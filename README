@@ -1,0 +1,11 @@
+This repo contains the code to run Emily & Nina's jukebox-esque device. 
+
+The MCU code contains all the code to:
+Read the RFID reader
+Communicates with the DF3 player
+Configures the Flash Memory to send the lightshow to the FPGA
+
+The FPGA code contains all the code to:
+Run a lightshow
+Control the servo motors
+Configures and reads from the SRAM
