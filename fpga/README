@@ -1,0 +1,4 @@
+The FPGA code contains all the code to:
+Run a lightshow
+Control the servo motors
+Configures and reads from the SRAM

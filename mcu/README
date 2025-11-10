@@ -1,0 +1,4 @@
+The MCU code contains all the code to:
+Read the RFID reader
+Communicates with the DF3 player
+Configures the Flash Memory to send the lightshow to the FPGA
