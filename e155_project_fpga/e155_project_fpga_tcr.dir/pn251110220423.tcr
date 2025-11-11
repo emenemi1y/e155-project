@@ -1,0 +1,7 @@
+#Start recording tcl command: 11/10/2025 20:24:02
+#Project Location: C:/Users/ekendrick/Documents/GitHub/e155-lab7/lab07/lab07_fpga/e155_project_fpga; Project name: e155_project_fpga
+prj_create -name "e155_project_fpga" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+prj_save 
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-lab7/lab07/lab07_fpga/e155_project_fpga/source/impl_1/top.sv"
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-lab7/lab07/lab07_fpga/e155_project_fpga/source/impl_1/spram.sv"
+#Stop recording: 11/10/2025 22:04:23
