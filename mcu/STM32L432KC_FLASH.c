@@ -5,7 +5,7 @@
 // 11/10/25
 // njobanputra@g.hmc.edu
 
-#include "STM32L432KC_FLASH.h"
+#include "mcu/STM32L432KC_FLASH.h"
 
 void configureFlash() {
   FLASH->ACR |= FLASH_ACR_LATENCY_4WS;
@@ -13,11 +13,12 @@ void configureFlash() {
 }
 
 void unlockFlash() {
-
+// Flash Keys used to unlock the Flash
 int FLASH_KEYR_KEY1 = 0x45670123;
 int FLASH_KEYR_KEY2 =  0xCDEF89AB;
 
-FLASH->KEYR |=  0x45670123;
+// Setting the Flash Key to unlock the Flash
+FLASH->KEYR |=  FLASH_KEYR_KEY1;
 }
 
 void eraseFlash() {
