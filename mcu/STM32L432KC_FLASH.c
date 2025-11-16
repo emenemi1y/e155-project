@@ -13,7 +13,7 @@ void configureFlash() {
   FLASH->ACR |= FLASH_ACR_LATENCY_4WS;
   FLASH->ACR |= FLASH_ACR_PRFTEN;
 }
- // testing
+
 void unlockFlash() {
 // Flash Keys used to unlock the Flash
 int FLASH_KEYR_KEY1 = 0x45670123;
