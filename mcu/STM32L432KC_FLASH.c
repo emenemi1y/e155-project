@@ -5,7 +5,10 @@
 // 11/10/25
 // njobanputra@g.hmc.edu
 
+// References, they haven't really helped so far
 // https://github.com/controllerstech/STM32/blob/master/LVGL/Simple_F446/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c#L433
+// https://github.com/aloebs29/flash_management
+
 
 #include "C:\Users\njobanputra\Documents\GitHub\e155-project\mcu\STM32L432KC_FLASH.h"
 
@@ -45,7 +48,7 @@ if (FLASH_SR_BSY == 0) {
   FLASH->CR |= _VAL2FLD(FLASH_CR_STRT, 1);
 
 // Wait for the BSY bit to be cleared in the FLASH_SR register.
-  FLASH->SR |= _VAL2FLD(FLASH_SR_BSY, 0);
+  //FLASH->SR |= _VAL2FLD(FLASH_SR_BSY, 0);
   }
 }
 
@@ -68,12 +71,12 @@ if (FLASH_SR_BSY == 0) {
   //– Write the second word
 
 // Wait until the BSY bit is cleared in the FLASH_SR register.
-
+  while(!(FLASH_SR_BSY));
 // Check that EOP flag is set in the FLASH_SR register (meaning that the programming operation has succeed), and clear it by software.
   FLASH->SR |= _VAL2FLD(FLASH_SR_EOP, 1);
 
 // Clear the PG bit in the FLASH_CR register if there no more programming request anymore.
-
+  FLASH->CR |= _VAL2FLD(FLASH_CR_PG, 0);
   }
 }
 
