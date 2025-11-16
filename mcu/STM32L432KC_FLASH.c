@@ -5,6 +5,7 @@
 // 11/10/25
 // njobanputra@g.hmc.edu
 
+// https://github.com/controllerstech/STM32/blob/master/LVGL/Simple_F446/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c#L433
 #include "C:\Users\njobanputra\Documents\GitHub\e155-project\mcu\STM32L432KC_FLASH.h"
 
 void configureFlash() {
