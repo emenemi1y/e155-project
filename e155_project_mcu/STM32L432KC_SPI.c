@@ -74,7 +74,8 @@ char spiSendReceive(char send){
   return rec; // Return received character
 }
 
+// Trying to emulate SPI.begin(), might be wrong 
 void beginSPI(void) {
-  // Set chip enable to high
-  digitalWrite(SPI_CE, PIO_HIGH);
+  // Set chip enable to high  
+  digitalWrite(SPI_CE, PIO_LOW);
 }

@@ -3,4 +3,4 @@
 #include "STM32L432KC.h"
 
 
-// TODO: Initialize TIM15
+// TODO: Initialize TIM15 for delays 
