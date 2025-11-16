@@ -5,6 +5,8 @@
 // 11/10/25
 // njobanputra@g.hmc.edu
 
+// https://github.com/controllerstech/STM32/blob/master/LVGL/Simple_F446/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c#L433
+
 #include "C:\Users\njobanputra\Documents\GitHub\e155-project\mcu\STM32L432KC_FLASH.h"
 
 void configureFlash() {
@@ -18,8 +20,8 @@ int FLASH_KEYR_KEY1 = 0x45670123;
 int FLASH_KEYR_KEY2 =  0xCDEF89AB;
 
 // Setting the Flash Key to unlock the Flash
-FLASH->KEYR =  FLASH_KEYR_KEY1;
-FLASH->KEYR = FLASH_KEYR_KEY2;
+FLASH->KEYR =  (FLASH_KEYR_KEY1 << 0);
+FLASH->KEYR = (FLASH_KEYR_KEY2 << 16);
 }
 
 void eraseFlash() {
@@ -28,6 +30,7 @@ void eraseFlash() {
 while (FLASH_SR_BSY == 0) {
 
 //Check and clear all error programming flags due to a previous programming. If not, PGSERR is set.
+FLASH->SR |= _VAL2FLD(FLASH_SR_RDERR, 0);
 
 //Set the PER bit and select the page you wish to erase (PNB) in the Flash control register (FLASH_CR).
 // Set the STRT bit in the FLASH_CR register.
