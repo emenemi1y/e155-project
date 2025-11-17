@@ -48,7 +48,7 @@ if (FLASH_SR_BSY == 0) {
   FLASH->CR |= _VAL2FLD(FLASH_CR_STRT, 1);
 
 // Wait for the BSY bit to be cleared in the FLASH_SR register.
-  //FLASH->SR |= _VAL2FLD(FLASH_SR_BSY, 0);
+  while(!(FLASH_SR_BSY));
   }
 }
 
@@ -64,12 +64,16 @@ if (FLASH_SR_BSY == 0) {
   FLASH->SR |= _VAL2FLD(FLASH_SR_MISERR, 1);
   FLASH->SR |= _VAL2FLD(FLASH_SR_FASTERR, 1);
 
+  int* memLoc = 0x0807F800;
+
 // Set the PG bit in the Flash control register (FLASH_CR).
   FLASH->CR |= _VAL2FLD(FLASH_CR_PG, 1);
+  }
 // Perform the data write operation at the desired memory address, inside main memory block or OTP area. Only double word can be programmed.
   //– Write a first word in an address aligned with double word
   //– Write the second word
 
+  *memLoc = 00000001;
 // Wait until the BSY bit is cleared in the FLASH_SR register.
   while(!(FLASH_SR_BSY));
 // Check that EOP flag is set in the FLASH_SR register (meaning that the programming operation has succeed), and clear it by software.
@@ -77,7 +81,6 @@ if (FLASH_SR_BSY == 0) {
 
 // Clear the PG bit in the FLASH_CR register if there no more programming request anymore.
   FLASH->CR |= _VAL2FLD(FLASH_CR_PG, 0);
-  }
 }
 
 void lockFlash(){
