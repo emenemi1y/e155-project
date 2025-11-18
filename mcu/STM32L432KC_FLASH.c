@@ -10,7 +10,7 @@
 // https://github.com/aloebs29/flash_management
 
 
-#include "C:\Users\njobanputra\Documents\GitHub\e155-project\mcu\STM32L432KC_FLASH.h"
+#include "/Users/ninajobanputra/Documents/E155Project/mcu/STM32L432KC_FLASH.h"
 
 void configureFlash() {
   FLASH->ACR |= FLASH_ACR_LATENCY_4WS;
@@ -84,4 +84,11 @@ if (FLASH_SR_BSY == 0) {
 }
 
 void lockFlash(){
+// Flash Keys used to unlock the Flash
+int FLASH_KEYR_KEY1 = 0x45670123;
+int FLASH_KEYR_KEY2 =  0xCDEF89AB;
+
+// Setting the Flash Key to unlock the Flash
+FLASH->KEYR =  (FLASH_KEYR_KEY1 << 0);
+FLASH->KEYR = (FLASH_KEYR_KEY2 << 16);
 }
