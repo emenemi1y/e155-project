@@ -16,12 +16,17 @@
  *          1: data changed on leading edge of clk and captured on next edge)
  * Refer to the datasheet for more low-level details. */ 
 
-void initSPI(int br, int cpol, int cpha){
+void initSPI(SPI_TypeDef * SPIx, int br, int cpol, int cpha){
 
   // Enable system clock for SPI1
-  RCC->APB2ENR |= RCC_APB2ENR_SPI1EN;
+  if (SPIx == SPI1){
+    RCC->APB2ENR |= RCC_APB2ENR_SPI1EN;
+  }
+  else if (SPIx == SPI3){
+    RCC->APB1ENR1 |= RCC_APB1ENR1_SPI3EN;
+  }
   
-  // Configure GPIO pins for SPI3
+  // Configure GPIO pins for SPI3 
   // Set to alternate function mode
   pinMode(SPI_SCK, GPIO_ALT);     // SPI1_SCK
   pinMode(SPI_MISO, GPIO_ALT);    // SPI1_MISO
@@ -38,20 +43,20 @@ void initSPI(int br, int cpol, int cpha){
   GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 5);
 
   // Set the baud rate 
-  SPI1->CR1 |= _VAL2FLD(SPI_CR1_BR, br);
+  SPIx->CR1 |= _VAL2FLD(SPI_CR1_BR, br);
 
   // Set to controller configuration
-  SPI1->CR1 |= SPI_CR1_MSTR;
+  SPIx->CR1 |= SPI_CR1_MSTR;
 
-  SPI1->CR1 &= ~(SPI_CR1_CPOL | SPI_CR1_CPHA | SPI_CR1_LSBFIRST | SPI_CR1_SSM);
+  SPIx->CR1 &= ~(SPI_CR1_CPOL | SPI_CR1_CPHA | SPI_CR1_LSBFIRST | SPI_CR1_SSM);
 
-  SPI1->CR1 |= _VAL2FLD(SPI_CR1_CPOL, cpol); // Polarity
-  SPI1->CR1 |= _VAL2FLD(SPI_CR1_CPHA, cpha); // Phase
-  SPI1->CR2 |= _VAL2FLD(SPI_CR2_DS, 0b0111); // Data length for transfer
-  SPI1->CR2 |= (SPI_CR2_FRXTH | SPI_CR2_SSOE);
+  SPIx->CR1 |= _VAL2FLD(SPI_CR1_CPOL, cpol); // Polarity
+  SPIx->CR1 |= _VAL2FLD(SPI_CR1_CPHA, cpha); // Phase
+  SPIx->CR2 |= _VAL2FLD(SPI_CR2_DS, 0b0111); // Data length for transfer
+  SPIx->CR2 |= (SPI_CR2_FRXTH | SPI_CR2_SSOE);
 
   // Enable SPI
-  SPI1->CR1 |= SPI_CR1_SPE;
+  SPIx->CR1 |= SPI_CR1_SPE;
   
 }
 
