@@ -17,6 +17,8 @@
 #define SS_PIN    PA5
 #define CPOL      0
 #define CPHA      0
+#define true 1
+#define false 0
 #ifndef MFRC522_SPICLOCK
 #define MFRC522_SPICLOCK (4000000u) // MFRC522 accept upto 10MHz, set to 4MHz.
 #endif

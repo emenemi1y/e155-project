@@ -39,8 +39,8 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="8" useTextEdit="1" path="MFRC522.c" left="0" selected="1" top="750" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="227" useTextEdit="1" path="MFRC522.h" left="0" top="195" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="30" y="1012" useTextEdit="1" path="MFRC522.c" left="0" selected="1" top="963" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="20" useTextEdit="1" path="MFRC522.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="9" useTextEdit="1" path="STM32L432KC_GPIO.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_GPIO.c" left="0" top="57" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="37" y="5" useTextEdit="1" path="main.c" left="0" top="0" codecName="Default"/>
