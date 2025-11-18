@@ -84,4 +84,11 @@ if (FLASH_SR_BSY == 0) {
 }
 
 void lockFlash(){
+// Flash Keys used to unlock the Flash
+int FLASH_KEYR_KEY1 = 0x45670123;
+int FLASH_KEYR_KEY2 =  0xCDEF89AB;
+
+// Setting the Flash Key to unlock the Flash
+FLASH->KEYR =  (FLASH_KEYR_KEY1 << 0);
+FLASH->KEYR = (FLASH_KEYR_KEY2 << 16);
 }
