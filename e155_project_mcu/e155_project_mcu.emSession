@@ -39,16 +39,20 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="259" useTextEdit="1" folds0="207" path="MFRC522.c" left="0" selected="1" top="208" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="30" y="1012" useTextEdit="1" path="MFRC522.c" left="0" selected="1" top="963" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="20" useTextEdit="1" path="MFRC522.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="9" useTextEdit="1" path="STM32L432KC_GPIO.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_GPIO.c" left="0" top="57" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="37" y="5" useTextEdit="1" path="main.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="28" y="19" useTextEdit="1" path="STM32L432KC.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="62" y="135" useTextEdit="1" path="MFRC522.h" left="0" top="120" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="58" y="34" useTextEdit="1" path="STM32L432KC_SPI.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="49" y="76" useTextEdit="1" path="STM32L432KC_SPI.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="6" useTextEdit="1" path="STM32L432KC.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="37" useTextEdit="1" path="STM32L432KC_SPI.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="49" y="76" useTextEdit="1" path="STM32L432KC_SPI.c" left="0" top="13" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_RCC.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_RCC.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="RFID_RC522.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="RFID_RC522.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="25" useTextEdit="1" path="STM32L432KC_TIM.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="20" useTextEdit="1" path="STM32L432KC_TIM.h" left="0" top="0" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="e155_project_mcu" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

@@ -53,7 +53,12 @@
       </file>
     </folder>
     <folder Name="lib">
-      <file file_name="MFRC522.c" />
+      <file file_name="MFRC522.c">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </file>
+      <file file_name="MFRC522.h">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </file>
       <file file_name="STM32L432KC.h" />
       <file file_name="STM32L432KC_FLASH.c" />
       <file file_name="STM32L432KC_FLASH.h" />
@@ -76,7 +81,8 @@
     <folder Name="Source Files">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <file file_name="main.c" />
-      <file file_name="MFRC522.h" />
+      <file file_name="RFID_RC522.c" />
+      <file file_name="RFID_RC522.h" />
     </folder>
     <folder Name="System Files">
       <file file_name="SEGGER_THUMB_Startup.s" />
