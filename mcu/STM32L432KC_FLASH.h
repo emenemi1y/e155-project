@@ -16,9 +16,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 void configureFlash();
-void unlockFlash();
-void eraseFlash();
-void programFlash();
-void lockFlash();
+//void unlockFlash();
+//void eraseFlash();
+//void programFlash();
+//void lockFlash();
 
 #endif
