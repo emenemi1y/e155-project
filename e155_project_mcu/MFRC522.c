@@ -970,7 +970,7 @@ void PICC_DumpMifareClassicToSerial(Uid *uid,			///< Pointer to Uid struct retur
 	
 	// Dump sectors, highest address first.
 	if (no_of_sectors) {
-		printf("Sector Block   0  1  2  3   4  5  6  7   8  9 10 11  12 13 14 15  AccessBits");
+		// printf("Sector Block   0  1  2  3   4  5  6  7   8  9 10 11  12 13 14 15  AccessBits");
 		for (int8_t i = no_of_sectors - 1; i >= 0; i--) {
 			PICC_DumpMifareClassicSectorToSerial(uid, key, i);
 		}
@@ -1056,7 +1056,7 @@ void PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to Uid struct
 		if (isSectorTrailer) {
 			status = PCD_Authenticate(PICC_CMD_MF_AUTH_KEY_A, firstBlock, key, uid);
 			if (status != STATUS_OK) {
-				printf("PCD_Authenticate() failed: ");
+				// printf("PCD_Authenticate() failed: \n");
 				return;
 			}
 		}
@@ -1064,7 +1064,7 @@ void PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to Uid struct
 		byteCount = sizeof(buffer);
 		status = MIFARE_Read(blockAddr, buffer, &byteCount);
 		if (status != STATUS_OK) {
-			printf("MIFARE_Read() failed: ");
+			// printf("MIFARE_Read() failed: ");
 			continue;
 		}
 		// Dump data
@@ -1107,12 +1107,12 @@ void PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to Uid struct
 		if (firstInGroup) {
 			// Print access bits
 			printf(" [ ");
-			printf("%d", (g[group] >> 2) & 1); printf(" ");
-			printf("%d", (g[group] >> 1) & 1); printf(" ");
-			printf("%d", (g[group] >> 0) & 1);
-			printf(" ] ");
+			// printf("%d", (g[group] >> 2) & 1); printf(" ");
+			// printf("%d", (g[group] >> 1) & 1); printf(" ");
+			// printf("%d", (g[group] >> 0) & 1);
+			// printf(" ] ");
 			if (invertedError) {
-				printf("\n Inverted access bits did not match! ");
+				// printf("\n Inverted access bits did not match! ");
 			}
 		}
 		
