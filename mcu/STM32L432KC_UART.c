@@ -1,8 +1,8 @@
 // STM32L432KC_USART.c
 // Source code for USART functions
 
-#include "STM32L432KC.h"
-#include "STM32L432KC_USART.h"
+#include "/Users/ninajobanputra/Documents/SEGGER Embedded Studio Projects/E155Project/STM32L432KC.h"
+#include "/Users/ninajobanputra/Documents/E155Project/mcu/STM32L432KC_UART.h"
 #include "STM32L432KC_GPIO.h"
 #include "STM32L432KC_RCC.h"
 
