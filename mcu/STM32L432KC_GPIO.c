@@ -118,3 +118,10 @@ void togglePin(int gpio_pin) {
 	// Use XOR to toggle
 	GPIO_PORT_PTR->ODR ^= (1 << pin_offset);
 }
+
+void gpioAFSel(int gpio_pin, int af_val){
+  GPIO_TypeDef *GPIO_PORT_PTR  = gpioPinToBase(gpio_pin);
+  int pin_offset = gpioPinOffset(gpio_pin);
+  int afsel_offset = pin_offset * 4;
+  GPIO_PORT_PTR->AFR[0] |= (af_val << afsel_offset);
+}

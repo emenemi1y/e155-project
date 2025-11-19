@@ -10,7 +10,7 @@
 // https://github.com/aloebs29/flash_management
 
 
-#include "/Users/ninajobanputra/Documents/E155Project/mcu/STM32L432KC_FLASH.h"
+#include "STM32L432KC_FLASH.h"
 
 void configureFlash() {
   FLASH->ACR |= FLASH_ACR_LATENCY_4WS;

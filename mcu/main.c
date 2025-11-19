@@ -4,21 +4,19 @@
 **********************************************************************
 
 -------------------------- END-OF-HEADER -----------------------------
-
+ 
 File    : main.c
 Purpose : Generic application start
 
 */
 
 #include <stdio.h>
-#include "/Users/ninajobanputra/Documents/SEGGER Embedded Studio Projects/E155Project/STM32L4xx/Device/Include/stm32l4xx.h"
-#include "/Users/ninajobanputra/Documents/E155Project/HAL_Library/stm32l4xx-hal-driver/Inc/stm32l4xx_hal.h"
-#include "STM32L432KC.h"
+#include "C:\Users\njobanputra\Documents\GitHub\e155-project\mcu\STM32L432KC.h"
 #include <stm32l432xx.h>
-#define USART_ID USART2_ID
+#define USART_ID USART1_ID
 #define TIM TIM15
 
-#define PAGE255 (0x0807F800)
+//#define PAGE255 (0x0807F800)
 
 /*********************************************************************
 *
@@ -28,12 +26,28 @@ Purpose : Generic application start
 *   Application entry point.
 */
 
+#define TX PA9
+#define RX PA10
+
 int main(void) {
 
 uint32_t uid = 0x33b2e52e;
 // Configure flash and clock
 configureFlash();
 configureClock();
+
+// Set pins
+gpioEnable(GPIO_PORT_A);
+gpioEnable(GPIO_PORT_B);
+gpioEnable(GPIO_PORT_C);
+
+pinMode(TX, GPIO_ALT);
+gpioAFSel(TX, 7);
+
+pinMode(RX, GPIO_ALT);
+gpioAFSel(RX, 7);
+
+
 
 // Initialize USART
 USART_TypeDef * USART = initUSART(USART_ID, 9600);
@@ -46,21 +60,35 @@ initTIM(TIM);
 // https://picaxe.com/docs/spe033.pdf
 //uint8_t msg = 0x7E;
 
+sendChar(USART, 0x7E);
+sendChar(USART, 0xFF); // Version
+sendChar(USART, 0x06); // Length
+sendChar(USART, 0x09); // Command: Select device
+sendChar(USART, 0x00); // Feedback
+//sendChar(USART, 0x00);
+sendChar(USART, 0x02); // Parameter: TF card
+sendChar(USART, 0xFE); // Checksum high byte
+sendChar(USART, 0xED); // Checksum low byte
+sendChar(USART, 0xEF); // End byte
+delay_millis(TIM, 2000);
+
+/*
+sendChar(USART, 0x7E);
+sendChar(USART, 0xFF); // Version
+sendChar(USART, 0x06); // Length
+sendChar(USART, 0x0C); // Command: Select device
+sendChar(USART, 0x00); // Feedback
+sendChar(USART, 0x00); // Parameter: TF card
+sendChar(USART, 0x05); // Checksum high byte
+sendChar(USART, 0xED); // Checksum low byte
+sendChar(USART, 0xEF); // End byte
+sendChar(USART, 0xEF);
+delay_millis(TIM, 2000);
+*/
 
 while(1){
-    sendChar(USART, 0x7E);
-    sendChar(USART, 0xFF); // Version
-    sendChar(USART, 0x06); // Length
-    sendChar(USART, 0x09); // Command: Select device
-    sendChar(USART, 0x00); // Feedback
-    sendChar(USART, 0x02); // Parameter: TF card
-    sendChar(USART, 0xFE); // Checksum high byte
-    sendChar(USART, 0xED); // Checksum low byte
-    sendChar(USART, 0xEF); // End byte
-    delay_millis(TIM, 2000);
-  }
 
-  if(uid == 0x33b2e52e) {
+  //if(uid == 0x33b2e52e) {
   // Tells the player to play file 001.mp3
     sendChar(USART, 0x7E);
     sendChar(USART, 0xFF);
@@ -68,10 +96,12 @@ while(1){
     sendChar(USART, 0x03);
     sendChar(USART, 0x00);
     sendChar(USART, 0x01);
+    sendChar(USART, 0x01);
     sendChar(USART, 0xFE);
     sendChar(USART, 0xF7);
     sendChar(USART, 0xEF);
     delay_millis(TIM, 2000);
+  //}
 }
-
+}
 /*************************** End of file ****************************/
