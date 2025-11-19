@@ -16,7 +16,7 @@
 #include "STM32L432KC_RCC.h"
 #include "STM32L432KC_TIM.h"
 #include "STM32L432KC_FLASH.h"
-#include "C:\Users\njobanputra\Documents\GitHub\e155-project\mcu\STM32L432KC_UART.h"
+#include "STM32L432KC_UART.h"
 
 // Global defines
 
