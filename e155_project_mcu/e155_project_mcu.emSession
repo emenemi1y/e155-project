@@ -21,13 +21,14 @@
  <Project>
   <ProjectSessionItem path="e155_project_mcu"/>
   <ProjectSessionItem path="e155_project_mcu;e155_project_mcu"/>
+  <ProjectSessionItem path="e155_project_mcu;e155_project_mcu;CMSIS Files"/>
   <ProjectSessionItem path="e155_project_mcu;e155_project_mcu;lib"/>
   <ProjectSessionItem path="e155_project_mcu;e155_project_mcu;Script Files"/>
   <ProjectSessionItem path="e155_project_mcu;e155_project_mcu;Source Files"/>
   <ProjectSessionItem path="e155_project_mcu;e155_project_mcu;System Files"/>
  </Project>
  <Register1>
-  <RegisterWindow invisibleNodes="" visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal;SPI1/CR1;SPI1/CR2;SPI1/SR;SPI1/DR;SPI1/CRCPR;SPI1/RXCRCR;SPI1/TXCRCR;GPIOB/MODER;GPIOB/OTYPER;GPIOB/OSPEEDR;GPIOB/PUPDR;GPIOB/IDR;GPIOB/ODR;GPIOB/BSRR;GPIOB/LCKR;GPIOB/AFRL;GPIOB/AFRH;GPIOA/MODER;GPIOA/OTYPER;GPIOA/OSPEEDR;GPIOA/PUPDR;GPIOA/IDR;GPIOA/ODR;GPIOA/BSRR;GPIOA/LCKR;GPIOA/AFRL;GPIOA/AFRH;RCC/CR;RCC/ICSCR;RCC/CFGR;RCC/PLLCFGR;RCC/PLLSAI1CFGR;RCC/CIER;RCC/CIFR;RCC/CICR;RCC/AHB1RSTR;RCC/AHB2RSTR;RCC/AHB3RSTR;RCC/APB1RSTR1;RCC/APB1RSTR2;RCC/APB2RSTR;RCC/AHB1ENR;RCC/AHB2ENR;RCC/AHB3ENR;RCC/APB1ENR1;RCC/APB1ENR2;RCC/APB2ENR;RCC/AHB1SMENR;RCC/AHB2SMENR;RCC/AHB3SMENR;RCC/APB1SMENR1;RCC/APB1SMENR2;RCC/APB2SMENR;RCC/CCIPR;RCC/BDCR;RCC/CSR;RCC/CRRCR;TIM15/CR1;TIM15/CR2;TIM15/DIER;TIM15/SR;TIM15/EGR;TIM15/CCMR1_Output;TIM15/CCMR1_Input;TIM15/CCER;TIM15/CNT;TIM15/PSC;TIM15/ARR;TIM15/RCR;TIM15/CCR1;TIM15/BDTR;TIM15/DCR;TIM15/DMAR;TIM15/CCR2;TIM15/OR1;TIM15/OR2;TIM15/SMCR" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context;SPI1;SPI1/CR1;GPIOB;GPIOA;RCC;RCC/AHB1ENR;RCC/APB2ENR;TIM15" name="e155_project_mcu_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+  <RegisterWindow invisibleNodes="" visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal;SPI1/CR1;SPI1/CR2;SPI1/SR;SPI1/DR;SPI1/CRCPR;SPI1/RXCRCR;SPI1/TXCRCR;GPIOB/MODER;GPIOB/OTYPER;GPIOB/OSPEEDR;GPIOB/PUPDR;GPIOB/IDR;GPIOB/ODR;GPIOB/BSRR;GPIOB/LCKR;GPIOB/AFRL;GPIOB/AFRH;GPIOA/MODER;GPIOA/OTYPER;GPIOA/OSPEEDR;GPIOA/PUPDR;GPIOA/IDR;GPIOA/ODR;GPIOA/BSRR;GPIOA/LCKR;GPIOA/AFRL;GPIOA/AFRH;RCC/CR;RCC/ICSCR;RCC/CFGR;RCC/PLLCFGR;RCC/PLLSAI1CFGR;RCC/CIER;RCC/CIFR;RCC/CICR;RCC/AHB1RSTR;RCC/AHB2RSTR;RCC/AHB3RSTR;RCC/APB1RSTR1;RCC/APB1RSTR2;RCC/APB2RSTR;RCC/AHB1ENR;RCC/AHB2ENR;RCC/AHB3ENR;RCC/APB1ENR1;RCC/APB1ENR2;RCC/APB2ENR;RCC/AHB1SMENR;RCC/AHB2SMENR;RCC/AHB3SMENR;RCC/APB1SMENR1;RCC/APB1SMENR2;RCC/APB2SMENR;RCC/CCIPR;RCC/BDCR;RCC/CSR;RCC/CRRCR;TIM15/CR1;TIM15/CR2;TIM15/DIER;TIM15/SR;TIM15/EGR;TIM15/CCMR1_Output;TIM15/CCMR1_Input;TIM15/CCER;TIM15/CNT;TIM15/PSC;TIM15/ARR;TIM15/RCR;TIM15/CCR1;TIM15/BDTR;TIM15/DCR;TIM15/DMAR;TIM15/CCR2;TIM15/OR1;TIM15/OR2;TIM15/SMCR;TIM16/CR1;TIM16/CR2;TIM16/DIER;TIM16/SR;TIM16/EGR;TIM16/CCMR1_Output;TIM16/CCMR1_Input;TIM16/CCER;TIM16/CNT;TIM16/PSC;TIM16/ARR;TIM16/RCR;TIM16/CCR1;TIM16/BDTR;TIM16/DCR;TIM16/DMAR;TIM16/OR1;TIM16/OR2" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context;SPI1;SPI1/CR1;GPIOB;GPIOA;RCC;RCC/AHB1ENR;RCC/APB2ENR;TIM15;TIM16;TIM16/ARR;TIM16/CCR1" name="e155_project_mcu_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
  </Register1>
  <Register2>
   <RegisterWindow invisibleNodes="" visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="e155_project_mcu_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -57,26 +58,25 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="972" useTextEdit="1" path="MFRC522.c" left="0" top="927" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="19" useTextEdit="1" path="MFRC522.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="9" useTextEdit="1" path="STM32L432KC_GPIO.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="106" useTextEdit="1" path="STM32L432KC_GPIO.c" left="0" top="85" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="52" useTextEdit="1" path="MFRC522.c" left="0" top="48" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="13" useTextEdit="1" path="MFRC522.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="9" useTextEdit="1" path="STM32L432KC_GPIO.h" left="0" top="87" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="106" useTextEdit="1" path="STM32L432KC_GPIO.c" left="0" selected="1" top="80" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="20" useTextEdit="1" path="STM32L432KC.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="17" useTextEdit="1" path="main.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="3" useTextEdit="1" path="main.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="45" useTextEdit="1" path="STM32L432KC_SPI.c" left="0" top="15" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="11" useTextEdit="1" path="STM32L432KC_SPI.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="20" useTextEdit="1" path="STM32L432KC_TIM.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="25" useTextEdit="1" path="STM32L432KC_TIM.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="11" useTextEdit="1" path="STM32L432KC_SPI.h" left="0" top="1" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="58" y="28" useTextEdit="1" path="STM32L432KC_TIM.h" left="0" top="18" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="5" useTextEdit="1" path="STM32L432KC_TIM.c" left="0" top="3" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="68" y="20" useTextEdit="1" path="STM32L432KC_RCC.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_RCC.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="RFID_RC522.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="RFID_RC522.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="14" y="52" useTextEdit="1" path="STM32L432KC_USART.c" left="0" top="44" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="78" useTextEdit="1" path="STM32L432KC_USART.c" left="0" top="44" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="6" y="24" useTextEdit="1" path="STM32L432KC_USART.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="19" y="13" useTextEdit="1" path="STM32L432KC_FLASH.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="51" y="9439" useTextEdit="1" path="STM32L4xx/Device/Include/stm32l432xx.h" left="0" top="9420" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="50" y="9409" useTextEdit="1" path="STM32L4xx/Device/Include/stm32l432xx.h" left="0" top="9409" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="24" y="5" useTextEdit="1" path="STM32L432KC_FLASH.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="22" useTextEdit="1" path="WS2812B.c" left="0" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="24" useTextEdit="1" path="DFPlayer.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="17" useTextEdit="1" path="DFPlayer.h" left="0" top="174" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="e155_project_mcu" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

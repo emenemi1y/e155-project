@@ -16,5 +16,6 @@ Output/Debug/Obj/e155_project_mcu/MFRC522.o: \
   C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\STM32L432KC_GPIO.h \
   C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\STM32L432KC_SPI.h \
   C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\STM32L432KC_TIM.h \
+  C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\STM32L432KC_RCC.h \
   C:\Program\ Files\SEGGER\SEGGER\ Embedded\ Studio\ 8.24\include\stdio.h \
   C:\Program\ Files\SEGGER\SEGGER\ Embedded\ Studio\ 8.24\include\stdlib.h

@@ -16,7 +16,7 @@
 // Definitions
 ///////////////////////////////////////////////////////////////////////////////
 
-#define RST_PIN   PA8
+#define RST_PIN   PB6
 #define SS_PIN    PA5
 #define CPOL      0
 #define CPHA      0

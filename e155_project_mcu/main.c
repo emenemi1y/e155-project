@@ -1,6 +1,7 @@
 // E155 project main file
 
 #include "STM32L432KC.h"
+#include "stm32l4xx_hal.h"
 
 
 
@@ -19,7 +20,12 @@
 
   // Enable TIM16 for LED strip delays 
   RCC->APB2ENR |= RCC_APB2ENR_TIM16EN;
-  initTIM(TIM16, 2e7); // base unit of 50 ns
+  initTIM(TIM16, 8e7); // Keep 80 MHz clock
+  initPWM(TIM16, 8e7);
+
+  // Enable TIM2 for short delays 
+  RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
+  initTIM(TIM2, 2e6);
 
   initSPI(SPI1, 6, CPOL, CPHA); // br of 6 = 80 MHz / 128 = 625 kHz
 
@@ -27,11 +33,15 @@
   delay_units(TIM15, 40);
 
   initLED();
-
+  printf("Clock frequency: %d", SystemCoreClock);
+  
   while(1) {
-    send1Pulse();
-    send0Pulse();
+    digitalWrite(LED_PIN, PIO_HIGH);
+    delay_units(TIM2, 16);
+    digitalWrite(LED_PIN, PIO_LOW);
+    delay_units(TIM2, 9);
 
+    
   }
   
 
