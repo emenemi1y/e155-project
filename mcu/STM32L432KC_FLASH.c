@@ -16,7 +16,7 @@ void configureFlash() {
   FLASH->ACR |= FLASH_ACR_LATENCY_4WS;
   FLASH->ACR |= FLASH_ACR_PRFTEN;
 }
-
+/*
 void unlockFlash() {
 // Flash Keys used to unlock the Flash
 int FLASH_KEYR_KEY1 = 0x45670123;
@@ -28,7 +28,7 @@ FLASH->KEYR = (FLASH_KEYR_KEY2 << 16);
 }
 
 void eraseFlash() {
-/* pg 84 refernce manual */
+/* pg 84 refernce manual 
 //Check that no Flash memory operation is ongoing by checking the BSY bit in the FLASH_SR register.
 if (FLASH_SR_BSY == 0) {
 
@@ -92,3 +92,4 @@ int FLASH_KEYR_KEY2 =  0xCDEF89AB;
 FLASH->KEYR =  (FLASH_KEYR_KEY1 << 0);
 FLASH->KEYR = (FLASH_KEYR_KEY2 << 16);
 }
+*/
