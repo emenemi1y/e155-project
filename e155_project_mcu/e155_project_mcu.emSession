@@ -1,9 +1,7 @@
 <!DOCTYPE CrossStudio_Session_File>
 <session>
  <Bookmarks/>
- <Breakpoints groups="Breakpoints" active_group="Breakpoints">
-  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
- </Breakpoints>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
  <ExecutionProfileWindow/>
  <FrameBuffer>
   <FrameBufferWindow width="0" keepAspectRatio="0" zoomToFitWindow="0" showGrid="0" addressSpace="" format="0" height="0" autoEvaluate="0" scaleFactor="1" refreshPeriod="0" name="e155_project_mcu_Debug" addressText="" accessByDisplayWidth="0"/>
@@ -59,12 +57,12 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="972" useTextEdit="1" path="MFRC522.c" left="0" top="911" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="972" useTextEdit="1" path="MFRC522.c" left="0" top="927" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="19" useTextEdit="1" path="MFRC522.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="9" useTextEdit="1" path="STM32L432KC_GPIO.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="106" useTextEdit="1" path="STM32L432KC_GPIO.c" left="0" top="89" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="106" useTextEdit="1" path="STM32L432KC_GPIO.c" left="0" top="85" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="20" useTextEdit="1" path="STM32L432KC.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="9" useTextEdit="1" path="main.c" left="0" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="17" useTextEdit="1" path="main.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="45" useTextEdit="1" path="STM32L432KC_SPI.c" left="0" top="15" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="11" useTextEdit="1" path="STM32L432KC_SPI.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="6" y="20" useTextEdit="1" path="STM32L432KC_TIM.h" left="0" top="0" codecName="Default"/>
@@ -78,6 +76,7 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="19" y="13" useTextEdit="1" path="STM32L432KC_FLASH.h" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="51" y="9439" useTextEdit="1" path="STM32L4xx/Device/Include/stm32l432xx.h" left="0" top="9420" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="24" y="5" useTextEdit="1" path="STM32L432KC_FLASH.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="22" useTextEdit="1" path="WS2812B.c" left="0" selected="1" top="0" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="e155_project_mcu" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

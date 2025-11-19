@@ -13,8 +13,8 @@
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
-void initTIM(TIM_TypeDef * TIMx);
-void delay_micros(TIM_TypeDef * TIMx, uint32_t us);
+void initTIM(TIM_TypeDef * TIMx, uint32_t base);
+void delay_units(TIM_TypeDef * TIMx, uint32_t us);
 void start_timer(TIM_TypeDef *TIMx, uint32_t us);
 uint8_t check_timer(TIM_TypeDef *TIMx);
 

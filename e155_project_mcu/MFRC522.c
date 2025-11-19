@@ -162,10 +162,10 @@ void PCD_Init(void) {
 		if (digitalRead(RST_PIN) == PIO_LOW) {          // The MFRC522 chip is in power down mode.
 			pinMode(RST_PIN, GPIO_OUTPUT);		// Now set the resetPowerDownPin as digital output.
 			digitalWrite(RST_PIN, PIO_LOW);		// Make sure we have a clean LOW state.
-			delay_micros(TIM15, 2);				// 8.8.1 Reset timing requirements says about 100ns. Let us be generous: 2μsl
+			delay_units(TIM15, 2);				// 8.8.1 Reset timing requirements says about 100ns. Let us be generous: 2μsl
 			digitalWrite(RST_PIN, PIO_HIGH);		// Exit power down mode. This triggers a hard reset.
 			// Section 8.8.2 in the datasheet says the oscillator start-up time is the start up time of the crystal + 37,74μs. Let us be generous: 50ms.
-			delay_micros(TIM15, 100);
+			delay_units(TIM15, 100);
 			hardReset = 1;
 		}
 	}
@@ -202,7 +202,7 @@ void PCD_Reset(void) {
 	uint8_t count = 0;
 	do {
 		// Wait for the PowerDown bit in CommandReg to be cleared (max 3x50ms)
-		delay_micros(TIM15, 50000); // 50000 us = 50 ms
+		delay_units(TIM15, 50000); // 50000 us = 50 ms
 	} while ((PCD_ReadRegister(CommandReg) & (1 << 4)) && (++count) < 3);
 } // End PCD_Reset()
 

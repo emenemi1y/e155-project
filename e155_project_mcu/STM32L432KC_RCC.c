@@ -16,7 +16,7 @@ void configurePLL(void) {
    // Load configuration
    RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLSRC, RCC_PLLCFGR_PLLSRC_MSI);
    RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLM, 0b001); // M = 2
-   RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLN, 4);     // N = 80
+   RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLN, 80);     // N = 80
    RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLR, 0b00);  // R = 2
    RCC->PLLCFGR |= RCC_PLLCFGR_PLLREN;                // Enable PLLCLK output
 

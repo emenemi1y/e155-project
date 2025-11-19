@@ -19,6 +19,7 @@
 #include "STM32L432KC_USART.h"
 #include "STM32L432KC_SPI.h"
 #include "MFRC522.h"
+#include "WS2812B.h"
 // Global defines
 
 #define HSI_FREQ 16000000 // HSI clock is 16 MHz

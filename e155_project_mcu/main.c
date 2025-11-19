@@ -3,9 +3,6 @@
 #include "STM32L432KC.h"
 
 
-// TODO: Initialize TIM15 for delays 
-
-
 
   int main(void) {
   configureFlash();
@@ -18,25 +15,40 @@
 
   // Enable TIM15
   RCC->APB2ENR |= RCC_APB2ENR_TIM15EN;
-  initTIM(TIM15);
+  initTIM(TIM15, 1e6);
 
-  initSPI(SPI1, 3, CPOL, CPHA);
+  // Enable TIM16 for LED strip delays 
+  RCC->APB2ENR |= RCC_APB2ENR_TIM16EN;
+  initTIM(TIM16, 2e7); // base unit of 50 ns
+
+  initSPI(SPI1, 6, CPOL, CPHA); // br of 6 = 80 MHz / 128 = 625 kHz
 
   PCD_Init();
-  delay_micros(TIM15, 40);
+  delay_units(TIM15, 40);
+
+  initLED();
+
+  while(1) {
+    send1Pulse();
+    send0Pulse();
+
+  }
+  
+
+
+  /*
   PCD_DumpVersionToSerial();
   printf("Scan PICC to see UID, SAK, type, and data blocks...");
 
   while(1){
     if (PICC_IsNewCardPresent()){
       if(PICC_ReadCardSerial()){
-
         PICC_DumpToSerial(&(uid));
-
       }
     
     }
 
   }
+  */
 
 }

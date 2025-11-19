@@ -11,7 +11,6 @@
 #include "STM32L432KC_TIM.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 
 ///////////////////////////////////////////////////////////////////////////////
 // Definitions
