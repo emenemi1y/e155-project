@@ -10,8 +10,6 @@
 // https://github.com/aloebs29/flash_management
 
 
-#include "mcu/DF3Player.h"
-
 #define USART_ID USART2_ID
 
 // card 1: 33 b2 e5 2e

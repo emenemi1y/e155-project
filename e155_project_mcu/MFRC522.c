@@ -1,6 +1,7 @@
 // MFRC522.c
 // Source code  for MFRC522 functions
 // Emily Kendrick, ekendrick@hmc.edu, 11/15/25
+// Adapted from https://github.com/miguelbalboa/rfid/blob/master/examples/DumpInfo/DumpInfo.ino by Miguel Balboa
 
 #include "MFRC522.h"
 
@@ -17,14 +18,10 @@ int _write(int file, char *ptr, int len) {
 }
 
 
-/**
- * Writes a byte to the specified register in the MFRC522 chip.
- * The interface is described in the datasheet section 8.1.2.
- */
- 
-void PCD_WriteRegisterMulti(enum PCD_Register reg,	///< The register to write to. One of the PCD_Register enums.
-                            uint8_t count,              ///< The number of bytes to write to the register
-                            uint8_t *values		///< The value to write.
+// Writes multiple bytse to the specified register in the MFRC522 chip.
+void PCD_WriteRegisterMulti(enum PCD_Register reg,	/// The register to write to. One of the PCD_Register enums.
+                            uint8_t count,              /// The number of bytes to write to the register
+                            uint8_t *values		/// The values to write.
 								) {
     digitalWrite(SPI_CE, PIO_LOW); // Select slave
     spiSendReceive(reg);
@@ -32,28 +29,23 @@ void PCD_WriteRegisterMulti(enum PCD_Register reg,	///< The register to write to
       spiSendReceive(values[index]);
     }
     digitalWrite(SPI_CE, PIO_HIGH); // Release slave 
-    // In Arduino code: SPI.endTransaction(); (stop using the SPI bus) 
-    // I think that's not necessary here because the STM MCU has multiple SPI lines
-} // End PCD_WriteRegister()
+}
 
-
-void PCD_WriteRegister(enum PCD_Register reg,  ///< The register to write to. One of the PCD_Register enums.
-                       uint8_t value) {        ///< The value to write.
+// Write one value to the specified register on the MFRC522 chip. 
+void PCD_WriteRegister(enum PCD_Register reg,  /// The register to write to. One of the PCD_Register enums.
+                       uint8_t value) {        /// The value to write.
     digitalWrite(SPI_CE, PIO_LOW); // Select slave
     spiSendReceive(reg);
     spiSendReceive(value);
     digitalWrite(SPI_CE, PIO_HIGH); // Release slave
 }
 
-/**
- * Reads a number of bytes from the specified register in the MFRC522 chip.
- * The interface is described in the datasheet section 8.1.2.
- */
 
-void PCD_ReadRegisterMulti(enum PCD_Register reg,   ///< The register to read from.
-                     uint8_t count,           ///< The number of bytes to read
-                     uint8_t *values,         ///< Byte array to store the values in.
-                     uint8_t rxAlign          ///< Only bit positions rxAlign...7 in values[0] are updated
+// Reads a number of bytes from the specified register on the MFRC522 chip. 
+void PCD_ReadRegisterMulti(enum PCD_Register reg,   /// The register to read from.
+                     uint8_t count,                 /// The number of bytes to read
+                     uint8_t *values,               /// Byte array to store the values in.
+                     uint8_t rxAlign                /// Only bit positions rxAlign...7 in values[0] are updated
                      ){ 
 
     if (count == 0) return;
@@ -81,7 +73,8 @@ void PCD_ReadRegisterMulti(enum PCD_Register reg,   ///< The register to read fr
     digitalWrite(SPI_CE, PIO_HIGH); // Release slave
 }
 
-uint8_t PCD_ReadRegister(enum PCD_Register reg) { ///< The register to read from.
+// Reads one byte from the specified register on the MFRC522 chip. 
+uint8_t PCD_ReadRegister(enum PCD_Register reg) { /// The register to read from.
     uint8_t value;
     digitalWrite(SPI_CE, PIO_LOW);  // Select slave
     spiSendReceive(0x80 | reg);
@@ -91,27 +84,27 @@ uint8_t PCD_ReadRegister(enum PCD_Register reg) { ///< The register to read from
 }
 
 // Sets the bits given in mask in register reg
-void PCD_SetRegisterBitMask(enum PCD_Register reg,  ///< The register to update. One of the PCD_Register enums.
-                            uint8_t mask ){         ///< The bits to set
+void PCD_SetRegisterBitMask(enum PCD_Register reg,  /// The register to update. One of the PCD_Register enums.
+                            uint8_t mask ){         /// The bits to set
   uint8_t tmp;
   tmp = PCD_ReadRegister(reg);
   PCD_WriteRegister(reg, tmp | mask); // Set bit mask
 }
 
 // Clears the bits given in mask in register reg
-void PCD_ClearRegisterBitMask(enum PCD_Register reg,  ///< The register to update. 
-                              uint8_t mask){          ///< The bits to clear 
+void PCD_ClearRegisterBitMask(enum PCD_Register reg,  /// The register to update. 
+                              uint8_t mask){          /// The bits to clear 
     uint8_t tmp;
     tmp = PCD_ReadRegister(reg);
     PCD_WriteRegister(reg, tmp & (~mask));
 }
 
-enum StatusCode PCD_CalculateCRC(uint8_t *data,		///< In: Pointer to the data to transfer to the FIFO for CRC calculation.
-                                 uint8_t length,	///< In: The number of bytes to transfer.
-				 uint8_t *result	///< Out: Pointer to result buffer. Result is written to result[0..1], low byte first.
+enum StatusCode PCD_CalculateCRC(uint8_t *data,		/// In: Pointer to the data to transfer to the FIFO for CRC calculation.
+                                 uint8_t length,	/// In: The number of bytes to transfer.
+				 uint8_t *result	/// Out: Pointer to result buffer. Result is written to result[0..1], low byte first.
 					 ) {
 	PCD_WriteRegister(CommandReg, PCD_Idle);		// Stop any active command.
-	PCD_WriteRegister(DivIrqReg, 0x04);				// Clear the CRCIRq interrupt request bit
+	PCD_WriteRegister(DivIrqReg, 0x04);                     // Clear the CRCIRq interrupt request bit
 	PCD_WriteRegister(FIFOLevelReg, 0x80);			// FlushBuffer = 1, FIFO initialization
 	PCD_WriteRegisterMulti(FIFODataReg, length, data);	// Write data to the FIFO
 	PCD_WriteRegister(CommandReg, PCD_CalcCRC);		// Start the calculation
@@ -122,7 +115,7 @@ enum StatusCode PCD_CalculateCRC(uint8_t *data,		///< In: Pointer to the data to
 	// the operation.
 	const uint32_t deadline = 89; // ms
 
-        start_timer(TIM15, 65000); // do 65,000 us because 65535 is the maximum value of the 
+        start_timer(TIM15, 65000); // do 65,000 us because 65535 is the maximum value of the timer
 
 	do {
 		// DivIrqReg[7..0] bits are: Set2 reserved reserved MfinActIRq reserved CRCIRq reserved reserved
@@ -139,14 +132,14 @@ enum StatusCode PCD_CalculateCRC(uint8_t *data,		///< In: Pointer to the data to
 
 	// 89ms passed and nothing happened. Communication with the MFRC522 might be down.
 	return STATUS_TIMEOUT;
-} // End PCD_CalculateCRC()
+} 
 
 
 /////////////////////////////////////////////////////////////////////////////////////
 // Functions for manipulating the MFRC522
 /////////////////////////////////////////////////////////////////////////////////////
 
-
+// Initialize registers and gpio pins 
 void PCD_Init(void) {
 	int hardReset = 0;
 
@@ -191,7 +184,7 @@ void PCD_Init(void) {
 	PCD_WriteRegister(TxASKReg, 0x40);		// Default 0x00. Force a 100 % ASK modulation independent of the ModGsPReg register setting
 	PCD_WriteRegister(ModeReg, 0x3D);		// Default 0x3F. Set the preset value for the CRC coprocessor for the CalcCRC command to 0x6363 (ISO 14443-3 part 6.2.4)
 	PCD_AntennaOn();						// Enable the antenna driver pins TX1 and TX2 (they were disabled by the reset)
-} // End PCD_Init()
+}
 
 // Reset
 void PCD_Reset(void) {
@@ -204,7 +197,7 @@ void PCD_Reset(void) {
 		// Wait for the PowerDown bit in CommandReg to be cleared (max 3x50ms)
 		delay_units(TIM15, 50000); // 50000 us = 50 ms
 	} while ((PCD_ReadRegister(CommandReg) & (1 << 4)) && (++count) < 3);
-} // End PCD_Reset()
+} 
 
 
 // Turns the antenna on by enabling pins TX1 and TX2
@@ -235,7 +228,6 @@ void PCD_SetAntennaGain(uint8_t mask) {
   }
 }
 
-// Skipping PCD_PerformSelfTest
 
 /////////////////////////////////////////////////////////////////////////////////////
 // Power control
@@ -852,12 +844,12 @@ void PCD_DumpVersionToSerial(void) {
 
 // Dumps debug info about the selected PICC to Serial
 // On success the PICC is halted after dumping the data 
-void PICC_DumpToSerial(Uid *uid	///< Pointer to Uid struct returned from a successful PICC_Select().
+uint64_t PICC_DumpToSerial(Uid *uid	///< Pointer to Uid struct returned from a successful PICC_Select().
                       ) {
 	MIFARE_Key key;
 	
 	// Dump UID, SAK and Type
-	PICC_DumpDetailsToSerial(uid);
+	uint64_t card_id = PICC_DumpDetailsToSerial(uid);
 	
 	// Dump contents
 	enum PICC_Type piccType = PICC_GetType(uid->sak);
@@ -892,6 +884,7 @@ void PICC_DumpToSerial(Uid *uid	///< Pointer to Uid struct returned from a succe
 	
 	printf("");
 	PICC_HaltA(); // Already done if it was a MIFARE Classic PICC.
+        return card_id;
 } // End PICC_DumpToSerial()
 
 enum PICC_Type PICC_GetType(uint8_t sak		///< The SAK byte returned from PICC_Select().
@@ -918,24 +911,27 @@ enum PICC_Type PICC_GetType(uint8_t sak		///< The SAK byte returned from PICC_Se
 
 
 // Dumps card info *UID, SAK, Type) about the selected picc to Serial
-void PICC_DumpDetailsToSerial(Uid *uid	///< Pointer to Uid struct returned from a successful PICC_Select().
+uint64_t PICC_DumpDetailsToSerial(Uid *uid	///< Pointer to Uid struct returned from a successful PICC_Select().
 									) {
 	// UID
-	printf("Card UID:");
+	printf("\nCard UID:");
+        uint64_t card_id;
 	for (uint8_t i = 0; i < uid->size; i++) {
 		if(uid->uidByte[i] < 0x10)
                     printf(" 0");
 		else
                     printf(" ");
 		printf("%x", uid->uidByte[i]);
+                if (i == 0) card_id = uid->uidByte[i];
+                else card_id = (card_id << 8) | uid->uidByte[i];
 	} 
 	printf("\n");
-	
+	return card_id;
 	// SAK
-	printf("Card SAK: ");
-	if(uid->sak < 0x10)
-		printf("0");
-	printf("%x", uid->sak);
+	//printf("Card SAK: ");
+	//if(uid->sak < 0x10)
+		//printf("0");
+	//printf("%x", uid->sak);
 	
 	// (suggested) PICC type
 	enum PICC_Type piccType = PICC_GetType(uid->sak);
@@ -1030,6 +1026,7 @@ void PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to Uid struct
 	for (int8_t blockOffset = no_of_blocks - 1; blockOffset >= 0; blockOffset--) {
 		blockAddr = firstBlock + blockOffset;
 		// Sector number - only on first line
+                /*
 		if (isSectorTrailer) {
 			if(sector < 10)
 				printf("   "); // Pad with spaces
@@ -1052,6 +1049,7 @@ void PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to Uid struct
 		}
 		printf("%d", blockAddr);
 		printf("  ");
+                */
 		// Establish encrypted communications before reading the first block
 		if (isSectorTrailer) {
 			status = PCD_Authenticate(PICC_CMD_MF_AUTH_KEY_A, firstBlock, key, uid);
@@ -1068,6 +1066,7 @@ void PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to Uid struct
 			continue;
 		}
 		// Dump data
+                /*
 		for (uint8_t index = 0; index < 16; index++) {
 			if(buffer[index] < 0x10)
 				printf(" 0");
@@ -1078,6 +1077,7 @@ void PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to Uid struct
 				printf(" ");
 			}
 		}
+                */
 		// Parse sector trailer data
 		if (isSectorTrailer) {
 			c1  = buffer[7] >> 4;
@@ -1106,7 +1106,7 @@ void PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to Uid struct
 		
 		if (firstInGroup) {
 			// Print access bits
-			printf(" [ ");
+			// printf(" [ ");
 			// printf("%d", (g[group] >> 2) & 1); printf(" ");
 			// printf("%d", (g[group] >> 1) & 1); printf(" ");
 			// printf("%d", (g[group] >> 0) & 1);
@@ -1119,9 +1119,9 @@ void PICC_DumpMifareClassicSectorToSerial(Uid *uid,			///< Pointer to Uid struct
 		if (group != 3 && (g[group] == 1 || g[group] == 6)) { // Not a sector trailer, a value block
 			// int32_t value = (int32_t(buffer[3])<<24) | (int32_t(buffer[2])<<16) | (int32_t(buffer[1])<<8) | int32_t(buffer[0]);
 			// printf(" Value=0x"); printf("%x", value);
-			printf(" Adr=0x"); printf("%x", buffer[12]);
+			// printf(" Adr=0x"); printf("%x", buffer[12]);
 		}
-		printf("\n");
+		//printf("\n");
 	}
 	
 	return;
@@ -1144,6 +1144,7 @@ void PICC_DumpMifareUltralightToSerial(void) {
 			break;
 		}
 		// Dump data
+                /*
 		for (uint8_t offset = 0; offset < 4; offset++) {
 			i = page + offset;
 			if(i < 10)
@@ -1160,8 +1161,10 @@ void PICC_DumpMifareUltralightToSerial(void) {
 					printf(" ");
 				printf("%x", buffer[i]);
 			}
-			printf("\n");
-		}
+			//printf("\n");
+                        
+		}*/
+                
 	}
 } // End PICC_DumpMifareUltralightToSerial()
 

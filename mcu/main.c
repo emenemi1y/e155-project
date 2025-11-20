@@ -108,6 +108,7 @@ delay_millis(TIM, 2000);
 
   //if(uid == 0x33b2e52e) {
   // Tells the player to play file 001.mp3
+while(1) {
     sendChar(USART, 0x7E);
     sendChar(USART, 0xFF);
     sendChar(USART, 0x06);
@@ -119,6 +120,7 @@ delay_millis(TIM, 2000);
     //sendChar(USART, 0xE6);
     sendChar(USART, 0xEF);
     delay_millis(TIM, 2000);
+  }
     
     //sendChar(USART, 0x7E);
     //sendChar(USART, 0xFF);

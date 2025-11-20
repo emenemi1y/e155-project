@@ -1,6 +1,7 @@
 // MFRC522.h
 // Header for MFRC522 functions
 // Emily Kendrick, ekendrick@hmc.edu, 11/15/2025
+// Adapted from https://github.com/miguelbalboa/rfid/blob/master/examples/DumpInfo/DumpInfo.ino by Miguel Balboa
 
 #ifndef MFRC522_h
 
@@ -292,8 +293,8 @@ const char *PICC_GetTypeName(uint8_t type);
 
 // Support functions for debuging
 void PCD_DumpVersionToSerial(void);
-void PICC_DumpToSerial(Uid *uid);
-void PICC_DumpDetailsToSerial(Uid *uid);
+uint64_t PICC_DumpToSerial(Uid *uid);
+uint64_t PICC_DumpDetailsToSerial(Uid *uid);
 void PICC_DumpMifareClassicToSerial(Uid *uid, enum PICC_Type piccType, MIFARE_Key *key);
 void PICC_DumpMifareClassicSectorToSerial(Uid *uid, MIFARE_Key *key, uint8_t sector);
 void PICC_DumpMifareUltralightToSerial(void);

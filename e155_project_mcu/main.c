@@ -1,11 +1,14 @@
 // E155 project main file
 
 #include "STM32L432KC.h"
-#include "stm32l4xx_hal.h"
+
+#define TX PA9
+#define RX PA10
+#define USART_ID USART1_ID
 
 
 
-  int main(void) {
+int main(void) {
   configureFlash();
   configureClock();
 
@@ -16,48 +19,60 @@
 
   // Enable TIM15
   RCC->APB2ENR |= RCC_APB2ENR_TIM15EN;
-  initTIM(TIM15, 1e6);
+  initTIM(TIM15, 1e3);
 
-  // Enable TIM16 for LED strip delays 
-  RCC->APB2ENR |= RCC_APB2ENR_TIM16EN;
-  initTIM(TIM16, 8e7); // Keep 80 MHz clock
-  initPWM(TIM16, 8e7);
-
-  // Enable TIM2 for short delays 
-  RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
-  initTIM(TIM2, 2e6);
-
-  initSPI(SPI1, 6, CPOL, CPHA); // br of 6 = 80 MHz / 128 = 625 kHz
-
-  PCD_Init();
+  //initSPI(SPI1, 3, CPOL, CPHA);
+  //PCD_Init();
   delay_units(TIM15, 40);
 
-  initLED();
-  printf("Clock frequency: %d", SystemCoreClock);
-  
-  while(1) {
-    digitalWrite(LED_PIN, PIO_HIGH);
-    delay_units(TIM2, 16);
-    digitalWrite(LED_PIN, PIO_LOW);
-    delay_units(TIM2, 9);
 
-    
+  // Initialize USART
+  USART_TypeDef * USART = initUSART(USART_ID, 9600);
+
+
+  //initializeDF3(USART);
+  //while(1){
+  
+  sendChar(USART, 0x7E);
+  sendChar(USART, 0xFF); // Version
+  sendChar(USART, 0x06); // Length
+  sendChar(USART, 0x09); // Command: Select device
+  sendChar(USART, 0x00); // Feedback
+  sendChar(USART, 0x00); // Parameter: TF card
+  sendChar(USART, 0x02); // Checksum high byte
+  sendChar(USART, 0xEF); // End byte
+  delay_units(TIM15, 2000);
+ // }
+  while(1) {
+  sendChar(USART, 0x7E);
+  sendChar(USART, 0xFF); // Version
+  sendChar(USART, 0x06); // Length
+  sendChar(USART, 0x12); // Command: Select device
+  sendChar(USART, 0x00); // Feedback
+  sendChar(USART, 0x00); // Parameter: TF card
+  sendChar(USART, 0x01); // Checksum high byte
+  sendChar(USART, 0xEF); // End byte
+  delay_units(TIM15, 2000);
   }
   
-
-
   /*
+  uint64_t card_id, prev_id;
+  
   PCD_DumpVersionToSerial();
-  printf("Scan PICC to see UID, SAK, type, and data blocks...");
-
+  printf("\nScan PICC to see UID, SAK, type, and data blocks...");
+  
   while(1){
     if (PICC_IsNewCardPresent()){
       if(PICC_ReadCardSerial()){
-        PICC_DumpToSerial(&(uid));
-      }
-    
+        card_id = PICC_DumpToSerial(&(uid));
+      }   
+      //pauseSong(USART);
+      //if (card_id == 0x7945dc11) playSong(USART, 0x01);
+      //else if (card_id == 0x1c2ae62e) playSong(USART, 0x02);
     }
-
+    playSong(USART, 0x01);
+    //printf("\ncurrent ID: %x", (int) card_id);
+    
   }
   */
 

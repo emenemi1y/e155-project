@@ -6,7 +6,7 @@
 void initTIM(TIM_TypeDef * TIMx, uint32_t base){
   // Set prescaler to give 1 us time base
   uint32_t psc_div = (uint32_t) ((SystemCoreClock/base) - 1);
-  printf("psc: %d", (uint32_t) ((SystemCoreClock/base)));
+  //printf("psc: %d", (uint32_t) ((SystemCoreClock/base)));
 
   // Set prescaler division factor
   TIMx->PSC = (psc_div - 1);

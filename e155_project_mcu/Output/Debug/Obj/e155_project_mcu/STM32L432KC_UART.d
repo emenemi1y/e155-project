@@ -1,5 +1,5 @@
-Output/Debug/Obj/e155_project_mcu/main.o: \
-  C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\main.c \
+Output/Debug/Obj/e155_project_mcu/STM32L432KC_UART.o: \
+  C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\STM32L432KC_UART.c \
   C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\STM32L432KC.h \
   C:\Program\ Files\SEGGER\SEGGER\ Embedded\ Studio\ 8.24\include\stdio.h \
   C:\Program\ Files\SEGGER\SEGGER\ Embedded\ Studio\ 8.24\include\__SEGGER_RTL.h \

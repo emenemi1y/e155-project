@@ -12,14 +12,16 @@
 
 // Include other peripheral libraries
 
+#include "DFPlayer.h"
 #include "STM32L432KC_GPIO.h"
 #include "STM32L432KC_RCC.h"
 #include "STM32L432KC_TIM.h"
 #include "STM32L432KC_FLASH.h"
-#include "STM32L432KC_USART.h"
+#include "STM32L432KC_UART.h"
 #include "STM32L432KC_SPI.h"
 #include "MFRC522.h"
-#include "WS2812B.h"
+
+
 // Global defines
 
 #define HSI_FREQ 16000000 // HSI clock is 16 MHz

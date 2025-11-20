@@ -6,6 +6,7 @@
 
 #include <stdint.h>
 #include <stm32l432xx.h>
+#include "STM32L432KC_GPIO.h"
 
 // Defines for USART case statements
 #define USART1_ID   1
