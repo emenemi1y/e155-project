@@ -1,0 +1,5 @@
+#Start recording tcl command: 11/23/2025 20:57:30
+#Project Location: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga; Project name: e155_project_fpga
+prj_open "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/e155_project_fpga.rdf"
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv"
+#Stop recording: 11/23/2025 21:27:48

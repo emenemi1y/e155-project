@@ -9,6 +9,9 @@
         <Source name="source/impl_1/spram.sv" type="Verilog" type_short="Verilog">
             <Options VerilogStandard="System Verilog"/>
         </Source>
+        <Source name="source/impl_1/led_driver.sv" type="Verilog" type_short="Verilog">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
     </Implementation>
     <Strategy name="Strategy1" file="e155_project_fpga1.sty"/>
 </RadiantProject>
