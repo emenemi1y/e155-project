@@ -1,0 +1,20 @@
+POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2024.2.0.3.0
+Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o e155_project_fpga_impl_1_syn.udb -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml e155_project_fpga_impl_1.vm 
+   Architecture:     iCE40UP
+   Device:           iCE40UP5K
+   Package:          SG48
+   Performance:      High-Performance_1.2V
+Reading input file 'e155_project_fpga_impl_1.vm' ...
+Removing unused logic ...
+Starting design annotation....
+ 
+Constraint Summary:
+   Total number of constraints: 0
+   Total number of constraints dropped: 0
+ 
+Writing output file 'e155_project_fpga_impl_1_syn.udb'.
+POSTSYN finished successfully.
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 40 MB
+Checksum -- postsyn: 48870390f417c547c12b02eb7dcff7815fe8653

@@ -1,0 +1,32 @@
+#Start recording tcl command: 11/24/2025 19:52:16
+#Project Location: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga; Project name: e155_project_fpga
+prj_open "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/e155_project_fpga.rdf"
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv"
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_disable_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 11/24/2025 21:47:55

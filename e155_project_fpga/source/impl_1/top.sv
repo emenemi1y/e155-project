@@ -1,8 +1,13 @@
 module top (input logic clk, 
 			input logic [15:0] data_in,
 			input logic reset,
-			output logic [15:0] data_out);
+			output logic [15:0] data_out, 
+			output logic light_out);
 			
+	logic start, load, done, to_light;
+	logic [23:0] rgb;
+	led_driver led_driver1(clk, reset, start, rgb, load, done, to_light);
+	/*		
 	typedef enum logic [3:0] {start, setVal, writeEn, hold, writeDis, read, change};
 	statetype state, nextstate;
 	
@@ -29,6 +34,8 @@ module top (input logic clk,
 		
 	always_comb begin
 		incVals = (state == change) | (state == setVals);
-		
+	*/
+	
+endmodule
 		
 		

@@ -1,0 +1,92 @@
+// Verilog netlist produced by program LSE :  version Radiant Software (64-bit) 2024.2.0.3.0
+// Netlist written on Mon Nov 24 21:46:32 2025
+// Source file index table: 
+// Object locations will have the form @<file_index>(<first_ line>[<left_column>],<last_line>[<right_column>])
+// file 0 "c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv"
+// file 1 "c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv"
+// file 2 "c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv"
+// file 3 "c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v"
+// file 4 "c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd"
+// file 5 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/ccu2_b.v"
+// file 6 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/fd1p3bz.v"
+// file 7 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/fd1p3dz.v"
+// file 8 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/fd1p3iz.v"
+// file 9 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/fd1p3jz.v"
+// file 10 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/hsosc.v"
+// file 11 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/hsosc1p8v.v"
+// file 12 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/ib.v"
+// file 13 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/ifd1p3az.v"
+// file 14 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/lsosc.v"
+// file 15 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/lsosc1p8v.v"
+// file 16 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/ob.v"
+// file 17 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/obz_b.v"
+// file 18 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/ofd1p3az.v"
+// file 19 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/pdp4k.v"
+// file 20 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/rgb.v"
+// file 21 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/rgb1p8v.v"
+// file 22 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/sp256k.v"
+// file 23 "c:/lscc/radiant/2024.2/cae_library/simulation/verilog/ice40up/legacy.v"
+// file 24 "c:/lscc/radiant/2024.2/ip/common/adder/rtl/lscc_adder.v"
+// file 25 "c:/lscc/radiant/2024.2/ip/common/adder_subtractor/rtl/lscc_add_sub.v"
+// file 26 "c:/lscc/radiant/2024.2/ip/common/complex_mult/rtl/lscc_complex_mult.v"
+// file 27 "c:/lscc/radiant/2024.2/ip/common/counter/rtl/lscc_cntr.v"
+// file 28 "c:/lscc/radiant/2024.2/ip/common/fifo/rtl/lscc_fifo.v"
+// file 29 "c:/lscc/radiant/2024.2/ip/common/fifo_dc/rtl/lscc_fifo_dc.v"
+// file 30 "c:/lscc/radiant/2024.2/ip/common/mult_accumulate/rtl/lscc_mult_accumulate.v"
+// file 31 "c:/lscc/radiant/2024.2/ip/common/mult_add_sub/rtl/lscc_mult_add_sub.v"
+// file 32 "c:/lscc/radiant/2024.2/ip/common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v"
+// file 33 "c:/lscc/radiant/2024.2/ip/common/multiplier/rtl/lscc_multiplier.v"
+// file 34 "c:/lscc/radiant/2024.2/ip/common/ram_dp/rtl/lscc_ram_dp.v"
+// file 35 "c:/lscc/radiant/2024.2/ip/common/ram_dq/rtl/lscc_ram_dq.v"
+// file 36 "c:/lscc/radiant/2024.2/ip/common/rom/rtl/lscc_rom.v"
+// file 37 "c:/lscc/radiant/2024.2/ip/common/subtractor/rtl/lscc_subtractor.v"
+// file 38 "c:/lscc/radiant/2024.2/ip/pmi/pmi_add.v"
+// file 39 "c:/lscc/radiant/2024.2/ip/pmi/pmi_addsub.v"
+// file 40 "c:/lscc/radiant/2024.2/ip/pmi/pmi_complex_mult.v"
+// file 41 "c:/lscc/radiant/2024.2/ip/pmi/pmi_counter.v"
+// file 42 "c:/lscc/radiant/2024.2/ip/pmi/pmi_dsp.v"
+// file 43 "c:/lscc/radiant/2024.2/ip/pmi/pmi_fifo.v"
+// file 44 "c:/lscc/radiant/2024.2/ip/pmi/pmi_fifo_dc.v"
+// file 45 "c:/lscc/radiant/2024.2/ip/pmi/pmi_mac.v"
+// file 46 "c:/lscc/radiant/2024.2/ip/pmi/pmi_mult.v"
+// file 47 "c:/lscc/radiant/2024.2/ip/pmi/pmi_multaddsub.v"
+// file 48 "c:/lscc/radiant/2024.2/ip/pmi/pmi_multaddsubsum.v"
+// file 49 "c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dp.v"
+// file 50 "c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dp_be.v"
+// file 51 "c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dq.v"
+// file 52 "c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dq_be.v"
+// file 53 "c:/lscc/radiant/2024.2/ip/pmi/pmi_rom.v"
+// file 54 "c:/lscc/radiant/2024.2/ip/pmi/pmi_sub.v"
+
+//
+// Verilog Description of module top
+//
+
+module top (input clk, input [15:0]data_in, input reset, output [15:0]data_out, 
+            output light_out);
+    
+    wire GND_net;
+    
+    wire VCC_net;
+    
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[15]  (.I(GND_net), .O(data_out[15]));
+    VHI i12 (.Z(VCC_net));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[14]  (.I(GND_net), .O(data_out[14]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[13]  (.I(GND_net), .O(data_out[13]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[12]  (.I(GND_net), .O(data_out[12]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[11]  (.I(GND_net), .O(data_out[11]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[10]  (.I(GND_net), .O(data_out[10]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[9]  (.I(GND_net), .O(data_out[9]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[8]  (.I(GND_net), .O(data_out[8]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[7]  (.I(GND_net), .O(data_out[7]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[6]  (.I(GND_net), .O(data_out[6]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[5]  (.I(GND_net), .O(data_out[5]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[4]  (.I(GND_net), .O(data_out[4]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[3]  (.I(GND_net), .O(data_out[3]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[2]  (.I(GND_net), .O(data_out[2]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[1]  (.I(GND_net), .O(data_out[1]));
+    (* lineinfo="@2(4[24],4[32])" *) OB \data_out_pad[0]  (.I(GND_net), .O(data_out[0]));
+    (* lineinfo="@2(5[17],5[26])" *) OB light_out_pad (.I(GND_net), .O(light_out));
+    VLO i5 (.Z(GND_net));
+    
+endmodule
