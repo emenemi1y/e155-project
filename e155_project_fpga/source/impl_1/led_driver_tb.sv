@@ -21,10 +21,10 @@ module led_driver_tb();
 	initial begin
 		#12; 
 		rst = 1;
-		#12; 
-		rst = 0; 
 		rgb = {8'd0, 8'd206, 8'd255};
 		load = 1;
+		#12; 
+		rst = 0; 
 		#1000;
 	end
 endmodule

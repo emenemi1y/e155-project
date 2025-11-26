@@ -27,19 +27,26 @@ module led_driver (
 	always_ff @(posedge clk) begin
 		if (rst) begin
 			state <= init;
+		end
+		else begin 
+			state <= nextstate;
+		end
+	end
+	
+	always_ff @(negedge clk) begin
+		if (rst) begin
 			rgb_shift <= rgb;
 			rgb_count <= 0;
 		end
-		else begin 
-			if (shift) begin 
-				rgb_shift <= {rgb[22:0], 1'b0};
+		else begin
+			if (shift_bit) begin
+				rgb_shift <= {rgb_shift[22:0], 1'b0};
 				rgb_count <= rgb_count + 4'd1;
 			end
-			else begin
+			else begin 
 				rgb_shift <= rgb_shift;
 				rgb_count <= rgb_count;
 			end
-			state <= nextstate;
 		end
 	end
 	
@@ -58,7 +65,7 @@ module led_driver (
 			T0L:		if (~counted_low)		nextstate = T0L;
 						else 					nextstate = shift;
 			
-			shift:		if (rgb_count == 5'd24) nextstate = finish;
+			shift:		if (rgb_count == 5'd23) nextstate = finish;
 						else					nextstate = init;
 			finish:		if (~load)				nextstate = finish;
 						else					nextstate = init;
@@ -67,14 +74,17 @@ module led_driver (
 		
 	// Output logic
 	always_comb begin
-		done = (state == shift && rgb_count == 5'd24);
-		counter_reset_low = (~(state != T1L) && ~(state != T0L));
-		counter_reset_high = (~(state == T1H) && ~(state == T0H));
+		done = (state == finish);
+		counter_reset_low = (state != T1L) && (state != T0L);
+		counter_reset_high = (state != T1H) && (state != T0H);
+		to_light = ((state == T1H) | (state == T0H));
+		shift_bit = (state == shift);
 		if (state == T1H) num_high = 38;
 		if (state == T1L) num_low = 21;
 		if (state == T0H) num_high = 40;
 		if (state == T0L) num_low = 19;
-		shift_bit = (state == shift);
+			
+		
 	end
 
 endmodule

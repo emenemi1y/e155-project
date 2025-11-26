@@ -1,0 +1,40 @@
+# Current time Wed Nov 26 11:58:06 2025
+# Program = vish
+# Id = "2024.2"
+# Version = "2024.05"
+# Date = "May 20 2024"
+# Platform = win64
+
+Exception c0000005 has occurred at address 140167dd0. Traceback:
+# 0    0x140167dd0: 'mti_RPC + 0x77950'
+# 1    0x14016cd3d: 'mti_RPC + 0x7c8bd'
+# 2    0x14012c430: 'mti_RPC + 0x3bfb0'
+# 3    0x5a0a8bfc: 'TclNRRunCallbacks + 0x5c'
+# 4    0x7ffe0390f384: 'Itcl_EvalMemberCode + 0x384'
+# 5    0x7ffe0391035d: 'Itcl_ExecMethod + 0x20d'
+# 6    0x7ffe039171b5: 'Itcl_EvalArgs + 0x1a5'
+# 7    0x7ffe03912baa: 'Itcl_HandleInstance + 0x29a'
+# 8    0x5a0a8bfc: 'TclNRRunCallbacks + 0x5c'
+# 9    0x7ffe0390f384: 'Itcl_EvalMemberCode + 0x384'
+# 10   0x7ffe0391035d: 'Itcl_ExecMethod + 0x20d'
+# 11   0x7ffe039171b5: 'Itcl_EvalArgs + 0x1a5'
+# 12   0x7ffe03912baa: 'Itcl_HandleInstance + 0x29a'
+# 13   0x5a0a8bfc: 'TclNRRunCallbacks + 0x5c'
+# 14   0x5a0aa501: 'Tcl_EvalEx + 0xb01'
+# 15   0x5a0a9a28: 'Tcl_EvalEx + 0x28'
+# 16   0x5a284aba: 'Tk_BindEvent + 0x91a'
+# 17   0x5a2bc4d1: 'TkBindEventProc + 0x291'
+# 18   0x5a2ccd84: 'Tk_HandleEvent + 0x2f4'
+# 19   0x5a2cba4a: 'TkDeleteThreadExitHandler + 0x31a'
+# 20   0x5a16098c: 'Tcl_ServiceEvent + 0xec'
+# 21   0x5a160e04: 'Tcl_DoOneEvent + 0x184'
+# 22   0x5a2cb655: 'Tk_MainLoop + 0x25'
+# 23   0x5a30d972: 'Tk_MainEx + 0x932'
+# 24   0x140112b82: 'mti_RPC + 0x22702'
+# 25   0x140111198: 'mti_RPC + 0x20d18'
+# 26   0x140773a38: 'Tclsqlite3_Init + 0x19da8'
+# 27   0x7ffe3ac6e8d7: 'BaseThreadInitThunk + 0x17'
+# 28   0x7ffe3cf2c53c: 'RtlUserThreadStart + 0x2c'
+StackWalk failed 0
+# End of Stack Trace
+

@@ -1,18 +1,5 @@
-synthesis:  version Radiant Software (64-bit) 2024.2.0.3.0
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Nov 24 21:46:21 2025
-
-
-Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1_lattice.synproj -logfile e155_project_fpga_impl_1_lattice.srp -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml 
-
 INFO <35002000> - synthesis: Lattice Synthesis Engine launched.
 
-The -top option is not used.
 Synthesis options:
 The -a option is iCE40UP.
 The -t option is SG48.
@@ -52,7 +39,7 @@ Resolving user-selected strategy settings...
 ----------------------------------------------------------------
 Optimization Goal     | Area
 ----------------------------------------------------------------
-Top-level Module Name | 
+Top-level Module Name | spram
 ----------------------------------------------------------------
 Target Frequency      | 200.000 MHz
 ----------------------------------------------------------------
@@ -113,9 +100,9 @@ Output HDL filename: e155_project_fpga_impl_1.vm
 -path C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1 (searchpath added)
 -path C:/lscc/radiant/2024.2/ispfpga/ice40tp/data (searchpath added)
 Mixed language design
-CRITICAL <35001476> - synthesis: A top-level module has not been specified for the mixed language design.
 Verilog design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv
+Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv
 VHDL library: pmi
@@ -169,138 +156,15 @@ INFO <35901328> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(16): an
 INFO <35901328> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
 INFO <35901328> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_dsp.v. VERI-1328
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv. VERI-1482
+Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/spram.sv. VERI-1482
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv. VERI-1482
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
 
 INFO <35921014> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
-WARNING <35001200> - synthesis: Setting top as the top-level module. To specify the top-level module explicitly, go to View->Set Views->Hierarchy or Project->Active Implementation->Set Top-Level Unit.
 INFO <35921504> - synthesis: The default VHDL library search path is now "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1". VHDL-1504
 Top module language type = Verilog.
-Top module name (Verilog, mixed language): top
-INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(1): compiling module top. VERI-1018
-INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(6): compiling module led_driver. VERI-1018
-INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv(9): compiling module counter. VERI-1018
-WARNING <35901899> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(66): behavior inside always_comb block does not represent combinational logic. VERI-1899
-WARNING <35901899> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(79): behavior inside always_comb block does not represent combinational logic. VERI-1899
-WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(7): net start does not have a driver. VDB-1002
-WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(7): net load does not have a driver. VDB-1002
-WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(8): net rgb[23] does not have a driver. VDB-1002
-[Parameter Setting Section Start]
-
-[Parameter Setting Section End]
-WARNING <35935047> - synthesis: Unused instance led_driver1 is removed. VDB-5047
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: clk
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[15]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[14]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[13]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[12]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[11]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[10]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[9]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[8]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[7]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[6]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[5]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[4]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[3]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[2]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[1]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[0]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: reset
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[15]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[14]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[13]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[12]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[11]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[10]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[9]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[8]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[7]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[6]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[5]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[4]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[3]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[2]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[1]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_out[0]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: light_out
-######## Missing driver on net data_out[15]. Patching with GND.
-######## Missing driver on net data_out[14]. Patching with GND.
-######## Missing driver on net data_out[13]. Patching with GND.
-######## Missing driver on net data_out[12]. Patching with GND.
-######## Missing driver on net data_out[11]. Patching with GND.
-######## Missing driver on net data_out[10]. Patching with GND.
-######## Missing driver on net data_out[9]. Patching with GND.
-######## Missing driver on net data_out[8]. Patching with GND.
-######## Missing driver on net data_out[7]. Patching with GND.
-######## Missing driver on net data_out[6]. Patching with GND.
-######## Missing driver on net data_out[5]. Patching with GND.
-######## Missing driver on net data_out[4]. Patching with GND.
-######## Missing driver on net data_out[3]. Patching with GND.
-######## Missing driver on net data_out[2]. Patching with GND.
-######## Missing driver on net data_out[1]. Patching with GND.
-######## Missing driver on net data_out[0]. Patching with GND.
-######## Missing driver on net light_out. Patching with GND.
-
-
-
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: clk
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[15]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[14]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[13]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[12]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[11]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[10]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[9]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[8]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[7]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[6]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[5]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[4]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[3]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[2]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[1]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: data_in[0]
-CRITICAL <35002028> - synthesis: I/O port's net has no driver and is unused: reset
-
-################### Begin Area Report (top)######################
-Number of register bits => 0 of 5280 (0 % )
-OB => 17
-################### End Area Report ##################
-Number of odd-length carry chains : 0
-Number of even-length carry chains : 0
-
-################### Begin Clock Report ######################
-Clock Nets
-Number of Clocks: 0
-Clock Enable Nets
-Number of Clock Enables: 0
-Highest fanout non-clock nets
-Top 10 highest fanout non-clock nets:
-  Net : light_out, loads : 0
-  Net : data_out[0], loads : 0
-  Net : data_out[1], loads : 0
-  Net : data_out[2], loads : 0
-  Net : data_out[3], loads : 0
-  Net : data_out[4], loads : 0
-  Net : data_out[5], loads : 0
-  Net : data_out[6], loads : 0
-  Net : data_out[7], loads : 0
-  Net : data_out[8], loads : 0
-################### End Clock Report ##################
-
-################### Begin Constraint Report ######################
-Constraint Summary:
-  Total number of constraints: 0
-  Total number of constraints dropped: 0
-###################  End Constraint Report  ######################
-
-Peak Memory Usage: 99 MB
-
---------------------------------------------------------------
-Total CPU Time: 5 secs 
-Total REAL Time: 11 secs 
---------------------------------------------------------------
-Checksum -- synthesis -- netlist: e8caa336ff47d09eb33f4fc86593caccf72bd767
+Top module name (Verilog, mixed language): spram
+INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/spram.sv(3): compiling module spram. VERI-1018
+ERROR <35901063> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/spram.sv(25): instantiating unknown module SB_SPRAM256KA. VERI-1063

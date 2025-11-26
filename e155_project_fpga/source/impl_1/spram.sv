@@ -4,7 +4,7 @@ module spram #(
 				localparam WIDTH=16,
 				localparam DEPTH=16384,
 				localparam ADDRW=$clog2(DEPTH) ) (
-	
+				
 			    input logic clk,
 			    input logic [3:0] we,
 			    input logic [ADDRW-1:0] addr,
@@ -22,6 +22,34 @@ module spram #(
 		 .SLEEP(1'b0),
 		 .POWEROFF(1'b1),
 		 .DATAOUT(data_out)
-		)
+		);
+	
+
+/*
+		typedef enum logic [3:0] {start, write, stop_write, read, inc, hold} statetype;
+		statetype state, nextstate; 
 		
+		logic to_read;
+		
+		always_ff @(posedge clk) begin
+			if (rst) state <= start;
+			else state <= nextstate;
+		end
+	
+		// Next state logic
+		always_comb begin
+			case(state) 
+				start:			nextstate = write;
+				write:			nextstate = stop_write;
+				stop_write:		nextstate = read;
+				inc: 			nextstate = hold;
+				hold:			nextstate = write;
+			endcase
+		end
+		
+		// Output logic
+		always_comb
+			next = (state == inc);
+*/
+				
 endmodule

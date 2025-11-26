@@ -16,12 +16,12 @@
             <Task name="PARTrace" build_result="0" update_result="2" update_time="1764177833"/>
             <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="0" build_time="1764181313">
-            <Task name="Lattice_Synthesis" build_result="0" update_result="2" update_time="1764181313"/>
-            <Task name="LSE_Compile" build_result="0" update_result="2" update_time="1764181313"/>
-            <Task name="LSE_Lint" build_result="0" update_result="2" update_time="1764181313"/>
-            <Task name="SynTrace" build_result="0" update_result="2" update_time="1764181313"/>
-            <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1764181313"/>
+        <Milestone name="Synthesis" build_result="1" build_time="1764189510">
+            <Task name="Lattice_Synthesis" build_result="1" update_result="2" update_time="1764189510"/>
+            <Task name="LSE_Compile" build_result="0" update_result="2" update_time="1764189510"/>
+            <Task name="LSE_Lint" build_result="0" update_result="2" update_time="1764189458"/>
+            <Task name="SynTrace" build_result="0" update_result="2" update_time="1764189458"/>
+            <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1764189458"/>
         </Milestone>
         <Report name="e155_project_fpga_impl_1.bgn" last_build_time="1764049630" last_build_size="1264"/>
         <Report name="e155_project_fpga_impl_1.bin" last_build_time="1764049630" last_build_size="104156"/>
@@ -29,7 +29,7 @@
         <Report name="e155_project_fpga_impl_1.twr.html" last_build_time="1764049616" last_build_size="12102"/>
         <Report name="e155_project_fpga_impl_1.udb" last_build_time="1764049615" last_build_size="2028"/>
         <Report name="e155_project_fpga_impl_1_map.udb" last_build_time="1764049602" last_build_size="1639"/>
-        <Report name="e155_project_fpga_impl_1_rtl.udb" last_build_time="1764049592" last_build_size="8187"/>
-        <Report name="e155_project_fpga_impl_1_syn.udb" last_build_time="1764049593" last_build_size="1158"/>
+        <Report name="e155_project_fpga_impl_1_rtl.udb" last_build_time="1764177025" last_build_size="8187"/>
+        <Report name="e155_project_fpga_impl_1_syn.udb" last_build_time="1764177025" last_build_size="1158"/>
     </Strategy>
 </BuildStatus>
