@@ -6,7 +6,6 @@
 module led_driver (
 	input logic clk,
 	input logic rst,
-	input logic start, 
 	input logic [23:0] rgb,
 	input logic load,
 	output logic to_light, done);

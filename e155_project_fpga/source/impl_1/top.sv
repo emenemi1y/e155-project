@@ -4,9 +4,9 @@ module top (input logic clk,
 			output logic [15:0] data_out, 
 			output logic light_out);
 			
-	logic start, load, done, to_light;
+	logic load, done, to_light;
 	logic [23:0] rgb;
-	led_driver led_driver1(clk, reset, start, rgb, load, done, to_light);
+	led_driver led_driver1(clk, reset, rgb, load, done, to_light);
 	/*		
 	typedef enum logic [3:0] {start, setVal, writeEn, hold, writeDis, read, change};
 	statetype state, nextstate;
