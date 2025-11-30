@@ -113,6 +113,24 @@ prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fp
 
 
 
+<A name="pn251126124010"></A><B><U><big>pn251126124010</big></U></B>
+#Start recording tcl command: 11/26/2025 11:41:14
+#Project Location: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga; Project name: e155_project_fpga
+prj_open "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/e155_project_fpga.rdf"
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter_tb.sv"
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_tb.sv"
+prj_disable_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter_tb.sv"
+prj_disable_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv"
+prj_disable_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_tb.sv"
+prj_run PAR -impl impl_1
+prj_enable_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+#Stop recording: 11/26/2025 12:40:10
+
+
+
 </PRE></DIV>
 
 <DIV id="toc" class="radiant"><span onmousemove="showTocList()">Contents</span>
@@ -122,6 +140,7 @@ prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fp
 <LI><A href=#pn251123212748>pn251123212748</A></LI>
 <LI><A href=#pn251124214755>pn251124214755</A></LI>
 <LI><A href=#pn251126103105>pn251126103105</A></LI>
+<LI><A href=#pn251126124010>pn251126124010</A></LI>
 </UL>
 </DIV>
 

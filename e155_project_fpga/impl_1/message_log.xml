@@ -337,18 +337,182 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/spram.sv(3): </Dynamic>
-            <Dynamic>spram</Dynamic>
-            <Navigation>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/spram.sv</Navigation>
-            <Navigation>3</Navigation>
+            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(1): </Dynamic>
+            <Dynamic>top</Dynamic>
+            <Navigation>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv</Navigation>
+            <Navigation>1</Navigation>
         </Message>
         <Message>
-            <ID>35901063</ID>
-            <Severity>4096</Severity>
-            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/spram.sv(25): </Dynamic>
-            <Dynamic>SB_SPRAM256KA</Dynamic>
-            <Navigation>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/spram.sv</Navigation>
-            <Navigation>25</Navigation>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): </Dynamic>
+            <Dynamic>HSOSC(CLKHF_DIV=2'b0)</Dynamic>
+            <Navigation>C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
+            <Navigation>756</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(742): </Dynamic>
+            <Dynamic>SP256K</Dynamic>
+            <Navigation>C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
+            <Navigation>742</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv(6): </Dynamic>
+            <Dynamic>led_string</Dynamic>
+            <Navigation>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(6): </Dynamic>
+            <Dynamic>led_driver</Dynamic>
+            <Navigation>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv(9): </Dynamic>
+            <Dynamic>counter</Dynamic>
+            <Navigation>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv</Navigation>
+            <Navigation>9</Navigation>
+        </Message>
+        <Message>
+            <ID>35001774</ID>
+            <Severity>1</Severity>
+            <Dynamic>\led_string1/state</Dynamic>
+            <Dynamic>one-hot</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001774</ID>
+            <Severity>1</Severity>
+            <Dynamic>\led_string1/single_led/state</Dynamic>
+            <Dynamic>one-hot</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving state[5:0]</Dynamic>
+            <Dynamic>5, 4, 3</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \led_string1/single_led/num_low[23:0]</Dynamic>
+            <Dynamic>23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 1</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i12</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i11</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i6</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i7</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i8</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i9</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i10</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i13</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i14</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i15</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i16</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i17</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i18</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i19</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i20</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i21</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i22</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_string1/single_led/num_high_i23</Dynamic>
+            <Dynamic>Zero</Dynamic>
         </Message>
     </Task>
 </BaliMessageLog>

@@ -23,6 +23,9 @@ if {[file exists {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_
   file copy -force -- {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1_syn.udb} {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/incr/postsyn.udb}
   file copy -force -- {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1_map.udb} {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/incr/postmap.udb}
   file copy -force -- {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1.udb} {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/incr/postpar.udb}
+  if [file exists {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc}] {
+    file copy -force -- {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc} {C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/incr/lastrun.pdc}
+  }
 }
 
 } out]} {

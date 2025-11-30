@@ -25,6 +25,8 @@ module led_driver_tb();
 		load = 1;
 		#12; 
 		rst = 0; 
+		#10;
+		load = 0;
 		#1000;
 	end
 endmodule

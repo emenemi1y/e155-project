@@ -1,0 +1,1 @@
+C:/lscc/radiant/2024.2/questasim/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 393216 work.led_string_tb(fast) -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt2 -id 6-00be43eaeac0-692cbc6c-35e-3790 +__design_bin_path+C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga +__betafsm

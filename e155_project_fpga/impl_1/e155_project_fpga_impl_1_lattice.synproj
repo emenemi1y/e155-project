@@ -43,13 +43,13 @@
 -ver "C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v"
 -lib pmi -vhd "C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd"
 -sver "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv"
-"C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv"
 "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv"
 "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv"
+"C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv"
 
 
 -path "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga"
--top spram
+-top top
 -udb "e155_project_fpga_impl_1_rtl.udb"
 -output_hdl "e155_project_fpga_impl_1.vm"
 
