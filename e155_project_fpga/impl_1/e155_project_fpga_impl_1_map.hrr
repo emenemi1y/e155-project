@@ -3,54 +3,54 @@ Report for cell top
    Instance path: top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        234        100.0
-                               LUTGATE	        146        100.0
-                                LUTCCU	         88        100.0
+                                  LUT4	        164        100.0
+                               LUTGATE	         92        100.0
+                                LUTCCU	         72        100.0
                                  IOBUF	          1        100.0
-                                PFUREG	        162        100.0
+                                PFUREG	        104        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                            led_string	          1        61.5
+                            led_string	          1        82.9
 ---------------------------------------------------
 Report for cell led_string
    Instance path: top/led_string1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        144        61.5
-                               LUTGATE	         72        49.3
-                                LUTCCU	         72        81.8
-                                PFUREG	        113        69.8
+                                  LUT4	        136        82.9
+                               LUTGATE	         64        69.6
+                                LUTCCU	         72        100.0
+                                PFUREG	        104        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                            led_driver	          1        52.6
+                            led_driver	          1        68.9
 ---------------------------------------------------
 Report for cell led_driver
    Instance path: top/led_string1/single_led
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        123        52.6
-                               LUTGATE	         63        43.2
-                                LUTCCU	         60        68.2
-                                PFUREG	         99        61.1
+                                  LUT4	        113        68.9
+                               LUTGATE	         53        57.6
+                                LUTCCU	         60        83.3
+                                PFUREG	         91        87.5
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                               counter	          1        15.4
-                            counter_U0	          1        15.4
+                               counter	          1        22.0
+                            counter_U0	          1        22.0
 ---------------------------------------------------
 Report for cell counter
    Instance path: top/led_string1/single_led/counter_low
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         36        15.4
-                               LUTGATE	         10         6.8
-                                LUTCCU	         26        29.5
-                                PFUREG	         25        15.4
+                                  LUT4	         36        22.0
+                               LUTGATE	         10        10.9
+                                LUTCCU	         26        36.1
+                                PFUREG	         25        24.0
 ---------------------------------------------------
 Report for cell counter_U0
    Instance path: top/led_string1/single_led/counter_high
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         36        15.4
-                               LUTGATE	         10         6.8
-                                LUTCCU	         26        29.5
-                                PFUREG	         25        15.4
+                                  LUT4	         36        22.0
+                               LUTGATE	         10        10.9
+                                LUTCCU	         26        36.1
+                                PFUREG	         25        24.0

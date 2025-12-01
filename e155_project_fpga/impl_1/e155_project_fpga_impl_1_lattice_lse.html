@@ -48,7 +48,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Sun Nov 30 15:34:03 2025
+Mon Dec  1 13:25:14 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1_lattice.synproj -logfile e155_project_fpga_impl_1_lattice.srp -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml 
@@ -222,11 +222,15 @@ INFO <35921504> - synthesis: The default VHDL library search path is now "C:/Use
 Top module language type = Verilog.
 Top module name (Verilog, mixed language): top
 INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(1): compiling module top. VERI-1018
-INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2'b0). VERI-1018
+INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2'b01). VERI-1018
 INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(742): compiling module SP256K. VERI-1018
 INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv(6): compiling module led_string. VERI-1018
 INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(6): compiling module led_driver. VERI-1018
 INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv(9): compiling module counter. VERI-1018
+WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(4): net addr[13] does not have a driver. VDB-1002
+WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(5): net data_in[15] does not have a driver. VDB-1002
+WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(6): net wren does not have a driver. VDB-1002
+WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(18): net reset does not have a driver. VDB-1002
 
 <A name="lse_parameter"></A><B><U><big>Parameter Setting</big></U></B>
 
@@ -234,138 +238,94 @@ INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e1
 
 	[Parameter Settings for Instance(s): hf_osc]
 	(Module: HSOSC)
-		CLKHF_DIV                 2'b00
+		CLKHF_DIV                 2'b01
 
 [Parameter Setting Section End]
-INFO <35001774> - synthesis: Extracted state machine for register '\led_string1/state' with one-hot encoding
-State machine has 5 reachable states with original encodings of:
-
- 0000 
-
- 0001 
-
- 0010 
-
- 0011 
-
- 0100 
-
-original encoding -> new encoding (one-hot encoding)
-
- 0000 -> 00001
-
- 0001 -> 00010
-
- 0010 -> 00100
-
- 0011 -> 01000
-
- 0100 -> 10000
-
-INFO <35001774> - synthesis: Extracted state machine for register '\led_string1/single_led/state' with one-hot encoding
-State machine has 9 reachable states with original encodings of:
-
- 00000 
-
- 00001 
-
- 00010 
-
- 00011 
-
- 00100 
-
- 00101 
-
- 00110 
-
- 00111 
-
- 01000 
-
-original encoding -> new encoding (one-hot encoding)
-
- 00000 -> 000000001
-
- 00001 -> 000000010
-
- 00010 -> 000000100
-
- 00011 -> 000001000
-
- 00100 -> 000010000
-
- 00101 -> 000100000
-
- 00110 -> 001000000
-
- 00111 -> 010000000
-
- 01000 -> 100000000
+WARNING <35935047> - synthesis: Unused instance spram is removed. VDB-5047
+######## Missing driver on net reset. Patching with GND.
 
 
 
-
-CRITICAL <35001747> - synthesis: Bit(s) of register driving state[5:0] stuck at '0': 5, 4, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_string1/single_led/num_low[23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 1
+CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_string1/single_led/state[4:0] stuck at '0': 4
+CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_string1/state[3:0] stuck at '0': 3
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i23 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i22 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i21 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i20 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i19 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i18 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i17 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i16 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i15 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i14 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i13 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i12 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i9 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i23 clock is stuck at Zero. VDB-5040
-Duplicate register/latch removal. \led_string1/single_led/num_low__i3 is a one-to-one match with \led_string1/single_led/num_low__i5.
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i13 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i14 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i15 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i16 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i17 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i18 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i19 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i20 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i21 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i22 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_low_i23 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_string1/single_led/num_high_i0 clock is stuck at One. VDB-5040
 
 
 <A name="lse_area"></A><B><U><big>Area Report</big></U></B>
 
 ################### Begin Area Report (top)######################
-Number of register bits => 162 of 5280 (3 % )
-CCU2 => 44
-FD1P3XZ => 162
+Number of register bits => 104 of 5280 (1 % )
+CCU2 => 36
+FD1P3XZ => 104
 HSOSC => 1
 INV => 1
-LUT4 => 141
+LUT4 => 66
 OB => 1
-SP256K => 1
 ################### End Area Report ##################
 Number of odd-length carry chains : 0
-Number of even-length carry chains : 5
+Number of even-length carry chains : 4
 
 
 <A name="lse_clock"></A><B><U><big>Clock Report</big></U></B>
 
 ################### Begin Clock Report ######################
 Clock Nets
-Number of Clocks: 2
-  Net : led_string1/single_led/clk_derived_93, loads : 0
-  Net : clk, loads : 2
+Number of Clocks: 1
+  Net : clk, loads : 1
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : reset, loads : 59
-  Net : led_string1/single_led/n1250, loads : 34
-  Net : led_string1/single_led/n590, loads : 31
-  Net : led_string1/single_led/n586, loads : 31
-  Net : led_string1/single_led/update_bits, loads : 27
-  Net : n1144, loads : 24
-  Net : n1, loads : 23
-  Net : data_in[0], loads : 17
-  Net : n2130, loads : 15
-  Net : n61[13], loads : 15
+  Net : led_string1/single_led/clk_derived_43, loads : 39
+  Net : n578, loads : 32
+  Net : led_string1/single_led/n494, loads : 31
+  Net : led_string1/single_led/n71, loads : 31
+  Net : led_string1/single_led/n67, loads : 31
+  Net : led_string1/single_led/counter_low/n1092, loads : 14
+  Net : led_string1/single_led/counter_low/n101[23], loads : 14
+  Net : led_string1/single_led/counter_high/n101[23], loads : 14
+  Net : led_string1/single_led/counter_high/n1067, loads : 14
+  Net : led_string1/single_led/state[0], loads : 13
 ################### End Clock Report ##################
 
 
@@ -377,13 +337,13 @@ Constraint Summary:
   Total number of constraints dropped: 0
 ###################  End Constraint Report  ######################
 
-Peak Memory Usage: 97 MB
+Peak Memory Usage: 95 MB
 
 --------------------------------------------------------------
 Total CPU Time: 5 secs 
 Total REAL Time: 12 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: 68c41a2168aaff858214de7cefb1aa06ac520e4
+Checksum -- synthesis -- netlist: dcc2857afa47dd0f1d77d9bf4a30feaa4015039
 
 
 

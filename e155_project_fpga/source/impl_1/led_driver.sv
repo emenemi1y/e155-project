@@ -39,10 +39,10 @@ module led_driver (
 			else num_high <= 24'd40;
 		end
 		else begin
-			if (state == T1H) num_high <= 24'd38;
-			if (state == T1L) num_low <= 24'd21;
-			if (state == T0H) num_high <= 24'd19;
-			if (state == T0L) num_low <= 24'd40;
+			if (state == T1H) num_high <= 24'd19;
+			if (state == T1L) num_low <= 24'd10;
+			if (state == T0H) num_high <= 24'd9;
+			if (state == T0L) num_low <= 24'd20; 
 		end
 	end
 	

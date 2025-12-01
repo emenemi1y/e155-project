@@ -7,7 +7,7 @@ module top (output logic to_light);
 	
 	
 	// 48 MHz clock
-	HSOSC #(.CLKHF_DIV(2'b00))
+	HSOSC #(.CLKHF_DIV(2'b01))
 		hf_osc(.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk));	
 	
 	// Instantiate SPRAM
@@ -19,8 +19,8 @@ module top (output logic to_light);
 	logic [3:0] data_count, read_count;
 	logic [23:0] rgb, rgb_start;
 	
-	led_string led_string1(clk, reset, rgb, to_light);
-	
+	led_string led_string1(clk, reset, {8'd0, 8'd206, 8'd255}, to_light);
+	/*
 	typedef enum logic [5:0] {init, set_data, load_data, write_disable, read_data, next, go} statetype;
 	statetype state, nextstate;
 	
@@ -81,7 +81,7 @@ module top (output logic to_light);
 		reset = (state != go);
 		wren = (state == load_data);
 	end
-		
+	*/	
 	
 	//led_driver led_driver1(clk, reset, rgb, load, done, to_light, hold);
 	/*		
