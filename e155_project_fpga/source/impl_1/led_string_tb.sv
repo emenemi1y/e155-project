@@ -8,8 +8,13 @@ module led_string_tb();
 	logic clk, rst;
 	logic [23:0] rgb;
 	logic to_light;
+	logic [23:0] color;
+	logic [3455:0] color_string;
 	
-	led_string dut(clk, rst, rgb, to_light);
+	assign color = {8'd0, 8'd206, 8'd255};
+	assign color_string = {24{{3{color}}, {3{24'd0}}}};
+	led_string dut(clk, rst, color_string, to_light);
+	
 	
 	always
 		begin
@@ -18,10 +23,8 @@ module led_string_tb();
 		end
 	
 	initial begin
-		#12; 
 		rst = 1;
-		rgb = {8'd0, 8'd206, 8'd255};
-		#12; 
+		#25; 
 		rst = 0; 
 		#1000;
 	end

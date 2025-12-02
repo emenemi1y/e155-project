@@ -1,329 +1,4 @@
 
-"C:/lscc/radiant/2024.2/tcltk/windows/bin/tclsh" "e155_project_fpga_impl_1_synthesize.tcl"
-
-synthesis -f C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1_lattice.synproj -logfile e155_project_fpga_impl_1_lattice.srp
-synthesis:  version Radiant Software (64-bit) 2024.2.0.3.0
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Dec  1 13:25:14 2025
-
-
-Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1_lattice.synproj -logfile e155_project_fpga_impl_1_lattice.srp -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml 
-
-INFO <35002000> - synthesis: Lattice Synthesis Engine launched.
-
-Synthesis options:
-The -a option is iCE40UP.
-The -t option is SG48.
-The -sp option is High-Performance_1.2V.
-The -p option is iCE40UP5K.
-
-###################### Device Information ######################
-----------------------------------------------------------------
-Lattice Family        | iCE40UP
-----------------------------------------------------------------
-Device                | iCE40UP5K
-----------------------------------------------------------------
-Package               | SG48
-----------------------------------------------------------------
-Performance Grade     | High-Performance_1.2V
-----------------------------------------------------------------
-################################################################
-
-####################### Device Resources #######################
-----------------------------------------------------------------
-Logic Cells           | 5280
-----------------------------------------------------------------
-RAM Blocks            | 30
-----------------------------------------------------------------
-DSP Blocks            | 8
-----------------------------------------------------------------
-PLLs                  | 1
-----------------------------------------------------------------
-I/O Pins              | 56
-----------------------------------------------------------------
-################################################################
-
-Resolving user-selected strategy settings...
-
-
-###################### Strategy Settings #######################
-----------------------------------------------------------------
-Optimization Goal     | Area
-----------------------------------------------------------------
-Top-level Module Name | top
-----------------------------------------------------------------
-Target Frequency      | 200.000 MHz
-----------------------------------------------------------------
-Maximum Fanout        | 1000
-----------------------------------------------------------------
-Timing Path Count     | 3
-----------------------------------------------------------------
-RAM Read/Write Check  | False
-----------------------------------------------------------------
-BRAM Utilization      | 100.0%
-----------------------------------------------------------------
-DSP Usage             | True
-----------------------------------------------------------------
-DSP Utilization       | 100.0%
-----------------------------------------------------------------
-FSM Encoding Style    | Auto
-----------------------------------------------------------------
-Resolve Mixed Drivers | False
-----------------------------------------------------------------
-Fix Gated Clocks      | True
-----------------------------------------------------------------
-Mux Style             | Auto
-----------------------------------------------------------------
-Use Carry Chain       | True
-----------------------------------------------------------------
-Carry Chain Length    | Infinite
-----------------------------------------------------------------
-Loop Limit            | 1950
-----------------------------------------------------------------
-Use I/O Insertion     | True
-----------------------------------------------------------------
-Use I/O Registers     | True
-----------------------------------------------------------------
-Resource Sharing      | True
-----------------------------------------------------------------
-Propagate Constants   | True
-----------------------------------------------------------------
-Remove Duplicate Reg  | True
-----------------------------------------------------------------
-Force GSR             | False
-----------------------------------------------------------------
-ROM Style             | Auto
-----------------------------------------------------------------
-RAM Style             | Auto
-----------------------------------------------------------------
-Remove LOC Properties | False
-----------------------------------------------------------------
-Partition Flow        | False
-----------------------------------------------------------------
-################################################################
-
-
-The -comp option is FALSE.
-The -syn option is FALSE.
-
-Output HDL filename: e155_project_fpga_impl_1.vm
--path C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga (searchpath added)
--path C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1 (searchpath added)
--path C:/lscc/radiant/2024.2/ispfpga/ice40tp/data (searchpath added)
-Mixed language design
-Verilog design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v
-Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv
-Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv
-Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv
-Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv
-VHDL library: pmi
-VHDL design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd
-WARNING <35935050> - input port TRIM9 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM8 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM7 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM6 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM5 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM4 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM3 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM2 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM1 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM0 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port I is not connected on this instance. VDB-5050
-
-Compiling design...
-
-Analyzing Verilog file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v. VERI-1482
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(1): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_addsub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_addsub.v(40): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(2): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_add.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_add.v(50): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(3): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_complex_mult.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_complex_mult.v(52): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(4): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_counter.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_counter.v(39): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/counter/rtl/lscc_cntr.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(5): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_fifo.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_fifo.v(44): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/fifo/rtl/lscc_fifo.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(6): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_fifo_dc.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_fifo_dc.v(47): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(7): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_mac.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_mac.v(52): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(8): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_multaddsubsum.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_multaddsubsum.v(53): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(9): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_multaddsub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_multaddsub.v(52): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(10): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_mult.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_mult.v(51): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(11): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dp.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dp.v(48): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(12): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dq.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dq.v(45): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(13): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_rom.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_rom.v(45): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/rom/rtl/lscc_rom.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(14): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_sub.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_sub.v(50): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(15): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dp_be.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(16): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dq_be.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
-INFO <35901328> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2024.2/ip/pmi/pmi_dsp.v. VERI-1328
-Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv. VERI-1482
-Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv. VERI-1482
-Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv. VERI-1482
-Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv. VERI-1482
-Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
-Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
-
-INFO <35921014> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
-INFO <35921504> - The default VHDL library search path is now "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1". VHDL-1504
-Top module language type = Verilog.
-Top module name (Verilog, mixed language): top
-INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(1): compiling module top. VERI-1018
-INFO <35901018> - C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2&apos;b01). VERI-1018
-INFO <35901018> - C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(742): compiling module SP256K. VERI-1018
-INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv(6): compiling module led_string. VERI-1018
-INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(6): compiling module led_driver. VERI-1018
-INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv(9): compiling module counter. VERI-1018
-WARNING <35931002> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(4): net addr[13] does not have a driver. VDB-1002
-WARNING <35931002> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(5): net data_in[15] does not have a driver. VDB-1002
-WARNING <35931002> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(6): net wren does not have a driver. VDB-1002
-WARNING <35931002> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(18): net reset does not have a driver. VDB-1002
-[Parameter Setting Section Start]
-
-	[Parameter Settings for Instance(s): hf_osc]
-	(Module: HSOSC)
-		CLKHF_DIV                 2'b01
-
-[Parameter Setting Section End]
-WARNING <35935047> - Unused instance spram is removed. VDB-5047
-######## Missing driver on net reset. Patching with GND.
-
-
-
-CRITICAL <35001747> - Bit(s) of register driving \led_string1/single_led/state[4:0] stuck at '0': 4
-CRITICAL <35001747> - Bit(s) of register driving \led_string1/state[3:0] stuck at '0': 3
-WARNING <35935040> - Register \led_string1/single_led/num_low_i0 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i23 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_low_i23 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i2 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_string1/single_led/num_high_i0 clock is stuck at One. VDB-5040
-
-################### Begin Area Report (top)######################
-Number of register bits => 104 of 5280 (1 % )
-CCU2 => 36
-FD1P3XZ => 104
-HSOSC => 1
-INV => 1
-LUT4 => 66
-OB => 1
-################### End Area Report ##################
-Number of odd-length carry chains : 0
-Number of even-length carry chains : 4
-
-################### Begin Clock Report ######################
-Clock Nets
-Number of Clocks: 1
-  Net : clk, loads : 1
-Clock Enable Nets
-Number of Clock Enables: 0
-Highest fanout non-clock nets
-Top 10 highest fanout non-clock nets:
-  Net : led_string1/single_led/clk_derived_43, loads : 39
-  Net : n578, loads : 32
-  Net : led_string1/single_led/n494, loads : 31
-  Net : led_string1/single_led/n71, loads : 31
-  Net : led_string1/single_led/n67, loads : 31
-  Net : led_string1/single_led/counter_low/n1092, loads : 14
-  Net : led_string1/single_led/counter_low/n101[23], loads : 14
-  Net : led_string1/single_led/counter_high/n101[23], loads : 14
-  Net : led_string1/single_led/counter_high/n1067, loads : 14
-  Net : led_string1/single_led/state[0], loads : 13
-################### End Clock Report ##################
-
-################### Begin Constraint Report ######################
-Constraint Summary:
-  Total number of constraints: 0
-  Total number of constraints dropped: 0
-###################  End Constraint Report  ######################
-
-Peak Memory Usage: 95 MB
-
---------------------------------------------------------------
-Total CPU Time: 5 secs 
-Total REAL Time: 12 secs 
---------------------------------------------------------------
-Checksum -- synthesis -- netlist: dcc2857afa47dd0f1d77d9bf4a30feaa4015039
-
-
-
-postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o e155_project_fpga_impl_1_syn.udb e155_project_fpga_impl_1.vm
-POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2024.2.0.3.0
-Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o e155_project_fpga_impl_1_syn.udb -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml e155_project_fpga_impl_1.vm 
-   Architecture:     iCE40UP
-   Device:           iCE40UP5K
-   Package:          SG48
-   Performance:      High-Performance_1.2V
-Reading input file 'e155_project_fpga_impl_1.vm' ...
-CPU Time to convert: 0.0625
-REAL Time to convert: 0
-convert PEAK Memory Usage: 35 MB
-convert CURRENT Memory Usage: 35 MB
-Removing unused logic ...
-Starting design annotation....
- 
-Constraint Summary:
-   Total number of constraints: 1
-   Total number of constraints dropped: 0
- 
-Writing output file 'e155_project_fpga_impl_1_syn.udb'.
-POSTSYN finished successfully.
-Total CPU Time: 0 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 43 MB
-Checksum -- postsyn: ecb9f2189791e9ab42fd51b347ec5eddc0a6e34d
-
-
-
 pnmainc -log pnmain "e155_project_fpga_impl_1_map.tcl"
 map:  version Radiant Software (64-bit) 2024.2.0.3.0
 
@@ -352,13 +27,12 @@ Running general design DRC...
 
 
 Design Summary:
-   Number of slice registers: 104 out of  5280 (2%)
+   Number of slice registers: 130 out of  5280 (2%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           164 out of  5280 (3%)
-      Number of logic LUT4s:              67
-      Number of inserted feedthru LUT4s:  23
+   Number of LUT4s:           230 out of  5280 (4%)
+      Number of logic LUT4s:             120
       Number of replicated LUT4s:          2
-      Number of ripple logic:             36 (72 LUT4s)
+      Number of ripple logic:             54 (108 LUT4s)
    Number of IO sites used:   1 out of 39 (3%)
       Number of IO sites used for general PIO: 1
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -368,7 +42,7 @@ Design Summary:
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
       Number of IO sites used for PIO+I3C+OD+RGB: 1 out of 39 (3%)
-   Number of DSPs:             0 out of 8 (0%)
+   Number of DSPs:             1 out of 8 (13%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  1 out of 1 (100%)
    Number of Low Speed OSCs:   0 out of 1 (0%)
@@ -378,32 +52,32 @@ Design Summary:
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             0 out of 30 (0%)
+   Number of EBRs:             12 out of 30 (40%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net clk: 76 loads, 42 rising, 34 falling (Driver: Pin hf_osc.osc_inst/CLKHF)
-   Number of Clock Enables:  3
-      Net VCC_net: 1 loads, 0 SLICEs
-      Net n578: 27 loads, 27 SLICEs
-      Net to_light_c: 1 loads, 1 SLICEs
-   Number of LSRs:  6
-      Net led_string1.n1326: 1 loads, 1 SLICEs
-      Net led_string1.inc_num: 1 loads, 1 SLICEs
-      Net led_string1.single_led.n494: 27 loads, 27 SLICEs
-      Net state_adj_208[3]: 1 loads, 1 SLICEs
-      Net led_string1.single_led.n71: 13 loads, 13 SLICEs
-      Net led_string1.single_led.n67: 13 loads, 13 SLICEs
+      Net clk: 103 loads, 103 rising, 0 falling (Driver: Pin hf_osc.osc_inst/CLKHF)
+   Number of Clock Enables:  4
+      Net VCC_net: 25 loads, 0 SLICEs
+      Net n103127: 6 loads, 6 SLICEs
+      Net led_string1.rgb_0__N_255: 12 loads, 0 SLICEs
+      Net led_string1.single_led.n103076: 27 loads, 27 SLICEs
+   Number of LSRs:  5
+      Net led_string1.n103091: 6 loads, 6 SLICEs
+      Net led_string1.n102588: 13 loads, 13 SLICEs
+      Net led_string1.single_led.update_bits: 4 loads, 4 SLICEs
+      Net led_string1.single_led.n102596: 13 loads, 13 SLICEs
+      Net led_string1.single_led.counter_high.n102592: 13 loads, 13 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net led_string1.single_led.n494: 28 loads
-      Net n578: 28 loads
-      Net state_adj_208[0]: 17 loads
-      Net state_adj_208[1]: 16 loads
-      Net state_adj_208[2]: 14 loads
-      Net led_string1.single_led.n67: 13 loads
-      Net led_string1.single_led.n71: 13 loads
-      Net state_adj_208[3]: 13 loads
-      Net led_string1.state[0]_2: 7 loads
-      Net led_string1.state[1]_2: 7 loads
+      Net VCC_net: 65 loads
+      Net led_string1.single_led.update_bits: 36 loads
+      Net led_string1.single_led.n103076: 28 loads
+      Net led_string1.single_led.state[0]: 16 loads
+      Net led_string1.single_led.state[1]: 15 loads
+      Net led_string1.single_led.state[2]: 15 loads
+      Net led_string1.single_led.state[3]: 15 loads
+      Net led_string1.n102588: 13 loads
+      Net led_string1.single_led.counter_high.n102592: 13 loads
+      Net led_string1.single_led.n102596: 13 loads
 Running physical design DRC...
 
  
@@ -420,15 +94,15 @@ Constraint Summary:
 
 Total CPU Time: 0 secs  
 Total REAL Time: 0 secs  
-Peak Memory Usage: 68 MB
+Peak Memory Usage: 70 MB
 
-Checksum -- map: cd58b0983f7631f2a88833b4cc02a9cce6c45bd5
+Checksum -- map: 6fdbfd1961acc1ae4774e2ae9191b159ec19607
 Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /0 secs 
 
 pnmainc -log pnmain "e155_project_fpga_impl_1_par.tcl"
 
 PAR: Place And Route Radiant Software (64-bit) 2024.2.0.3.0.
-PARed on: Mon Dec  1 13:25:44 2025
+PARed on: Tue Dec  2 00:36:59 2025
 
 Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
 	e155_project_fpga_impl_1_map.udb e155_project_fpga_impl_1_par.dir/5_1.udb 
@@ -450,17 +124,17 @@ Constraint Summary
    Total number of constraints: 2
    Total number of constraints dropped: 0
 
-Number of Signals: 329
-Number of Connections: 730
+Number of Signals: 485
+Number of Connections: 1224
 Device utilization summary:
 
-   SLICE (est.)      88/2640          3% used
-     LUT            164/5280          3% used
-     REG            104/5280          2% used
+   SLICE (est.)     127/2640          5% used
+     LUT            230/5280          4% used
+     REG            130/5280          2% used
    PIO                1/56            2% used
                       1/36            2% bonded
    IOLOGIC            0/56            0% used
-   DSP                0/8             0% used
+   DSP                1/8            13% used
    I2C                0/2             0% used
    HFOSC              1/1           100% used
    LFOSC              0/1             0% used
@@ -470,7 +144,7 @@ Device utilization summary:
    SRAM               0/4             0% used
    WARMBOOT           0/1             0% used
    SPI                0/2             0% used
-   EBR                0/30            0% used
+   EBR               12/30           40% used
    PLL                0/1             0% used
    RGBOUTBUF          0/3             0% used
    I3C                0/2             0% used
@@ -482,31 +156,31 @@ Pin Constraint Summary:
 Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
 
 
-.................
+................
 Finished Placer Phase 0 (AP).  CPU time: 0 secs , REAL time: 0 secs 
 
 Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs 
 ..  ..
 ....................
 
-Placer score = 15883.
+Placer score = 61387.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE             87/2640          3% used
+   SLICE            123/2640          4% used
 
 Finished Placer Phase 1. CPU time: 4 secs , REAL time: 4 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  23875
+Placer score =  70383
 Finished Placer Phase 2.  CPU time: 4 secs , REAL time: 4 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "clk" from comp "hf_osc.osc_inst" on site "HFOSC_R1C32", clk load = 61, ce load = 0, sr load = 0
+  PRIMARY "clk" from comp "hf_osc.osc_inst" on site "HFOSC_R1C32", clk load = 85, ce load = 0, sr load = 0
 
   PRIMARY  : 1 out of 8 (12%)
 
@@ -531,11 +205,11 @@ I/O Bank Usage Summary:
 Total Placer CPU time: 4 secs , REAL time: 4 secs 
 
 
-Checksum -- place: 5936893b05192ef672eefc95efe2e2ee318e4ea
+Checksum -- place: 2b0351255403f71027cfd56a85ce98d2a029e3a
 Writing design to file e155_project_fpga_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 13:25:48 12/01/25
+Start NBR router at 00:37:03 12/02/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -554,56 +228,68 @@ Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
 1 global clock signals routed
-233 connections routed (of 693 total) (33.62%)
+317 connections routed (of 1195 total) (26.53%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (1 used out of 8 available):
 #4  Signal "clk"
-       Clock   loads: 61    out of    61 routed (100.00%)
+       Clock   loads: 85    out of    85 routed (100.00%)
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
     TimerIf::skewscore 0
 
-Start NBR section for initial routing at 13:25:49 12/01/25
+Start NBR section for initial routing at 00:37:03 12/02/25
 Level 4, iteration 1
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-10(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 8.056ns/0.000ns; real time: 0 secs 
+9(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 24.748ns/0.000ns; real time: 0 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 13:25:49 12/01/25
+Start NBR section for normal routing at 00:37:04 12/02/25
 Level 4, iteration 1
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 24.748ns/0.000ns; real time: 0 secs 
+Level 4, iteration 2
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 24.748ns/0.000ns; real time: 0 secs 
+Level 4, iteration 3
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 24.748ns/0.000ns; real time: 0 secs 
+Level 4, iteration 4
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 24.748ns/0.000ns; real time: 0 secs 
+Level 4, iteration 5
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 8.056ns/0.000ns; real time: 0 secs 
+Estimated worst slack/total negative slack<setup>: 24.748ns/0.000ns; real time: 0 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 13:25:49 12/01/25
+Start NBR section for setup/hold timing optimization with effort level 3 at 00:37:04 12/02/25
 Changing speed to m;   changing temperature to -40
 Changing speed to 6;   changing temperature to 100
 
-Start NBR section for post-routing at 13:25:49 12/01/25
+Start NBR section for post-routing at 00:37:04 12/02/25
 
 End NBR router with 0 unrouted connection(s)
 Changing speed to m;   changing temperature to -40
 Changing speed to 6;   changing temperature to 100
 
-Checksum -- route: faf6cfb7d073bc44800ccf8eedd40c1fc1c16205
+Checksum -- route: d95bb600a7bc45d0f6c74d757747b8f6f8260a78
 
 Total CPU time 1 secs 
 Total REAL time: 0 secs 
 Completely routed.
-End of route.  693 routed (100.00%); 0 unrouted.
+End of route.  1195 routed (100.00%); 0 unrouted.
 
 Writing design to file e155_project_fpga_impl_1_par.dir/5_1.udb ...
 
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 8.056
+PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 25.387
 PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
 PAR_SUMMARY::Estimated worst slack<hold/<ns>> = 1.743
 PAR_SUMMARY::Timing score<hold/<ns>> = 0.000
@@ -613,7 +299,7 @@ Note: user must run 'timing' for timing closure signoff.
 
 Total CPU  Time: 5 secs 
 Total REAL Time: 6 secs 
-Peak Memory Usage: 130.15 MB
+Peak Memory Usage: 132.73 MB
 
 
 par done!
@@ -640,7 +326,7 @@ Performance Grade:   High-Performance_1.2V
 
 
 
-Successfully loading udb, 0.03 seconds
+Successfully loading udb, 0.05 seconds
 
 Initializing timer
 Starting design annotation....
@@ -648,15 +334,15 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  61  counted  608  covered  606
+Connections ignored  85  counted  844  covered  809
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 104 MB
+Peak Memory Usage: 106 MB
 
- 0.621312s wall, 0.500000s user + 0.093750s system = 0.593750s CPU (95.6%)
+ 0.679517s wall, 0.625000s user + 0.031250s system = 0.656250s CPU (96.6%)
 
 
 tmcheck -par "e155_project_fpga_impl_1.par"  
@@ -708,6 +394,6 @@ Bitstream generation complete!
 
 Total CPU Time: 0 secs 
 Total REAL Time: 6 secs 
-Peak Memory Usage: 119 MB
+Peak Memory Usage: 120 MB
 
 Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /6 secs 

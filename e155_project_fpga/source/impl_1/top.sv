@@ -17,9 +17,12 @@ module top (output logic to_light);
 			
 	logic load, done, reset;
 	logic [3:0] data_count, read_count;
-	logic [23:0] rgb, rgb_start;
-	
-	led_string led_string1(clk, reset, {8'd0, 8'd206, 8'd255}, to_light);
+	logic [23:0] color;
+	logic [3455:0] color_string;
+		
+	assign color = {8'd0, 8'd206, 8'd255};
+	assign color_string = {24{{3{color}}, {3{24'd0}}}};
+	led_string led_string1(clk, reset, color_string, to_light);
 	/*
 	typedef enum logic [5:0] {init, set_data, load_data, write_disable, read_data, next, go} statetype;
 	statetype state, nextstate;

@@ -16,5 +16,5 @@ Writing output file 'e155_project_fpga_impl_1_syn.udb'.
 POSTSYN finished successfully.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 43 MB
-Checksum -- postsyn: ecb9f2189791e9ab42fd51b347ec5eddc0a6e34d
+Peak Memory Usage: 44 MB
+Checksum -- postsyn: 821c6f969dc14fc51ab4abee7cdfa1df98d15d8e

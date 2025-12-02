@@ -3,54 +3,68 @@ Report for cell top
    Instance path: top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        164        100.0
-                               LUTGATE	         92        100.0
-                                LUTCCU	         72        100.0
+                                  LUT4	        230        100.0
+                               LUTGATE	        122        100.0
+                                LUTCCU	        108        100.0
                                  IOBUF	          1        100.0
-                                PFUREG	        104        100.0
+                                PFUREG	        130        100.0
+                                   EBR	         12        100.0
+                                   DSP	          1        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                            led_string	          1        82.9
+                            led_string	          1        97.0
 ---------------------------------------------------
 Report for cell led_string
    Instance path: top/led_string1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        136        82.9
-                               LUTGATE	         64        69.6
-                                LUTCCU	         72        100.0
-                                PFUREG	        104        100.0
+                                  LUT4	        223        97.0
+                               LUTGATE	        115        94.3
+                                LUTCCU	        108        100.0
+                                PFUREG	        130        100.0
+                                   EBR	         12        100.0
+                                   DSP	          1        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                            led_driver	          1        68.9
+                            counter_U1	          1        14.8
+                            led_driver	          1        62.2
 ---------------------------------------------------
 Report for cell led_driver
    Instance path: top/led_string1/single_led
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        113        68.9
-                               LUTGATE	         53        57.6
-                                LUTCCU	         60        83.3
-                                PFUREG	         91        87.5
+                                  LUT4	        143        62.2
+                               LUTGATE	         83        68.0
+                                LUTCCU	         60        55.6
+                                PFUREG	         92        70.8
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                               counter	          1        22.0
-                            counter_U0	          1        22.0
+                               counter	          1        15.7
+                            counter_U0	          1        16.5
 ---------------------------------------------------
 Report for cell counter
    Instance path: top/led_string1/single_led/counter_low
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         36        22.0
-                               LUTGATE	         10        10.9
-                                LUTCCU	         26        36.1
-                                PFUREG	         25        24.0
+                                  LUT4	         36        15.7
+                               LUTGATE	         10         8.2
+                                LUTCCU	         26        24.1
+                                PFUREG	         25        19.2
 ---------------------------------------------------
 Report for cell counter_U0
    Instance path: top/led_string1/single_led/counter_high
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         36        22.0
-                               LUTGATE	         10        10.9
-                                LUTCCU	         26        36.1
-                                PFUREG	         25        24.0
+                                  LUT4	         38        16.5
+                               LUTGATE	         12         9.8
+                                LUTCCU	         26        24.1
+                                PFUREG	         25        19.2
+---------------------------------------------------
+Report for cell counter_U1
+   Instance path: top/led_string1/counter_reset
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         34        14.8
+                               LUTGATE	          8         6.6
+                                LUTCCU	         26        24.1
+                                PFUREG	         25        19.2

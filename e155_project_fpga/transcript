@@ -14,30 +14,6 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 # Loading project e155_project_test
-vsim -gui work.led_driver_tb -voptargs=+acc
-# vsim -gui work.led_driver_tb -voptargs="+acc" 
-# Start time: 12:33:48 on Nov 30,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-add wave -position insertpoint  \
-sim:/led_driver_tb/clk \
-sim:/led_driver_tb/rst \
-sim:/led_driver_tb/start \
-sim:/led_driver_tb/load \
-sim:/led_driver_tb/rgb \
-sim:/led_driver_tb/to_light \
-sim:/led_driver_tb/done
-run 10000
-run 10000
-restart -f
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
 # Compile of top.sv was successful.
 # Compile of counter.sv was successful.
 # Compile of led_driver.sv was successful.
@@ -45,251 +21,9 @@ run 20000
 # Compile of counter_tb.sv was successful.
 # Compile of spram_tb.sv was successful.
 # Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Compile of top.sv failed with 2 errors.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv failed with 1 errors.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 2 failed with 3 errors.
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv failed with 1 errors.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 1 failed with 1 error.
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# A time value could not be extracted from the current line
-# Break key hit
-# Break in Module led_driver_tb at C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv line 29
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Break key hit
-# Break in Module led_driver_tb at C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv line 29
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv failed with 4 errors.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 1 failed with 4 errors.
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv failed with 1 errors.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 1 failed with 1 error.
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# 7 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of spram_tb.sv was successful.
-# Compile of spram.sv was successful.
-# Compile of led_string.sv was successful with warnings.
+# Compile of led_string.sv failed with 1 errors.
 # Compile of led_string_tb.sv was successful.
-# 9 compiles, 0 failed with no errors.
-# Load canceled
+# 9 compiles, 1 failed with 1 error.
 # Compile of top.sv was successful.
 # Compile of counter.sv was successful.
 # Compile of led_driver.sv was successful.
@@ -300,23 +34,10 @@ run 20000
 # Compile of led_string.sv was successful.
 # Compile of led_string_tb.sv was successful.
 # 9 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+vsim -gui work.led_string_tb -voptargs=+acc
+# vsim -gui work.led_string_tb -voptargs="+acc" 
+# Start time: 19:18:27 on Dec 01,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 20000
-vsim -gui -voptargs=+acc work.led_string_tb
-# End time: 13:37:07 on Nov 30,2025, Elapsed time: 1:03:19
-# Errors: 0, Warnings: 2
-# vsim -gui -voptargs="+acc" work.led_string_tb 
-# Start time: 13:37:07 on Nov 30,2025
-# ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
 # ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
@@ -332,15 +53,29 @@ sim:/led_string_tb/rst \
 sim:/led_string_tb/rgb \
 sim:/led_string_tb/to_light
 add wave -position insertpoint  \
+sim:/led_string_tb/dut/rgb_shift
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/rgb
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/done
+add wave -position insertpoint  \
 sim:/led_string_tb/dut/led_num
 add wave -position insertpoint  \
 sim:/led_string_tb/dut/inc_num
 add wave -position insertpoint  \
-sim:/led_string_tb/dut/done
+sim:/led_string_tb/dut/state
 add wave -position insertpoint  \
-sim:/led_string_tb/dut/load
-run 50000
-run 1000000
+sim:/led_string_tb/dut/nextstate
+run 200000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 200000
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
@@ -373,8 +108,28 @@ restart -f
 # Loading work.led_driver(fast)
 # Loading work.counter(fast)
 run 200000
-add wave -position insertpoint  \
-sim:/led_string_tb/dut/single_led/counter_reset_high
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 200000
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
@@ -384,17 +139,48 @@ restart -f
 # Loading work.led_driver(fast)
 # Loading work.counter(fast)
 run 200000
-add wave -position insertpoint  \
-sim:/led_string_tb/dut/single_led/num_high
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
 # Loading work.led_string_tb(fast)
 # Loading work.led_string(fast)
 # Loading work.led_driver(fast)
 # Loading work.counter(fast)
-run 20000
+run 200000
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 200000
 # Compile of top.sv was successful.
 # Compile of counter.sv was successful.
 # Compile of led_driver.sv was successful.
@@ -410,6 +196,7 @@ restart -f
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.led_string_tb(fast)
@@ -417,8 +204,335 @@ restart -f
 # Loading work.led_driver(fast)
 # Loading work.counter(fast)
 run 200000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv failed with 1 errors.
+# 9 compiles, 1 failed with 1 error.
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.led_string_tb
+# End time: 21:26:28 on Dec 01,2025, Elapsed time: 2:08:01
+# Errors: 0, Warnings: 4
+# vsim -gui -voptargs="+acc" work.led_string_tb 
+# Start time: 21:26:28 on Dec 01,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+add wave -position insertpoint  \
+sim:/led_string_tb/clk \
+sim:/led_string_tb/rst \
+sim:/led_string_tb/to_light \
+sim:/led_string_tb/color \
+sim:/led_string_tb/led_bitstring
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/rgb_next
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/nextstate
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/state
 run 2000000
-run 100000
-run 50000
-# End time: 15:38:24 on Nov 30,2025, Elapsed time: 2:01:17
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 2000000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+# Warning in wave window restart: (vish-4014) No objects found matching '/led_string_tb/color'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/led_string_tb/led_bitstring'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/led_string_tb/dut/single_led/reset_done'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/led_string_tb/dut/rgb_next'. 
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 300000
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/led_string_shift
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/rgb
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/led_string
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 300000
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 300000
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 300000
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 300000
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+resart -f
+# invalid command name "resart"
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 300000
+# A time value could not be extracted from the current line
+vsim -gui -voptargs=+acc work.led_string_tb
+# End time: 23:06:59 on Dec 01,2025, Elapsed time: 1:40:31
 # Errors: 0, Warnings: 2
+# vsim -gui -voptargs="+acc" work.led_string_tb 
+# Start time: 23:06:59 on Dec 01,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+add wave -position insertpoint  \
+sim:/led_string_tb/clk \
+sim:/led_string_tb/rst \
+sim:/led_string_tb/rgb \
+sim:/led_string_tb/to_light \
+sim:/led_string_tb/color \
+sim:/led_string_tb/color_string \
+sim:/led_string_tb/reset
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/led_string_shift
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/led_num
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/rgb
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/led_string
+run 300000
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+# Warning in wave window restart: (vish-4014) No objects found matching '/led_string_tb/reset'. 
+run 300000
+run 3000000
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 3000000
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/state
+add wave -position insertpoint  \
+sim:/led_string_tb/dut/nextstate
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 3000000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 3000000
+# Compile of top.sv was successful.
+# Compile of counter.sv was successful.
+# Compile of led_driver.sv was successful.
+# Compile of led_driver_tb.sv was successful.
+# Compile of counter_tb.sv was successful.
+# Compile of spram_tb.sv was successful.
+# Compile of spram.sv was successful.
+# Compile of led_string.sv was successful.
+# Compile of led_string_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "led_string(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 3000000
+# Causality operation skipped due to absence of debug database file
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.led_string_tb(fast)
+# Loading work.led_string(fast)
+# Loading work.led_driver(fast)
+# Loading work.counter(fast)
+run 3000000

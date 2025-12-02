@@ -38,14 +38,29 @@ module led_driver (
 			if (rgb[23]) num_high <= 24'd38;
 			else num_high <= 24'd40;
 		end
+		if (rst | update_bits) begin
+			rgb_shift <= rgb;
+			rgb_count <= 0;
+		end
 		else begin
 			if (state == T1H) num_high <= 24'd19;
 			if (state == T1L) num_low <= 24'd10;
 			if (state == T0H) num_high <= 24'd9;
 			if (state == T0L) num_low <= 24'd20; 
+				
+			if (nextstate == shift) begin
+				rgb_shift <= {rgb_shift[22:0], 1'b0};
+				if (done) rgb_count <= 6'b0;
+				rgb_count <= rgb_count + 6'd1;
+			end
+			else begin
+				rgb_shift <= rgb_shift;
+				rgb_count <= rgb_count;
+			end		
 		end
 	end
 	
+	/*
 	always_ff @(negedge clk) begin
 		if (rst | update_bits) begin
 			rgb_shift <= rgb;
@@ -63,6 +78,7 @@ module led_driver (
 			end
 		end
 	end
+	*/
 	
 	always_comb 
 		case(state) 

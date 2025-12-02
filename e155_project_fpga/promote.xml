@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userSetting name="C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml" version="Diamond (64-bit) 2024.2.0.3.0" date="Mon Dec 01 13:26:05 2025" vendor="Lattice Semiconductor Corporation" >
+<userSetting name="C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml" version="Diamond (64-bit) 2024.2.0.3.0" date="Tue Dec 02 00:37:20 2025" vendor="Lattice Semiconductor Corporation" >
   <msg mid="2043138" type="Error" internal="true" />
   <msg mid="35901328" type="Info" internal="true" />
   <msg mid="2043310" type="Info" internal="true" />
+  <msg mid="2043188" type="Error" internal="true" />
   <msg mid="2043063" type="Warning" internal="true" />
   <msg mid="35921504" type="Info" internal="true" />
+  <msg mid="2043330" type="Warning" internal="true" />
   <msg mid="35901209" type="Warning" internal="true" />
+  <msg mid="35931002" type="Warning" internal="true" />
   <msg mid="2043116" type="Error" internal="true" />
   <msg mid="35901899" type="Warning" internal="true" />
-  <msg mid="35931002" type="Warning" internal="true" />
   <msg mid="2043128" type="Error" internal="true" />
   <msg mid="2043137" type="Error" internal="true" />
   <msg mid="2044344" type="Error" internal="true" />
@@ -19,13 +21,15 @@
   <msg mid="2043967" type="Info" internal="true" />
   <msg mid="2043100" type="Error" internal="true" />
   <msg mid="2043214" type="Error" internal="true" />
-  <msg mid="2043924" type="Warning" internal="true" />
   <msg mid="2043348" type="Error" internal="true" />
+  <msg mid="2043924" type="Warning" internal="true" />
   <msg mid="2043971" type="Warning" internal="true" />
   <msg mid="2043972" type="Info" internal="true" />
   <msg mid="2044561" type="Info" internal="true" />
   <msg mid="2043182" type="Error" internal="true" />
   <msg mid="2043020" type="Error" internal="true" />
+  <msg mid="2043952" type="Error" internal="true" />
   <msg mid="2043372" type="Warning" internal="true" />
   <msg mid="2043010" type="Error" internal="true" />
+  <msg mid="2043362" type="Warning" internal="true" />
 </userSetting>

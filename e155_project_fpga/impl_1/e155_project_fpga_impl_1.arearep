@@ -1,63 +1,75 @@
 ----------------------------------------------------------------------
 Report for cell top.TECH
-Register bits:  104 of 5280 (1.970%)
+Register bits:  130 of 5280 (2.462%)
 I/O cells:      1
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               CCU2        36          100.0
-                            FD1P3XZ       104          100.0
+                              EBR_B        12          100.0
+                               CCU2        54          100.0
+                            FD1P3XZ       130          100.0
                               HSOSC         1          100.0
-                                INV         1          100.0
-                               LUT4        66          100.0
+                               LUT4       119          100.0
+                              MAC16         1          100.0
                                  OB         1          100.0
 SUB MODULES
                             counter         1
                          counter_U0         1
+                         counter_U1         1
                          led_driver         1
                          led_string         1
-                              TOTAL       213
+                              TOTAL       323
 ----------------------------------------------------------------------
 Report for cell led_string.v1
 Instance Path : led_string1
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        36          100.0
-                            FD1P3XZ       104          100.0
-                                INV         1          100.0
-                               LUT4        65           98.5
+                              EBR_B        12          100.0
+                                FA2        54          100.0
+                            FD1P3XZ       130          100.0
+                               LUT4       118           99.2
+                              MAC16         1          100.0
 SUB MODULES
                             counter         1
                          counter_U0         1
+                         counter_U1         1
                          led_driver         1
-                              TOTAL       209
+                              TOTAL       319
 ----------------------------------------------------------------------
 Report for cell led_driver.v1
 Instance Path : led_string1.single_led
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        30           83.3
-                            FD1P3XZ        91           87.5
-                                INV         1          100.0
-                               LUT4        54           81.8
+                                FA2        30           55.6
+                            FD1P3XZ        92           70.8
+                               LUT4        86           72.3
 SUB MODULES
                             counter         1
                          counter_U0         1
-                              TOTAL       178
+                              TOTAL       210
 ----------------------------------------------------------------------
 Report for cell counter.v1
 Instance Path : led_string1.single_led.counter_low
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        13           36.1
-                            FD1P3XZ        25           24.0
-                               LUT4        10           15.2
+                                FA2        13           24.1
+                            FD1P3XZ        25           19.2
+                               LUT4        10            8.4
                               TOTAL        48
 ----------------------------------------------------------------------
 Report for cell counter_U0.v1
 Instance Path : led_string1.single_led.counter_high
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        13           36.1
-                            FD1P3XZ        25           24.0
-                               LUT4        10           15.2
-                              TOTAL        48
+                                FA2        13           24.1
+                            FD1P3XZ        25           19.2
+                               LUT4        12           10.1
+                              TOTAL        50
+----------------------------------------------------------------------
+Report for cell counter_U1.v1
+Instance Path : led_string1.counter_reset
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        13           24.1
+                            FD1P3XZ        25           19.2
+                               LUT4         8            6.7
+                              TOTAL        46
