@@ -9,6 +9,7 @@
 "Output/Debug/Obj/e155_project_mcu/STM32L432KC_TIM.o"
 "Output/Debug/Obj/e155_project_mcu/STM32L432KC_UART.o"
 "Output/Debug/Obj/e155_project_mcu/main.o"
+"Output/Debug/Obj/e155_project_mcu/songIDs.o"
 "Output/Debug/Obj/e155_project_mcu/SEGGER_THUMB_Startup.o"
 "Output/Debug/Obj/e155_project_mcu/stm32l432xx_Vectors.o"
 "Output/Debug/Obj/e155_project_mcu/STM32L4xx_Startup.o"

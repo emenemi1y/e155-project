@@ -22,4 +22,5 @@ Output/Debug/Obj/e155_project_mcu/STM32L432KC_UART.o: \
   C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\STM32L432KC_RCC.h \
   C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\STM32L432KC_FLASH.h \
   C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\STM32L432KC_SPI.h \
-  C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\MFRC522.h
+  C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\MFRC522.h \
+  C:\Users\ekendrick\Documents\GitHub\e155-project\e155_project_mcu\songIDs.h

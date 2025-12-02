@@ -20,6 +20,7 @@
 #include "STM32L432KC_UART.h"
 #include "STM32L432KC_SPI.h"
 #include "MFRC522.h"
+#include "songIDs.h"
 
 
 // Global defines
