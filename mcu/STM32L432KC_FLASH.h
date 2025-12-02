@@ -15,10 +15,10 @@
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
-void configureFlash();
-void unlockFlash();
-void eraseFlash();
-static void programFlash(uint32_t Address, uint64_t Data);
-void lockFlash();
+void configureFlash(void);
+void unlockFlash(void);
+void eraseFlash(uint32_t address);
+void programFlash(uint32_t Address, uint64_t Data);
+void lockFlash(void);
 
 #endif

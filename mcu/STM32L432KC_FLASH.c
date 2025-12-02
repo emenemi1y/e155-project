@@ -12,12 +12,12 @@
 
 #include "STM32L432KC_FLASH.h"
 
-void configureFlash() {
+void configureFlash(void) {
   FLASH->ACR |= FLASH_ACR_LATENCY_4WS;
   FLASH->ACR |= FLASH_ACR_PRFTEN;
 }
 
-void unlockFlash() {
+void unlockFlash(void) {
 // Flash Keys used to unlock the Flash
 int FLASH_KEYR_KEY1 = 0x45670123;
 int FLASH_KEYR_KEY2 =  0xCDEF89AB;
@@ -27,7 +27,7 @@ FLASH->KEYR =  (FLASH_KEYR_KEY1 << 0);
 FLASH->KEYR = (FLASH_KEYR_KEY2 << 16);
 }
 
-void eraseFlash() {
+void eraseFlash(uint32_t address) {
 // pg 84 refernce manual 
 //Check that no Flash memory operation is ongoing by checking the BSY bit in the FLASH_SR register.
 if (FLASH_SR_BSY == 0) {
@@ -43,7 +43,7 @@ if (FLASH_SR_BSY == 0) {
 
 //Set the PER bit and select the page you wish to erase (PNB) in the Flash control register (FLASH_CR).
   FLASH->CR |= _VAL2FLD(FLASH_CR_PER, 1);
-  FLASH->CR |= _VAL2FLD(FLASH_CR_PNB, 11111111); // currently erasing page 255
+  FLASH->CR |= _VAL2FLD(FLASH_CR_PNB, address); // currently erasing page 255
 
 // Set the STRT bit in the FLASH_CR register.
   FLASH->CR |= _VAL2FLD(FLASH_CR_STRT, 1);
@@ -83,7 +83,7 @@ if (FLASH_SR_BSY == 0) {
   FLASH->CR |= _VAL2FLD(FLASH_CR_PG, 0);
 }
 
-void lockFlash(){
+void lockFlash(void){
 // The FLASH_CR register can be locked again by software by setting the LOCK bit in the FLASH_CR register.
 if (FLASH_SR_BSY == 0) {
   FLASH->CR |= _VAL2FLD(FLASH_CR_LOCK, 1);
