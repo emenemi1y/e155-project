@@ -7,9 +7,9 @@
 #include <stdint.h>
 #include <stm32l432xx.h>
 
-#define FLASHBASE (0x08000000)
-#define PAGE1 (0x08000800)
-#define PAGE255 (0x0807F800)
+#define FLASH_BASE      0x08000000UL
+#define FLASH_PAGE_SIZE 0x800UL       // 2 KB
+#define FLASH_PAGE_COUNT 128U         // for STM32L432KC
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes

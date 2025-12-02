@@ -18,74 +18,94 @@ void configureFlash(void) {
 }
 
 void unlockFlash(void) {
-// Flash Keys used to unlock the Flash
-int FLASH_KEYR_KEY1 = 0x45670123;
-int FLASH_KEYR_KEY2 =  0xCDEF89AB;
-
-// Setting the Flash Key to unlock the Flash
-FLASH->KEYR =  (FLASH_KEYR_KEY1 << 0);
-FLASH->KEYR = (FLASH_KEYR_KEY2 << 16);
+  // Check if already unlocked
+  if(!_FLD2VAL(FLASH_CR_LOCK, FLASH->CR)) {
+    return; // Already unlocked
+  }
+  
+  // Flash Keys used to unlock the Flash (from reference manual)
+  FLASH->KEYR = 0x45670123;
+  FLASH->KEYR = 0xCDEF89AB;
 }
 
 void eraseFlash(uint32_t address) {
-// pg 84 refernce manual 
-//Check that no Flash memory operation is ongoing by checking the BSY bit in the FLASH_SR register.
-if (FLASH_SR_BSY == 0) {
+  // Convert address to page number (each page is 2KB = 0x800 bytes)
+  // Page number = (address - flash_base) / page_size
+  uint32_t page_number = (address - FLASH_BASE) / FLASH_PAGE_SIZE;
+  
+  // Wait for any ongoing operation to complete
+ while (FLASH->SR & FLASH_SR_BSY);
 
-//Check and clear all error programming flags due to a previous programming. If not, PGSERR is set.
-  FLASH->SR |= _VAL2FLD(FLASH_SR_PROGERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_SIZERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_PGAERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_PGSERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_WRPERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_MISERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_FASTERR, 1);
+  // Clear all error flags by writing 1 to them
+  FLASH->SR |= _VAL2FLD(FLASH_SR_PROGERR, 1) | 
+               _VAL2FLD(FLASH_SR_SIZERR, 1) | 
+               _VAL2FLD(FLASH_SR_PGAERR, 1) | 
+               _VAL2FLD(FLASH_SR_PGSERR, 1) | 
+               _VAL2FLD(FLASH_SR_WRPERR, 1) | 
+               _VAL2FLD(FLASH_SR_MISERR, 1) | 
+               _VAL2FLD(FLASH_SR_FASTERR, 1) | 
+               _VAL2FLD(FLASH_SR_EOP, 1);
 
-//Set the PER bit and select the page you wish to erase (PNB) in the Flash control register (FLASH_CR).
-  FLASH->CR |= _VAL2FLD(FLASH_CR_PER, 1);
-  FLASH->CR |= _VAL2FLD(FLASH_CR_PNB, address); // currently erasing page 255
+  // Clear PNB field, set PER bit and page number
+  FLASH->CR = (FLASH->CR & ~FLASH_CR_PNB_Msk) | 
+              _VAL2FLD(FLASH_CR_PER, 1) | 
+              _VAL2FLD(FLASH_CR_PNB, page_number);
 
-// Set the STRT bit in the FLASH_CR register.
+  // Start the erase operation
   FLASH->CR |= _VAL2FLD(FLASH_CR_STRT, 1);
 
-// Wait for the BSY bit to be cleared in the FLASH_SR register.
-  while(!(FLASH_SR_BSY));
+  // Wait for operation to complete
+  while(_FLD2VAL(FLASH_SR_BSY, FLASH->SR));
+  
+  // Check for and clear EOP flag
+  if(_FLD2VAL(FLASH_SR_EOP, FLASH->SR)) {
+    FLASH->SR |= _VAL2FLD(FLASH_SR_EOP, 1);
   }
+  
+  // Clear PER bit
+  FLASH->CR &= ~_VAL2FLD(FLASH_CR_PER, 1);
 }
 
 void programFlash(uint32_t Address, uint64_t Data) {
-// Check that no Flash main memory operation is ongoing by checking the BSY bit in the Flash status register (FLASH_SR).
-if (FLASH_SR_BSY == 0) {
-// Check and clear all error programming flags due to a previous programming. If not, PGSERR is set.
-  FLASH->SR |= _VAL2FLD(FLASH_SR_PROGERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_SIZERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_PGAERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_PGSERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_WRPERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_MISERR, 1);
-  FLASH->SR |= _VAL2FLD(FLASH_SR_FASTERR, 1);
+  // Wait for any ongoing operation to complete
+  while(_FLD2VAL(FLASH_SR_BSY, FLASH->SR));
+  
+  // Clear all error flags by writing 1 to them
+  FLASH->SR |= _VAL2FLD(FLASH_SR_PROGERR, 1) | 
+               _VAL2FLD(FLASH_SR_SIZERR, 1) | 
+               _VAL2FLD(FLASH_SR_PGAERR, 1) | 
+               _VAL2FLD(FLASH_SR_PGSERR, 1) | 
+               _VAL2FLD(FLASH_SR_WRPERR, 1) | 
+               _VAL2FLD(FLASH_SR_MISERR, 1) | 
+               _VAL2FLD(FLASH_SR_FASTERR, 1) | 
+               _VAL2FLD(FLASH_SR_EOP, 1);
 
-// Set the PG bit in the Flash control register (FLASH_CR).
+  // Set the PG bit to enable programming
   FLASH->CR |= _VAL2FLD(FLASH_CR_PG, 1);
-  }
-// Perform the data write operation at the desired memory address, inside main memory block or OTP area. Only double word can be programmed.
-  //– Write a first word in an address aligned with double word
-  //– Write the second word
+  
+  // Perform the data write operation (double word - 64 bits)
+  // CRITICAL: Must write as double word (2 words back-to-back)
+  // Write first word (lower 32 bits)
   *(__IO uint32_t*)Address = (uint32_t)Data;
-  *(__IO uint32_t*)(Address+4U) = (uint32_t)(Data >> 32);
+  // Write second word (upper 32 bits) immediately after
+  *(__IO uint32_t*)(Address + 4) = (uint32_t)(Data >> 32);
 
-// Wait until the BSY bit is cleared in the FLASH_SR register.
-  while(!(FLASH_SR_BSY));
-// Check that EOP flag is set in the FLASH_SR register (meaning that the programming operation has succeed), and clear it by software.
-  FLASH->SR |= _VAL2FLD(FLASH_SR_EOP, 1);
+  // Wait for operation to complete
+  while(_FLD2VAL(FLASH_SR_BSY, FLASH->SR));
+  
+  // Check if EOP flag is set (end of operation)
+  if(_FLD2VAL(FLASH_SR_EOP, FLASH->SR)) {
+    FLASH->SR |= _VAL2FLD(FLASH_SR_EOP, 1);
+  }
 
-// Clear the PG bit in the FLASH_CR register if there no more programming request anymore.
-  FLASH->CR |= _VAL2FLD(FLASH_CR_PG, 0);
+  // Clear the PG bit
+  FLASH->CR &= ~_VAL2FLD(FLASH_CR_PG, 1);
 }
 
 void lockFlash(void){
-// The FLASH_CR register can be locked again by software by setting the LOCK bit in the FLASH_CR register.
-if (FLASH_SR_BSY == 0) {
+  // Wait for any ongoing operation to complete
+  while(_FLD2VAL(FLASH_SR_BSY, FLASH->SR));
+  
+  // Set LOCK bit to lock the Flash
   FLASH->CR |= _VAL2FLD(FLASH_CR_LOCK, 1);
-  }
 }
