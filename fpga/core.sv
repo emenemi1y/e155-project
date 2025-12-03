@@ -9,9 +9,13 @@ module aes(input  logic clk,
            output logic sdo,
            input  logic load);
                     
-    logic [127:0] key, plaintext, cyphertext;
-            
+        logic [7:0] parallel_out;
+    // use an FSM here:
+	// One stage would use the spio module to load 8 bits of data into it
+	// and then second stage takes the last stages output and stores it into another 8 bit register
+	// Last stage stores it into SPRAM
     sipo_shift_register (sck, load, sdi, sdo, parallel_out);  
+endmodule
 endmodule
 
 /////////////////////////////////////////////
