@@ -3,19 +3,37 @@
 //   Top level module with SPI interface and SPI core
 /////////////////////////////////////////////
 
-module aes(input  logic clk,
-           input  logic sck, 
+module core(input  logic sck, 
            input  logic sdi,
            output logic sdo,
            input  logic load);
                     
-        logic [7:0] parallel_out;
+        logic [7:0] tempReg1, tempReg2;
+		logic [3:0] counter;
+		logic incCount;
+		logic [13:0] addr;
+		assign addr  = 14'b00000000000000;
+		
     // use an FSM here:
 	// One stage would use the spio module to load 8 bits of data into it
 	// and then second stage takes the last stages output and stores it into another 8 bit register
 	// Last stage stores it into SPRAM
-    sipo_shift_register (sck, load, sdi, sdo, parallel_out);  
-endmodule
+	
+	always_ff @(posedge sck)
+		if (load==0) begin
+			counter = 31'b0;
+			tempReg2 <= 8'b0;
+		end else if (incCount == 6'd1) begin
+			counter = counter + 1;
+		end else begin
+			counter = counter;
+			tempReg2 <= tempReg1;
+		end
+		
+	controller FSM(sck, incCount);
+    sipo_shift_register spiToReg(sck, load, sdi, tempReg1);  
+	SP256K spram (.AD(addr), .DI(tempReg2), .MASKWE(4'b1111), .WE(incCount), .CS(1'b1), .CK(sck), .STDBY(1'b0), .SLEEP(1'b0), .PWROFF_N(1'b1), .DO(sdo));
+	
 endmodule
 
 /////////////////////////////////////////////
@@ -24,7 +42,7 @@ endmodule
 //   Captures ciphertext when done, then shifts it out
 //   Tricky cases to properly change sdo on negedge clk
 /////////////////////////////////////////////
-
+/*
 module aes_spi(input  logic sck, 
                input  logic sdi,
                output logic sdo,
@@ -53,42 +71,4 @@ module aes_spi(input  logic sck,
     
     // when done is first asserted, shift out msb before clock edge
     assign sdo = (done & !wasdone) ? cyphertext[127] : sdodelayed;
-endmodule
-
-
-module sipo_shift_register (
-    input sck,
-	input logic load,
-	input  logic sdi,
-    output logic sdo,
-    output reg [7:0] parallel_out // 8-bit output register
-);
-
-always @(posedge clk or negedge rst_n) begin
-    if (!load) begin // Asynchronous reset
-        parallel_out <= 8'b0; // Reset the register to all zeros
-    end else begin
-        // Shift right: parallel_out[7] gets serial_in, parallel_out[6] gets parallel_out[7], etc.
-        parallel_out <= {serial_in, parallel_out[7:1]}; 
-    end
-end
-
-endmodule
-
-/*module ShiftRegister (
-    input clk,
-    input reset,
-    input data_in,
-    output reg [7:0] shift_reg_out
-);
-
-always @(posedge clk or posedge reset) begin
-    if (reset) begin
-        shift_reg_out <= 8'b0; // Reset the register to all zeros
-    end else begin
-        // Shift existing data to the left and introduce new data_in at the LSB
-        shift_reg_out <= {shift_reg_out[6:0], data_in}; 
-    end
-end
-
 endmodule */
