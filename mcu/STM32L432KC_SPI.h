@@ -1,8 +1,5 @@
-// STM32L432KC_SPI.h
-// Emily Kendrick
-// ekendrick@hmc.edu
-// 10/19/2025
-// Header file for the STM32L432KC SPI peripheral
+ // STM32F401RE_SPI.h
+// Header for SPI functions
 
 #ifndef STM32L4_SPI_H
 #define STM32L4_SPI_H
@@ -10,15 +7,11 @@
 #include <stdint.h>
 #include <stm32l432xx.h>
 
-#define SPI_CE PA1
-#define SPI_SCK PA1
-#define SPI_MOSI PA7
-#define SPI_MISO PA11
 
-//#define SPI_CE PA5
-//#define SPI_SCK PB3
-//#define SPI_MOSI PB5
-//#define SPI_MISO PB4
+#define SPI_CE PA11
+#define SPI_SCK PB3
+#define SPI_MOSI PB5
+#define SPI_MISO PB4
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes

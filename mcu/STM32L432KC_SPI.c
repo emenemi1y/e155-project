@@ -1,7 +1,7 @@
 // STM32L432KC_SPI.c
 // Source code for SPI functions
 
-#include "/Users/ninajobanputra/Documents/SEGGER Embedded Studio Projects/E155Project/STM32L432KC.h"
+#include "STM32L432KC.h"
 #include "STM32L432KC_SPI.h"
 #include "STM32L432KC_GPIO.h"
 #include "STM32L432KC_RCC.h"
