@@ -7,11 +7,13 @@
 module led_shifter_tb();
 	logic clk, rst;
 	logic to_light;
-	logic [23:0] color;
-	logic [3455:0] color_string;
+	logic [23:0] color1, color2;
+	logic [143:0] color_string;
 	
-	assign color = {8'd0, 8'd206, 8'd255};
-	assign color_string = {24{{3{color}}, {3{24'd0}}}};
+	assign color1 = {8'd0, 8'd206, 8'd255};
+	assign color2 = {8'd127, 8'd50, 8'd168};
+	assign color_string ={color1, color1, color1,    // 3× color1
+         color2, color2, color2};    // 3× color2
 	led_shifter dut(clk, rst, color_string, to_light);
 	
 	

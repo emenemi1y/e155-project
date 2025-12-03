@@ -21,6 +21,52 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 Z2 !s12c _opt2
 R1
 R2
@@ -155,12 +201,12 @@ n@_opt
 Z10 OL;O;2024.2;79
 R4
 T_opt1
-!s110 1764737964
-VG1Z4Q3`g=OXHA>bQdQbBN0
+!s110 1764761959
+ViYaWNKKAfTbMPEAQ]:Z_i1
 04 14 4 work led_shifter_tb fast 0
-=10-00be43eae9b7-692fc3ac-1d5-4e44
+=28-00be43eae9b7-69302166-32b-1d4c
 R1
-!s12f OEM25U7 
+Z11 !s12f OEM25U5 
 R5
 R6
 R7
@@ -168,13 +214,14 @@ R8
 R9
 n@_opt1
 R10
+R4
 T_opt2
 !s110 1764726752
 VJodOmT139WW:`VkhR3QgY1
 04 13 4 work led_string_tb fast 0
 =22-00be43eae9b7-692f97e0-103-c0c
 R1
-!s12f OEM25U5 
+R11
 R5
 R6
 R7
@@ -185,82 +232,82 @@ R10
 R4
 vcounter
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv
-Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z12 !s110 1764737959
+Z12 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z13 !s110 1764762113
 !i10b 1
 !s100 FXTggBOha3EnzZPVaZDlE0
 I`GAoo5iBlY]I:DXeid<_63
 S1
 R4
-Z13 w1764643503
+Z14 w1764643503
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv
-!i122 650
+!i122 989
 L0 9 27
-Z14 VDg1SIo80bB@j0V0VzS_@n1
-Z15 OL;L;2024.2;79
+Z15 VDg1SIo80bB@j0V0VzS_@n1
+Z16 OL;L;2024.2;79
 r1
 !s85 0
 31
-Z16 !s108 1764737959.000000
+Z17 !s108 1764762113.000000
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv|
 !i113 0
-Z17 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z18 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R9
 vcounter_tb
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter_tb.sv
-R11
 R12
+R13
 !i10b 1
 !s100 PZGcBY@E:Kl=Ad<UMYMhc3
 Izm2Qc9iXi2];z;9Qo3jN[3
 S1
 R4
-R13
+R14
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter_tb.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter_tb.sv
-!i122 653
+!i122 992
 L0 8 25
-R14
 R15
+R16
 r1
 !s85 0
 31
-R16
+R17
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter_tb.sv|
 !i113 0
-R17
+R18
 R9
 vled_driver
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv
-R11
 R12
+R13
 !i10b 1
-!s100 >S:FiVbE98Vg?cm3bQn6H1
-ISiWjUXZC8RdXo1<M860^c1
+!s100 lAUaIOzHJIGI7EcNKodIO0
+I?0<XifDg^SLjLEdOTQLMZ0
 S1
 R4
-w1764737449
+w1764761949
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv
-!i122 651
-L0 6 103
-R14
+!i122 990
+L0 6 99
 R15
+R16
 r1
 !s85 0
 31
-R16
+R17
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv|
 !i113 0
-R17
+R18
 R9
 vled_driver_fsm
-Z18 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv
-R11
+Z19 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv
+R12
 !s110 1764181741
 !i10b 1
 !s100 ^PAA>hNgZZ8I@8n7Sz1c81
@@ -268,125 +315,125 @@ IflLMlXjE8R0XWfbH=i?z33
 S1
 R4
 w1764181635
-Z19 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv
-Z20 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv
+Z20 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv
+Z21 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv
 !i122 7
-Z21 L0 7 24
-R14
+Z22 L0 7 24
 R15
+R16
 r1
 !s85 0
 31
 !s108 1764181741.000000
-Z22 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv|
-Z23 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv|
+Z23 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv|
+Z24 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv|
 !i113 0
-R17
+R18
 R9
 vled_driver_tb
-R18
-R11
+R19
 R12
+R13
 !i10b 1
 !s100 TM9O^4[5:fi<V1TV1ND3g0
 IU23zl_mDIb^g[<5?ig>Ek3
 S1
 R4
-R13
-R19
-R20
-!i122 652
-L0 7 26
 R14
+R20
+R21
+!i122 991
+Z25 L0 7 26
 R15
+R16
 r1
 !s85 0
 31
-R16
-R22
-R23
-!i113 0
 R17
+R23
+R24
+!i113 0
+R18
 R9
 vled_shifter
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv
-R11
-Z24 !s110 1764737960
+R12
+R13
 !i10b 1
-!s100 GGhVhRlQW`z4iT8l[EH2o3
-I<1l3N9FdnmI<EOgjb2^lY1
+!s100 2U_UofdaPI^a6PGk]E;BA3
+IUAPDn<;FLoGG]4OQGY_De0
 S1
 R4
-w1764737911
+w1764761380
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv
-!i122 658
-L0 6 56
-R14
+!i122 997
+L0 6 55
 R15
+R16
 r1
 !s85 0
 31
-Z25 !s108 1764737960.000000
+R17
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv|
 !i113 0
-R17
+R18
 R9
 vled_shifter_tb
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv
-R11
-R24
+R12
+!s110 1764762114
 !i10b 1
-!s100 LINPYl3g857]3k9CP>]Pc2
-IZLo9hEUk5W`66_Y`Y<a`f2
+!s100 z0Hec4:a19VX@IGgegf?d0
+IUkKMW8X][TamVG4Y2fOOd3
 S1
 R4
-w1764726690
+w1764756588
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv
-!i122 659
-R21
-R14
+!i122 998
+R25
 R15
+R16
 r1
 !s85 0
 31
-R25
+!s108 1764762114.000000
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv|
 !i113 0
-R17
+R18
 R9
 vled_string
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv
-R11
-R24
+R12
+R13
 !i10b 1
 !s100 7YSz[4_SNen6BgoE:n;1`0
 IHQ0]e0mSoR_0GY;^7d^i03
 S1
 R4
-w1764727243
+w1764753514
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv
-!i122 656
+!i122 995
 L0 6 67
-R14
 R15
+R16
 r1
 !s85 0
 31
-R25
+R17
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv|
 !i113 0
-R17
+R18
 R9
 vled_string_tb
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string_tb.sv
-R11
-R24
+R12
+R13
 !i10b 1
 !s100 jla:N0ebc2_3kdLWENY<C1
 IRnW65NeBmHOOeo9g=cUXN3
@@ -395,91 +442,91 @@ R4
 w1764715708
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string_tb.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string_tb.sv
-!i122 657
-R21
-R14
+!i122 996
+R22
 R15
+R16
 r1
 !s85 0
 31
-R25
+R17
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string_tb.sv|
 !i113 0
-R17
+R18
 R9
 vspram
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv
-R11
-R24
+R12
+R13
 !i10b 1
 !s100 nn`I0AN<nHR0;l2VY6Qm=0
 IBa`_e^_AmZj4MHbmMFXlD3
 S1
 R4
-R13
+R14
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv
-!i122 655
+!i122 994
 L0 3 53
-R14
 R15
+R16
 r1
 !s85 0
 31
-R25
+R17
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv|
 !i113 0
-R17
+R18
 R9
 vspram_tb
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_tb.sv
-R11
 R12
+R13
 !i10b 1
 !s100 AoKQ3gE:JW?XHGH3bii4I0
 I^@1T>[Z5_lo0<ZjbJaclF3
 S1
 R4
-R13
+R14
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_tb.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_tb.sv
-!i122 654
+!i122 993
 L0 9 35
-R14
 R15
+R16
 r1
 !s85 0
 31
-R16
+R17
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_tb.sv|
 !i113 0
-R17
+R18
 R9
 vtop
 2C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv
-R11
 R12
+R13
 !i10b 1
-!s100 ^:^[<a0b0hieT0OZ`RUM00
-IOf>]dzAEV??`W142C0Ib<1
+!s100 =8WImG3NBKRZLnoSbI62]3
+I0[fjJRkCJ1YWj<?;WWClN1
 S1
 R4
-w1764727136
+w1764761353
 8C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv
 FC:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv
-!i122 649
-L0 1 126
-R14
+!i122 988
+L0 1 55
 R15
+R16
 r1
 !s85 0
 31
-R16
+R17
 !s107 C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv|
 !i113 0
-R17
+R18
 R9

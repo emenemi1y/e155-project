@@ -6,7 +6,7 @@
 module led_driver (
 	input logic clk,
 	input logic rst,
-	input logic [23:0] rgb,
+	input logic [143:0] rgb,
 	input logic load,
 	output logic to_light, done);
 
@@ -20,8 +20,8 @@ module led_driver (
 	counter counter_high(clk, counter_reset_high, num_high, counted_high);
 	counter counter_low(clk, counter_reset_low, num_low, counted_low);
 	
-	logic [23:0] rgb_shift; 
-	logic [5:0] rgb_count;
+	logic [143:0] rgb_shift; 
+	logic [10:0] rgb_count;
 	logic shift_bit, update_bits;
 	
 	always_ff @(posedge clk) begin
@@ -39,14 +39,10 @@ module led_driver (
 			else num_high <= 24'd40;
 		end
 		else begin
-			//if (state == T1H) num_high <= 24'd19;
-			//if (state == T1L) num_low <= 24'd10;
-			//if (state == T0H) num_high <= 24'd9;
-			//if (state == T0L) num_low <= 24'd20; 
 			if (state == T1H) num_high <= 24'd18;
-			if (state == T1L) num_low <= 24'd8;
+			if (state == T1L) num_low <= 24'd7;
 			if (state == T0H) num_high <= 24'd8;
-			if (state == T0L) num_low <= 24'd18;
+			if (state == T0L) num_low <= 24'd17; 
 		end
 	end
 	
@@ -57,9 +53,9 @@ module led_driver (
 		end
 		else begin
 			if (shift_bit) begin
-				rgb_shift <= {rgb_shift[22:0], 1'b0};
-				if (done) rgb_count <= 6'b0;
-				rgb_count <= rgb_count + 6'd1;
+				rgb_shift <= {rgb_shift[142:0], 1'b0};
+				if (done) rgb_count <= 10'b0;
+				rgb_count <= rgb_count + 10'd1;
 			end
 			else begin 
 				rgb_shift <= rgb_shift;
@@ -83,7 +79,7 @@ module led_driver (
 			T0L:		if (~counted_low)		nextstate = T0L;
 						else 					nextstate = shift;
 			
-			shift:		if (rgb_count == 6'd24) nextstate = finish;
+			shift:		if (rgb_count == 10'd144) nextstate = finish;
 						else					nextstate = hold;
 			finish:		 						nextstate = next;
 			next: 		if (~load)				nextstate = next;
@@ -107,111 +103,6 @@ module led_driver (
 
 endmodule
 	
-
-/*module led_driver (
-	input logic clk,
-	input logic rst,
-	input logic [3455:0] rgb,
-	input logic load,
-	output logic to_light, done);
-
-	typedef enum logic [4:0] {init, shift, T1H, T1L, T0H, T0L, finish, next, hold} statetype;
-	statetype state, nextstate;
-	
-	logic [23:0] num_high, num_low;
-	logic counter_reset_high, counted_high;
-	logic counter_reset_low, counted_low;
-	// Counter for waiting 
-	counter counter_high(clk, counter_reset_high, num_high, counted_high);
-	counter counter_low(clk, counter_reset_low, num_low, counted_low);
-	
-	logic [3455:0] rgb_shift; 
-	logic [15:0] rgb_count;
-	logic shift_bit, update_bits;
-	
-	always_ff @(posedge clk) begin
-		if (rst) begin
-			state <= init;
-		end
-		else begin 
-			state <= nextstate;
-		end
-	end
-	
-	always_ff @(posedge clk) begin
-		if (rst) begin
-			if (rgb[23]) num_high <= 24'd38;
-			else num_high <= 24'd40;
-		end
-		if (rst | update_bits | state == init) begin
-			rgb_shift <= rgb;
-			rgb_count <= 0;
-		end
-		else begin
-			
-			//if (state == T1H) num_high <= 24'd18;
-			//if (state == T1L) num_low <= 24'd7;
-			//if (state == T0H) num_high <= 24'd8;
-			//if (state == T0L) num_low <= 24'd7; 
-			
-			if (state == T1H) num_high <= 24'd18;
-			else if (state == T1L) num_low <= 24'd7;
-			else if (state == T0H) num_high <= 24'd8;
-			else if (state == T0L) num_low <= 24'd17;
-				
-			if (nextstate == shift) begin
-				rgb_shift <= {rgb_shift[3454:0], 1'b0};
-				if (done) rgb_count <= 16'b0;
-				rgb_count <= rgb_count + 16'd1;
-			end
-			else begin
-				rgb_shift <= rgb_shift;
-				rgb_count <= rgb_count;
-			end		
-		end
-	end
-	
-	always_comb 
-		case(state) 
-			init:		if (~load)				nextstate = init;
-						else if (rgb_shift[3455]) nextstate = T1H;
-						else                    nextstate = T0H;
-			T1H:		if (~counted_high)		nextstate = T1H;
-						else					nextstate = T1L;
-			T1L:		if (~counted_low) 		nextstate = T1L;
-						else 					nextstate = shift;
-			
-			T0H:		if (~counted_high)		nextstate = T0H;
-						else 					nextstate = T0L;
-			T0L:		if (~counted_low)		nextstate = T0L;
-						else 					nextstate = shift;
-			
-			shift:		if (rgb_count == 16'd3456) nextstate = finish;
-						else					nextstate = hold;
-			finish:		 						nextstate = next;
-			next: 		if (~load)				nextstate = next;
-						else					nextstate = init;
-			hold:		if (rgb_shift[3455])      nextstate = T1H;
-						else					nextstate = T0H;
-			default:							nextstate = init;
-						
-		endcase
-		
-		
-	// Output logic
-	always_comb begin
-		done = (state == finish);
-		counter_reset_low = (state != T1L) && (state != T0L);
-		counter_reset_high = (state != T1H) && (state != T0H);
-		to_light = ((state == T1H) | (state == T0H));
-		shift_bit = (state == shift);
-		update_bits = (state == next);
-	end
-
-endmodule
-	
-
-*/
 
 
 

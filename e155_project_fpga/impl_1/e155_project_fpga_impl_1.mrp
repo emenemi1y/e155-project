@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Tue Dec  2 22:40:02 2025
+Mapped on: Wed Dec  3 03:44:35 2025
 
 Design Information
 ------------------
@@ -22,12 +22,13 @@ Command line:   map -pdc C:/Users/ekendrick/Documents/GitHub/e155-project/e155_p
 Design Summary
 --------------
 
-   Number of slice registers: 106 out of  5280 (2%)
+   Number of slice registers: 105 out of  5280 (2%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           179 out of  5280 (3%)
-      Number of logic LUT4s:              79
+   Number of LUT4s:           165 out of  5280 (3%)
+      Number of logic LUT4s:              67
+      Number of inserted feedthru LUT4s:  20
       Number of replicated LUT4s:          2
-      Number of ripple logic:             49 (98 LUT4s)
+      Number of ripple logic:             38 (76 LUT4s)
    Number of IO sites used:   1 out of 39 (3%)
       Number of IO sites used for general PIO: 1
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -50,16 +51,15 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net clk: 67 loads, 57 rising, 10 falling (Driver: Pin
+      Net clk: 74 loads, 41 rising, 33 falling (Driver: Pin
      hf_osc.osc_inst/CLKHF)
-   Number of Clock Enables:  4
+   Number of Clock Enables:  3
       Net VCC_net: 1 loads, 0 SLICEs
-      Net n589: 4 loads, 4 SLICEs
-      Net led_shifter1.led_string1.n645: 6 loads, 6 SLICEs
       Net to_light_c: 1 loads, 1 SLICEs
-   Number of LSRs:  9
-      Net state_adj_304[3]: 2 loads, 2 SLICEs
-      Net led_shifter1.update_bits_N_280: 1 loads, 1 SLICEs
+      Net led_shifter1.single_led.n691: 26 loads, 26 SLICEs
+   Number of LSRs:  6
+      Net led_shifter1.inc_num: 1 loads, 1 SLICEs
+      Net led_shifter1.n3: 1 loads, 1 SLICEs
 
                                     Page 1
 
@@ -69,24 +69,21 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net led_shifter1.n50: 13 loads, 13 SLICEs
-      Net led_shifter1.led_string1.update_bits: 6 loads, 6 SLICEs
-      Net led_shifter1.led_string1.n548: 1 loads, 1 SLICEs
-      Net led_shifter1.led_string1.single_led.n563: 4 loads, 4 SLICEs
-      Net led_shifter1.led_string1.single_led.n62: 13 loads, 13 SLICEs
-      Net led_shifter1.led_string1.single_led.n1465: 1 loads, 1 SLICEs
-      Net led_shifter1.led_string1.single_led.n66: 13 loads, 13 SLICEs
+      Net led_shifter1.single_led.state[3]: 1 loads, 1 SLICEs
+      Net led_shifter1.single_led.n611: 26 loads, 26 SLICEs
+      Net led_shifter1.single_led.n119: 13 loads, 13 SLICEs
+      Net led_shifter1.single_led.n115: 13 loads, 13 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net state_adj_304[1]: 17 loads
-      Net state_adj_304[2]: 17 loads
-      Net state_adj_304[0]: 16 loads
-      Net state_adj_304[3]: 15 loads
-      Net led_shifter1.led_string1.single_led.n62: 13 loads
-      Net led_shifter1.led_string1.single_led.n66: 13 loads
-      Net led_shifter1.n50: 13 loads
-      Net led_shifter1.state_adj_300[2]: 11 loads
-      Net led_shifter1.state_adj_300[1]: 10 loads
-      Net led_shifter1.state_adj_300[0]: 9 loads
+      Net led_shifter1.single_led.n611: 27 loads
+      Net led_shifter1.single_led.n691: 27 loads
+      Net led_shifter1.single_led.state[1]: 18 loads
+      Net led_shifter1.single_led.state[0]: 17 loads
+      Net led_shifter1.single_led.state[2]: 16 loads
+      Net led_shifter1.single_led.n115: 13 loads
+      Net led_shifter1.single_led.n119: 13 loads
+      Net led_shifter1.single_led.state[3]: 13 loads
+      Net led_shifter1.state[0]: 7 loads
+      Net led_shifter1.state[1]: 7 loads
 
 
 
@@ -114,7 +111,7 @@ IO (PIO) Attributes
 Removed logic
 -------------
 
-Block led_shifter1/led_string1/single_led/i17_1_lut was optimized away.
+Block led_shifter1/single_led/i7_1_lut was optimized away.
 Block hf_osc.vlo_inst was optimized away.
 
 OSC Summary
@@ -126,6 +123,9 @@ OSC 1:                                 Pin/Node Value
   Enable Signal:                       NODE     VCC_net
   OSC Output:                          NODE     clk
   DIV Setting:                                  01
+
+
+
 
 
                                     Page 2
@@ -151,8 +151,8 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 69 MB
-Checksum -- map: 4cd602bb43f67455892a026ae9738f1573ba0d98
+   Peak Memory Usage: 68 MB
+Checksum -- map: 252bc5fac71aedb6e0465aaa8c86fddce7d54769
 
 
 

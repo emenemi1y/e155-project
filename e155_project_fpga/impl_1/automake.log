@@ -1,37 +1,34 @@
- Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i2 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i2 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_low_i23 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/led_string1/single_led/num_high_i0 clock is stuck at Zero. VDB-5040
 
-segmentation violation when run "synthesis -f C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1_lattice.synproj -logfile e155_project_fpga_impl_1_lattice.srp -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml"
-child killed: segmentation violation
+timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m   -pwrprd -html -rpt "e155_project_fpga_impl_1.twr" "e155_project_fpga_impl_1.udb" 
+timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt e155_project_fpga_impl_1.twr e155_project_fpga_impl_1.udb -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml
+Starting design reading...
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2024.2/ispfpga.
+Package Status:                     Preliminary    Version 1.5.
+Performance Hardware Data Status:   Advanced       Version 1.0.
+Loading udb::Database ...
+Design:  top
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:   High-Performance_1.2V
+
+
+
+Successfully loading udb, 0.03 seconds
+
+Initializing timer
+Starting design annotation....
+High-Performance_1.2V
+
+Starting full timing analysis...
+Performance Hardware Data Status:   Advanced       Version 1.0.
+Connections ignored  61  counted  625  covered  623
+Changing speed to m;   changing temperature to -40
+
+STA Runtime and Peak Memory Usage :
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 105 MB
+
+ 0.607877s wall, 0.515625s user + 0.078125s system = 0.593750s CPU (97.7%)
+

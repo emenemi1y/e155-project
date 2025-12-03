@@ -1,3 +1,15 @@
+synthesis:  version Radiant Software (64-bit) 2024.2.0.3.0
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+Wed Dec  3 03:44:01 2025
+
+
+Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1_lattice.synproj -logfile e155_project_fpga_impl_1_lattice.srp -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml 
+
 INFO <35002000> - synthesis: Lattice Synthesis Engine launched.
 
 Synthesis options:
@@ -104,9 +116,7 @@ Verilog design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv
-Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv
-Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv
 VHDL library: pmi
 VHDL design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
@@ -160,9 +170,7 @@ INFO <35901328> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.v(17): an
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv. VERI-1482
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv. VERI-1482
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv. VERI-1482
-Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv. VERI-1482
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv. VERI-1482
-Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
 
@@ -172,19 +180,9 @@ Top module language type = Verilog.
 Top module name (Verilog, mixed language): top
 INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(1): compiling module top. VERI-1018
 INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2'b01). VERI-1018
-INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(742): compiling module SP256K. VERI-1018
 INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv(6): compiling module led_shifter. VERI-1018
-WARNING <35901209> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv(29): expression size 32 truncated to fit in target size 8. VERI-1209
-INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv(9): compiling module counter. VERI-1018
-INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv(6): compiling module led_string. VERI-1018
-WARNING <35901209> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv(53): expression size 32 truncated to fit in target size 8. VERI-1209
 INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(6): compiling module led_driver. VERI-1018
-WARNING <35901209> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv(80): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING <35901209> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv(82): expression size 32 truncated to fit in target size 10. VERI-1209
-WARNING <35901209> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_string.sv(88): expression size 32 truncated to fit in target size 8. VERI-1209
-WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(4): net addr[13] does not have a driver. VDB-1002
-WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(5): net data_in[15] does not have a driver. VDB-1002
-WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(6): net wren does not have a driver. VDB-1002
+INFO <35901018> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv(9): compiling module counter. VERI-1018
 WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(18): net reset does not have a driver. VDB-1002
 [Parameter Setting Section Start]
 
@@ -193,350 +191,100 @@ WARNING <35931002> - synthesis: c:/users/ekendrick/documents/github/e155-project
 		CLKHF_DIV                 2'b01
 
 [Parameter Setting Section End]
-WARNING <35935047> - synthesis: Unused instance spram is removed. VDB-5047
-WARNING <35001771> - synthesis: Initial value found on net src[7] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net src[6] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net src[5] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net src[4] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net src[3] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net src[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net src[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net src[0] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net gnd_2 will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net gnd_2 will be ignored due to unrecognized driver type
 ######## Missing driver on net reset. Patching with GND.
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[0][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[0][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[1][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[1][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[2][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[2][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[3][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[3][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[4][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[4][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[5][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[5][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[6][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[6][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[7][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[7][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[8][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[8][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[9][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[9][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[10][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[10][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[11][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[11][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[12][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[12][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[13][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[13][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[14][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[14][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[15][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[15][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[16][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[16][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[17][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[17][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[18][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[18][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[19][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[19][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[20][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[20][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[21][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[21][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[22][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[22][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[23][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[23][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[24][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[24][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[25][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[25][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[26][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[26][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[27][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[27][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[28][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[28][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[29][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[29][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[30][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[30][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[31][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[31][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[32][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[32][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[33][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[33][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[34][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[34][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[35][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[35][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[36][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[36][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[37][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[37][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[38][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[38][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[39][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[39][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[40][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[40][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[41][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[41][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[42][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[42][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[43][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[43][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[44][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[44][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[45][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[45][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[46][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[46][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[47][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[47][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[48][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[48][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[49][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[49][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[50][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[50][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[51][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[51][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[52][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[52][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[53][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[53][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[54][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[54][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[55][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[55][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[56][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[56][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[57][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[57][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[58][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[58][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[59][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[59][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[60][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[60][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[61][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[61][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[62][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[62][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[63][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[63][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[64][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[64][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[65][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[65][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[66][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[66][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[67][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[67][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[68][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[68][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[69][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[69][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[70][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[70][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[71][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[71][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[72][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[72][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[73][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[73][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[74][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[74][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[75][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[75][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[76][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[76][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[77][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[77][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[78][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[78][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[79][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[79][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[80][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[80][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[81][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[81][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[82][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[82][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[83][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[83][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[84][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[84][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[85][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[85][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[86][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[86][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[87][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[87][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[88][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[88][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[89][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[89][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[90][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[90][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[91][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[91][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[92][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[92][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[93][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[93][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[94][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[94][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[95][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[95][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[96][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[96][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[97][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[97][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[98][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[98][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[99][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[99][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[100][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[100][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[101][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[101][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[102][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[102][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[103][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[103][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[104][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[104][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[105][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[105][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[106][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[106][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[107][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[107][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[108][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[108][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[109][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[109][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[110][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[110][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[111][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[111][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[112][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[112][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[113][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[113][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[114][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[114][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[115][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[115][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[116][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[116][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[117][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[117][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[118][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[118][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[119][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[119][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[120][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[120][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[121][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[121][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[122][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[122][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[123][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[123][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[124][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[124][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[125][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[125][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[126][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[126][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[127][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[127][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[128][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[128][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[129][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[129][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[130][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[130][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[131][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[131][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[132][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[132][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[133][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[133][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[134][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[134][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[135][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[135][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[136][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[136][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[137][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[137][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[138][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[138][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[139][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[139][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[140][23:0] stuck at '0': 23, 15, 14, 11, 10, 8, 6, 4, 2, 1, 0
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[140][23:0] stuck at '1': 22, 21, 20, 19, 18, 17, 16, 13, 12, 9, 7, 5, 3
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[141][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[141][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[142][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[142][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/mem[143][23:0] stuck at '0': 23, 22, 21, 20, 19, 18, 17, 16, 13, 12, 8
-CRITICAL <35001748> - synthesis: Bit(s) of register driving \led_shifter1/mem[143][23:0] stuck at '1': 15, 14, 11, 10, 9, 7, 6, 5, 4, 3, 2, 1, 0
 
 
 
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/led_string1/single_led/state[4:0] stuck at '0': 4
-CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/state[3:0] stuck at '0': 3, 2
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i0 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i23 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i2 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i2 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_low_i23 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \led_shifter1/led_string1/single_led/num_high_i0 clock is stuck at Zero. VDB-5040
+CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/state[3:0] stuck at '0': 3
+CRITICAL <35001747> - synthesis: Bit(s) of register driving \led_shifter1/single_led/state[4:0] stuck at '0': 4
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i0 clock is stuck at One. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i23 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i22 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i21 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i20 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i19 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i18 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i17 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i16 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i15 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i14 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i13 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i13 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i14 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i15 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i16 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i17 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i18 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i19 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i20 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i21 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i22 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_low_i23 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/rgb_shift_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/num_high_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/rgb_shift_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \led_shifter1/single_led/rgb_shift_i2 clock is stuck at Zero. VDB-5040
+
+################### Begin Area Report (top)######################
+Number of register bits => 105 of 5280 (1 % )
+CCU2 => 38
+FD1P3XZ => 105
+HSOSC => 1
+INV => 1
+LUT4 => 66
+OB => 1
+################### End Area Report ##################
+Number of odd-length carry chains : 1
+Number of even-length carry chains : 3
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 1
+  Net : clk, loads : 1
+Clock Enable Nets
+Number of Clock Enables: 0
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : led_shifter1/single_led/clk_derived_45, loads : 41
+  Net : led_shifter1/single_led/n691, loads : 34
+  Net : led_shifter1/single_led/n611, loads : 33
+  Net : led_shifter1/single_led/n119, loads : 31
+  Net : led_shifter1/single_led/n115, loads : 31
+  Net : led_shifter1/single_led/state[1], loads : 16
+  Net : led_shifter1/single_led/state[0], loads : 15
+  Net : led_shifter1/single_led/state[2], loads : 14
+  Net : led_shifter1/single_led/counter_low/n1216, loads : 14
+  Net : led_shifter1/single_led/counter_low/n101[23], loads : 14
+################### End Clock Report ##################
+
+################### Begin Constraint Report ######################
+Constraint Summary:
+  Total number of constraints: 0
+  Total number of constraints dropped: 0
+###################  End Constraint Report  ######################
+
+Peak Memory Usage: 97 MB
+
+--------------------------------------------------------------
+Total CPU Time: 11 secs 
+Total REAL Time: 19 secs 
+--------------------------------------------------------------
+Checksum -- synthesis -- netlist: 26ddfad6c4f69e1544e743a5a317d83ab096d403
