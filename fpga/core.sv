@@ -8,7 +8,7 @@ module core(input  logic sck,
            output logic sdo,
            input  logic load);
                     
-        logic [7:0] tempReg1, tempReg2;
+        logic [15:0] tempReg1, tempReg2;
 		logic [3:0] counter;
 		logic incCount;
 		logic [13:0] addr;
@@ -20,10 +20,10 @@ module core(input  logic sck,
 	// Last stage stores it into SPRAM
 	
 	always_ff @(posedge sck)
-		if (load==0) begin
-			counter = 31'b0;
-			tempReg2 <= 8'b0;
-		end else if (incCount == 6'd1) begin
+		if (load == 0) begin
+			counter = 4'b0;
+			tempReg2 <= 16'b0;
+		end else if (incCount == 1'd1) begin
 			counter = counter + 1;
 		end else begin
 			counter = counter;
