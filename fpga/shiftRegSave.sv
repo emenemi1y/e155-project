@@ -2,19 +2,19 @@
 // 12/3/24
 // This should shift the incoming spi data 8 bits in at a time
 
-module sipo_shift_register (
+module shiftRegSave (
     input clk,
 	input logic load,
 	input  logic sdi,
-    output reg [7:0] parallel_out // 8-bit output register
+    output reg [15:0] parallel_out // 8-bit output register
 );
 
 always @(posedge clk) begin
     if (!load) begin // Asynchronous reset
-        parallel_out <= 8'b0; // Reset the register to all zeros
+        parallel_out <= 16'b0; // Reset the register to all zeros
     end else begin
         // Shift right: parallel_out[7] gets serial_in, parallel_out[6] gets parallel_out[7], etc.
-        parallel_out <= {sdi, parallel_out[7:1]}; 
+        parallel_out <= {sdi, parallel_out[15:1]}; 
     end
 end
 
