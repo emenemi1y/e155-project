@@ -6,7 +6,7 @@ module top (output logic to_light);
 	logic wren;
 	
 	
-	// 48 MHz clock
+	// 24 MHz clock 
 	HSOSC #(.CLKHF_DIV(2'b01))
 		hf_osc(.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk));	
 	
@@ -15,14 +15,26 @@ module top (output logic to_light);
 
 	
 			
-	logic load, done, reset;
-	logic [3:0] data_count, read_count;
-	logic [23:0] color;
+	logic load, reset;
+	logic [23:0] color1, color2;
 	logic [3455:0] color_string;
+	logic [3455:0] color_string_shift;
 		
-	assign color = {8'd0, 8'd206, 8'd255};
-	assign color_string = {24{{3{color}}, {3{24'd0}}}};
-	led_string led_string1(clk, reset, color_string, to_light);
+	assign color1 = {8'd0, 8'd206, 8'd255};
+	assign color2 = {8'd127, 8'd50, 8'd168};
+	assign color_string = {
+    24 {
+        {color1, color1, color1,    // 3× color1
+         color2, color2, color2}    // 3× color2
+    }
+};
+	
+	led_shifter led_shifter1(clk, reset, color_string, to_light);
+	
+
+	
+	
+	
 	/*
 	typedef enum logic [5:0] {init, set_data, load_data, write_disable, read_data, next, go} statetype;
 	statetype state, nextstate;

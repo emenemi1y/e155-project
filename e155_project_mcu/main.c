@@ -48,9 +48,9 @@ int main(void) {
         card_id = PICC_DumpToSerial(&(uid));
       }   
       pauseSong(USART);
-      //playSong(USART, getSongID(card_id));
-      if (card_id == 0x7945dc11) playSong(USART, 0x01);
-      else if (card_id == 0x1c2ae62e) playSong(USART, 0x02);
+      playSong(USART, getSongID(card_id));
+      //if (card_id == 0x7945dc11) playSong(USART, 0x01);
+      //else if (card_id == 0x1c2ae62e) playSong(USART, 0x02);
     }
   }
   

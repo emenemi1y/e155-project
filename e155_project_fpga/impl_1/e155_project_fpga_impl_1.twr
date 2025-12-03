@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.2.0.3.0
 
-Tue Dec  2 00:37:05 2025
+Tue Dec  2 22:40:18 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -52,7 +52,7 @@ create_clock -name {clk} -period 41.6667 [get_pins {hf_osc.osc_inst/CLKHF }]
 
 1.2  Constraint Coverage
 ---------------------------
-Constraint Coverage: 95.8531%
+Constraint Coverage: 99.7155%
 
 
 1.3  Overall Summary
@@ -137,23 +137,23 @@ Clock Domain Crossing
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-led_string1/led_num__i0/SR               |   24.749 ns 
-{led_string1/led_num__i1/SR   led_string1/led_num__i2/SR}              
-                                         |   24.749 ns 
-{led_string1/led_num__i3/SR   led_string1/led_num__i4/SR}              
-                                         |   24.749 ns 
-{led_string1/led_num__i5/SR   led_string1/led_num__i6/SR}              
-                                         |   24.749 ns 
-{led_string1/led_num__i7/SP   led_string1/led_num__i8/SP}              
-                                         |   25.252 ns 
-led_string1/led_num__i9/SP               |   25.252 ns 
-{led_string1/led_num__i7/SR   led_string1/led_num__i8/SR}              
-                                         |   25.741 ns 
-led_string1/led_num__i9/SR               |   25.741 ns 
-{led_string1/led_num__i3/SP   led_string1/led_num__i4/SP}              
-                                         |   25.794 ns 
-{led_string1/led_num__i5/SP   led_string1/led_num__i6/SP}              
-                                         |   25.794 ns 
+led_shifter1/led_string1/single_led/state_i2/D              
+                                         |   10.484 ns 
+{led_shifter1/led_string1/led_num__i5/SR   led_shifter1/led_string1/led_num__i6/SR}              
+                                         |   10.734 ns 
+led_shifter1/led_string1/led_num__i9/SR  |   10.734 ns 
+{led_shifter1/led_string1/led_num__i7/SR   led_shifter1/led_string1/led_num__i8/SR}              
+                                         |   10.734 ns 
+led_shifter1/led_string1/led_num__i0/SR  |   10.734 ns 
+{led_shifter1/led_string1/led_num__i1/SR   led_shifter1/led_string1/led_num__i2/SR}              
+                                         |   10.734 ns 
+{led_shifter1/led_string1/led_num__i3/SR   led_shifter1/led_string1/led_num__i4/SR}              
+                                         |   10.734 ns 
+led_shifter1/led_string1/led_num__i0/SP  |   11.065 ns 
+{led_shifter1/led_string1/led_num__i1/SP   led_shifter1/led_string1/led_num__i2/SP}              
+                                         |   11.065 ns 
+{led_shifter1/led_string1/led_num__i3/SP   led_shifter1/led_string1/led_num__i4/SP}              
+                                         |   11.065 ns 
 -------------------------------------------------------
                                          |             
 Setup # of endpoints with negative slack:|           0 
@@ -176,632 +176,547 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : led_string1/led_num__i0/SR  (SLICE_R2C11A)
-Source Clock     : clk (R)
+Path Begin       : led_shifter1/led_string1/single_led/rgb_count__i2/Q  (SLICE_R17C4B)
+Path End         : led_shifter1/led_string1/single_led/state_i2/D  (SLICE_R16C6D)
+Source Clock     : clk (F)
 Destination Clock: clk (R)
-Logic Level      : 6
-Delay Ratio      : 77.5% (route), 22.5% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 24.748 ns  (Passed)
+Logic Level      : 5
+Delay Ratio      : 71.8% (route), 28.2% (logic)
+Clock Skew       : 1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 10.484 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                  4.177  64      
+{led_shifter1/led_string1/single_led/rgb_count__i1/CK   led_shifter1/led_string1/single_led/rgb_count__i2/CK}
+                                                             CLOCK PIN           0.000                  4.177  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.476                 18.002  7       
-led_string1/n103127                                          NET DELAY           0.304                 18.306  7       
-led_string1/i5498_2_lut_4_lut/D->led_string1/i5498_2_lut_4_lut/Z
-                                          SLICE_R3C11C       C1_TO_F1_DELAY      0.449                 18.755  6       
-led_string1/n103091                                          NET DELAY           3.133                 21.888  6       
-led_string1/led_num__i0/SR                                   ENDPOINT            0.000                 21.888  1       
+led_shifter1/led_string1/single_led/rgb_count__i2/CK->led_shifter1/led_string1/single_led/rgb_count__i2/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  5.565  2       
+led_shifter1/led_string1/single_led/rgb_count[2]
+                                                             NET DELAY           2.736                  8.301  2       
+led_shifter1/led_string1/single_led/i3_4_lut_adj_7/B->led_shifter1/led_string1/single_led/i3_4_lut_adj_7/Z
+                                          SLICE_R17C5A       A0_TO_F0_DELAY      0.476                  8.777  2       
+led_shifter1/led_string1/single_led/n8                       NET DELAY           0.304                  9.081  2       
+led_shifter1/led_string1/single_led/i4_3_lut/B->led_shifter1/led_string1/single_led/i4_3_lut/Z
+                                          SLICE_R17C5A       C1_TO_F1_DELAY      0.449                  9.530  2       
+led_shifter1/led_string1/single_led/counter_low/n11
+                                                             NET DELAY           2.763                 12.293  2       
+led_shifter1/led_string1/single_led/counter_low/i557_4_lut/B->led_shifter1/led_string1/single_led/counter_low/i557_4_lut/Z
+                                          SLICE_R17C7A       D0_TO_F0_DELAY      0.449                 12.742  1       
+led_shifter1/led_string1/single_led/counter_low/n3
+                                                             NET DELAY           2.432                 15.174  1       
+led_shifter1/led_string1/single_led/mux_90_Mux_1_i7_4_lut/A->led_shifter1/led_string1/single_led/mux_90_Mux_1_i7_4_lut/Z
+                                          SLICE_R16C6D       C0_TO_F0_DELAY      0.476                 15.650  1       
+led_shifter1/led_string1/single_led/n195[1]
+                                                             NET DELAY           0.000                 15.650  1       
+led_shifter1/led_string1/single_led/state_i2/D
+                                                             ENDPOINT            0.000                 15.650  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-led_string1/led_num__i0/CK                                   CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.529)                 46.636  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                 26.332  64      
+{led_shifter1/led_string1/single_led/state_i2/CK   led_shifter1/led_string1/single_led/state_i1/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.198)                 26.134  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.636  
-Arrival Time                                                                                        -(21.887)  
+Required Time                                                                                          26.134  
+Arrival Time                                                                                        -(15.649)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   24.748  
+Path Slack  (Passed)                                                                                   10.484  
 
 
 
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : {led_string1/led_num__i1/SR   led_string1/led_num__i2/SR}  (SLICE_R2C11B)
+Path Begin       : led_shifter1/led_string1/state_i2/Q  (SLICE_R16C5A)
+Path End         : {led_shifter1/led_string1/led_num__i5/SR   led_shifter1/led_string1/led_num__i6/SR}  (SLICE_R15C3D)
 Source Clock     : clk (R)
-Destination Clock: clk (R)
-Logic Level      : 6
-Delay Ratio      : 77.5% (route), 22.5% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 24.748 ns  (Passed)
+Destination Clock: clk (F)
+Logic Level      : 2
+Delay Ratio      : 77.7% (route), 22.3% (logic)
+Clock Skew       : -1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 10.734 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                  5.499  64      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.476                 18.002  7       
-led_string1/n103127                                          NET DELAY           0.304                 18.306  7       
-led_string1/i5498_2_lut_4_lut/D->led_string1/i5498_2_lut_4_lut/Z
-                                          SLICE_R3C11C       C1_TO_F1_DELAY      0.449                 18.755  6       
-led_string1/n103091                                          NET DELAY           3.133                 21.888  6       
-{led_string1/led_num__i1/SR   led_string1/led_num__i2/SR}
-                                                             ENDPOINT            0.000                 21.888  1       
+led_shifter1/led_string1/state_i2/CK->led_shifter1/led_string1/state_i2/Q
+                                          SLICE_R16C5A       CLK_TO_Q1_DELAY     1.388                  6.887  11      
+led_shifter1/led_string1/single_led/state[2]_2
+                                                             NET DELAY           2.736                  9.623  11      
+led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/A->led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/Z
+                                          SLICE_R15C4D       A1_TO_F1_DELAY      0.449                 10.072  6       
+led_shifter1/led_string1/update_bits                         NET DELAY           3.675                 13.747  6       
+{led_shifter1/led_string1/led_num__i5/SR   led_shifter1/led_string1/led_num__i6/SR}
+                                                             ENDPOINT            0.000                 13.747  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-{led_string1/led_num__i1/CK   led_string1/led_num__i2/CK}
-                                                             CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.529)                 46.636  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                 25.010  64      
+{led_shifter1/led_string1/led_num__i5/CK   led_shifter1/led_string1/led_num__i6/CK}
+                                                             CLOCK PIN           0.000                 25.010  1       
+                                                             Uncertainty      -(0.000)                 25.010  
+                                                             Setup time       -(0.529)                 24.481  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.636  
-Arrival Time                                                                                        -(21.887)  
+Required Time                                                                                          24.481  
+Arrival Time                                                                                        -(13.746)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   24.748  
+Path Slack  (Passed)                                                                                   10.734  
 
 
 
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : {led_string1/led_num__i3/SR   led_string1/led_num__i4/SR}  (SLICE_R2C11C)
+Path Begin       : led_shifter1/led_string1/state_i2/Q  (SLICE_R16C5A)
+Path End         : led_shifter1/led_string1/led_num__i9/SR  (SLICE_R15C4B)
 Source Clock     : clk (R)
-Destination Clock: clk (R)
-Logic Level      : 6
-Delay Ratio      : 77.5% (route), 22.5% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 24.748 ns  (Passed)
+Destination Clock: clk (F)
+Logic Level      : 2
+Delay Ratio      : 77.7% (route), 22.3% (logic)
+Clock Skew       : -1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 10.734 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                  5.499  64      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.476                 18.002  7       
-led_string1/n103127                                          NET DELAY           0.304                 18.306  7       
-led_string1/i5498_2_lut_4_lut/D->led_string1/i5498_2_lut_4_lut/Z
-                                          SLICE_R3C11C       C1_TO_F1_DELAY      0.449                 18.755  6       
-led_string1/n103091                                          NET DELAY           3.133                 21.888  6       
-{led_string1/led_num__i3/SR   led_string1/led_num__i4/SR}
-                                                             ENDPOINT            0.000                 21.888  1       
+led_shifter1/led_string1/state_i2/CK->led_shifter1/led_string1/state_i2/Q
+                                          SLICE_R16C5A       CLK_TO_Q1_DELAY     1.388                  6.887  11      
+led_shifter1/led_string1/single_led/state[2]_2
+                                                             NET DELAY           2.736                  9.623  11      
+led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/A->led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/Z
+                                          SLICE_R15C4D       A1_TO_F1_DELAY      0.449                 10.072  6       
+led_shifter1/led_string1/update_bits                         NET DELAY           3.675                 13.747  6       
+led_shifter1/led_string1/led_num__i9/SR                      ENDPOINT            0.000                 13.747  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-{led_string1/led_num__i3/CK   led_string1/led_num__i4/CK}
-                                                             CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.529)                 46.636  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                 25.010  64      
+led_shifter1/led_string1/led_num__i9/CK                      CLOCK PIN           0.000                 25.010  1       
+                                                             Uncertainty      -(0.000)                 25.010  
+                                                             Setup time       -(0.529)                 24.481  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.636  
-Arrival Time                                                                                        -(21.887)  
+Required Time                                                                                          24.481  
+Arrival Time                                                                                        -(13.746)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   24.748  
+Path Slack  (Passed)                                                                                   10.734  
 
 
 
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : {led_string1/led_num__i5/SR   led_string1/led_num__i6/SR}  (SLICE_R2C11D)
+Path Begin       : led_shifter1/led_string1/state_i2/Q  (SLICE_R16C5A)
+Path End         : {led_shifter1/led_string1/led_num__i7/SR   led_shifter1/led_string1/led_num__i8/SR}  (SLICE_R15C4A)
 Source Clock     : clk (R)
-Destination Clock: clk (R)
-Logic Level      : 6
-Delay Ratio      : 77.5% (route), 22.5% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 24.748 ns  (Passed)
+Destination Clock: clk (F)
+Logic Level      : 2
+Delay Ratio      : 77.7% (route), 22.3% (logic)
+Clock Skew       : -1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 10.734 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                  5.499  64      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.476                 18.002  7       
-led_string1/n103127                                          NET DELAY           0.304                 18.306  7       
-led_string1/i5498_2_lut_4_lut/D->led_string1/i5498_2_lut_4_lut/Z
-                                          SLICE_R3C11C       C1_TO_F1_DELAY      0.449                 18.755  6       
-led_string1/n103091                                          NET DELAY           3.133                 21.888  6       
-{led_string1/led_num__i5/SR   led_string1/led_num__i6/SR}
-                                                             ENDPOINT            0.000                 21.888  1       
+led_shifter1/led_string1/state_i2/CK->led_shifter1/led_string1/state_i2/Q
+                                          SLICE_R16C5A       CLK_TO_Q1_DELAY     1.388                  6.887  11      
+led_shifter1/led_string1/single_led/state[2]_2
+                                                             NET DELAY           2.736                  9.623  11      
+led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/A->led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/Z
+                                          SLICE_R15C4D       A1_TO_F1_DELAY      0.449                 10.072  6       
+led_shifter1/led_string1/update_bits                         NET DELAY           3.675                 13.747  6       
+{led_shifter1/led_string1/led_num__i7/SR   led_shifter1/led_string1/led_num__i8/SR}
+                                                             ENDPOINT            0.000                 13.747  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-{led_string1/led_num__i5/CK   led_string1/led_num__i6/CK}
-                                                             CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.529)                 46.636  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                 25.010  64      
+{led_shifter1/led_string1/led_num__i7/CK   led_shifter1/led_string1/led_num__i8/CK}
+                                                             CLOCK PIN           0.000                 25.010  1       
+                                                             Uncertainty      -(0.000)                 25.010  
+                                                             Setup time       -(0.529)                 24.481  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.636  
-Arrival Time                                                                                        -(21.887)  
+Required Time                                                                                          24.481  
+Arrival Time                                                                                        -(13.746)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   24.748  
+Path Slack  (Passed)                                                                                   10.734  
 
 
 
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : {led_string1/led_num__i7/SP   led_string1/led_num__i8/SP}  (SLICE_R2C12A)
+Path Begin       : led_shifter1/led_string1/state_i2/Q  (SLICE_R16C5A)
+Path End         : led_shifter1/led_string1/led_num__i0/SR  (SLICE_R15C3A)
 Source Clock     : clk (R)
-Destination Clock: clk (R)
-Logic Level      : 5
-Delay Ratio      : 80.2% (route), 19.8% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 25.251 ns  (Passed)
+Destination Clock: clk (F)
+Logic Level      : 2
+Delay Ratio      : 77.7% (route), 22.3% (logic)
+Clock Skew       : -1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 10.734 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                  5.499  64      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.449                 17.975  7       
-led_string1/n103127                                          NET DELAY           3.741                 21.716  7       
-{led_string1/led_num__i7/SP   led_string1/led_num__i8/SP}
-                                                             ENDPOINT            0.000                 21.716  1       
+led_shifter1/led_string1/state_i2/CK->led_shifter1/led_string1/state_i2/Q
+                                          SLICE_R16C5A       CLK_TO_Q1_DELAY     1.388                  6.887  11      
+led_shifter1/led_string1/single_led/state[2]_2
+                                                             NET DELAY           2.736                  9.623  11      
+led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/A->led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/Z
+                                          SLICE_R15C4D       A1_TO_F1_DELAY      0.449                 10.072  6       
+led_shifter1/led_string1/update_bits                         NET DELAY           3.675                 13.747  6       
+led_shifter1/led_string1/led_num__i0/SR                      ENDPOINT            0.000                 13.747  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-{led_string1/led_num__i7/CK   led_string1/led_num__i8/CK}
-                                                             CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.198)                 46.967  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                 25.010  64      
+led_shifter1/led_string1/led_num__i0/CK                      CLOCK PIN           0.000                 25.010  1       
+                                                             Uncertainty      -(0.000)                 25.010  
+                                                             Setup time       -(0.529)                 24.481  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.967  
-Arrival Time                                                                                        -(21.715)  
+Required Time                                                                                          24.481  
+Arrival Time                                                                                        -(13.746)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   25.251  
+Path Slack  (Passed)                                                                                   10.734  
 
 
 
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : led_string1/led_num__i9/SP  (SLICE_R2C12B)
+Path Begin       : led_shifter1/led_string1/state_i2/Q  (SLICE_R16C5A)
+Path End         : {led_shifter1/led_string1/led_num__i1/SR   led_shifter1/led_string1/led_num__i2/SR}  (SLICE_R15C3B)
 Source Clock     : clk (R)
-Destination Clock: clk (R)
-Logic Level      : 5
-Delay Ratio      : 80.2% (route), 19.8% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 25.251 ns  (Passed)
+Destination Clock: clk (F)
+Logic Level      : 2
+Delay Ratio      : 77.7% (route), 22.3% (logic)
+Clock Skew       : -1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 10.734 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                  5.499  64      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.449                 17.975  7       
-led_string1/n103127                                          NET DELAY           3.741                 21.716  7       
-led_string1/led_num__i9/SP                                   ENDPOINT            0.000                 21.716  1       
+led_shifter1/led_string1/state_i2/CK->led_shifter1/led_string1/state_i2/Q
+                                          SLICE_R16C5A       CLK_TO_Q1_DELAY     1.388                  6.887  11      
+led_shifter1/led_string1/single_led/state[2]_2
+                                                             NET DELAY           2.736                  9.623  11      
+led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/A->led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/Z
+                                          SLICE_R15C4D       A1_TO_F1_DELAY      0.449                 10.072  6       
+led_shifter1/led_string1/update_bits                         NET DELAY           3.675                 13.747  6       
+{led_shifter1/led_string1/led_num__i1/SR   led_shifter1/led_string1/led_num__i2/SR}
+                                                             ENDPOINT            0.000                 13.747  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-led_string1/led_num__i9/CK                                   CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.198)                 46.967  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                 25.010  64      
+{led_shifter1/led_string1/led_num__i1/CK   led_shifter1/led_string1/led_num__i2/CK}
+                                                             CLOCK PIN           0.000                 25.010  1       
+                                                             Uncertainty      -(0.000)                 25.010  
+                                                             Setup time       -(0.529)                 24.481  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.967  
-Arrival Time                                                                                        -(21.715)  
+Required Time                                                                                          24.481  
+Arrival Time                                                                                        -(13.746)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   25.251  
+Path Slack  (Passed)                                                                                   10.734  
 
 
 
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : {led_string1/led_num__i7/SR   led_string1/led_num__i8/SR}  (SLICE_R2C12A)
+Path Begin       : led_shifter1/led_string1/state_i2/Q  (SLICE_R16C5A)
+Path End         : {led_shifter1/led_string1/led_num__i3/SR   led_shifter1/led_string1/led_num__i4/SR}  (SLICE_R15C3C)
 Source Clock     : clk (R)
-Destination Clock: clk (R)
-Logic Level      : 6
-Delay Ratio      : 76.1% (route), 23.9% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 25.740 ns  (Passed)
+Destination Clock: clk (F)
+Logic Level      : 2
+Delay Ratio      : 77.7% (route), 22.3% (logic)
+Clock Skew       : -1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 10.734 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                  5.499  64      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.476                 18.002  7       
-led_string1/n103127                                          NET DELAY           0.304                 18.306  7       
-led_string1/i5498_2_lut_4_lut/D->led_string1/i5498_2_lut_4_lut/Z
-                                          SLICE_R3C11C       C1_TO_F1_DELAY      0.449                 18.755  6       
-led_string1/n103091                                          NET DELAY           2.141                 20.896  6       
-{led_string1/led_num__i7/SR   led_string1/led_num__i8/SR}
-                                                             ENDPOINT            0.000                 20.896  1       
+led_shifter1/led_string1/state_i2/CK->led_shifter1/led_string1/state_i2/Q
+                                          SLICE_R16C5A       CLK_TO_Q1_DELAY     1.388                  6.887  11      
+led_shifter1/led_string1/single_led/state[2]_2
+                                                             NET DELAY           2.736                  9.623  11      
+led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/A->led_shifter1/led_string1/i1_2_lut_3_lut_adj_8/Z
+                                          SLICE_R15C4D       A1_TO_F1_DELAY      0.449                 10.072  6       
+led_shifter1/led_string1/update_bits                         NET DELAY           3.675                 13.747  6       
+{led_shifter1/led_string1/led_num__i3/SR   led_shifter1/led_string1/led_num__i4/SR}
+                                                             ENDPOINT            0.000                 13.747  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-{led_string1/led_num__i7/CK   led_string1/led_num__i8/CK}
-                                                             CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.529)                 46.636  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                 25.010  64      
+{led_shifter1/led_string1/led_num__i3/CK   led_shifter1/led_string1/led_num__i4/CK}
+                                                             CLOCK PIN           0.000                 25.010  1       
+                                                             Uncertainty      -(0.000)                 25.010  
+                                                             Setup time       -(0.529)                 24.481  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.636  
-Arrival Time                                                                                        -(20.895)  
+Required Time                                                                                          24.481  
+Arrival Time                                                                                        -(13.746)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   25.740  
+Path Slack  (Passed)                                                                                   10.734  
 
 
 
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : led_string1/led_num__i9/SR  (SLICE_R2C12B)
+Path Begin       : led_shifter1/led_string1/state_i2/Q  (SLICE_R16C5A)
+Path End         : led_shifter1/led_string1/led_num__i0/SP  (SLICE_R15C3A)
 Source Clock     : clk (R)
-Destination Clock: clk (R)
-Logic Level      : 6
-Delay Ratio      : 76.1% (route), 23.9% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 25.740 ns  (Passed)
+Destination Clock: clk (F)
+Logic Level      : 2
+Delay Ratio      : 77.7% (route), 22.3% (logic)
+Clock Skew       : -1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 11.065 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                  5.499  64      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.476                 18.002  7       
-led_string1/n103127                                          NET DELAY           0.304                 18.306  7       
-led_string1/i5498_2_lut_4_lut/D->led_string1/i5498_2_lut_4_lut/Z
-                                          SLICE_R3C11C       C1_TO_F1_DELAY      0.449                 18.755  6       
-led_string1/n103091                                          NET DELAY           2.141                 20.896  6       
-led_string1/led_num__i9/SR                                   ENDPOINT            0.000                 20.896  1       
+led_shifter1/led_string1/state_i2/CK->led_shifter1/led_string1/state_i2/Q
+                                          SLICE_R16C5A       CLK_TO_Q1_DELAY     1.388                  6.887  11      
+led_shifter1/led_string1/single_led/state[2]_2
+                                                             NET DELAY           2.670                  9.557  11      
+led_shifter1/led_string1/i501_4_lut_3_lut/A->led_shifter1/led_string1/i501_4_lut_3_lut/Z
+                                          SLICE_R15C4D       B0_TO_F0_DELAY      0.449                 10.006  6       
+led_shifter1/led_string1/n645                                NET DELAY           3.741                 13.747  6       
+led_shifter1/led_string1/led_num__i0/SP                      ENDPOINT            0.000                 13.747  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-led_string1/led_num__i9/CK                                   CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.529)                 46.636  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                 25.010  64      
+led_shifter1/led_string1/led_num__i0/CK                      CLOCK PIN           0.000                 25.010  1       
+                                                             Uncertainty      -(0.000)                 25.010  
+                                                             Setup time       -(0.198)                 24.812  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.636  
-Arrival Time                                                                                        -(20.895)  
+Required Time                                                                                          24.812  
+Arrival Time                                                                                        -(13.746)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   25.740  
+Path Slack  (Passed)                                                                                   11.065  
 
 
 
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : {led_string1/led_num__i3/SP   led_string1/led_num__i4/SP}  (SLICE_R2C11C)
+Path Begin       : led_shifter1/led_string1/state_i2/Q  (SLICE_R16C5A)
+Path End         : {led_shifter1/led_string1/led_num__i1/SP   led_shifter1/led_string1/led_num__i2/SP}  (SLICE_R15C3B)
 Source Clock     : clk (R)
-Destination Clock: clk (R)
-Logic Level      : 5
-Delay Ratio      : 79.5% (route), 20.5% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 25.793 ns  (Passed)
+Destination Clock: clk (F)
+Logic Level      : 2
+Delay Ratio      : 77.7% (route), 22.3% (logic)
+Clock Skew       : -1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 11.065 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                  5.499  64      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.449                 17.975  7       
-led_string1/n103127                                          NET DELAY           3.199                 21.174  7       
-{led_string1/led_num__i3/SP   led_string1/led_num__i4/SP}
-                                                             ENDPOINT            0.000                 21.174  1       
+led_shifter1/led_string1/state_i2/CK->led_shifter1/led_string1/state_i2/Q
+                                          SLICE_R16C5A       CLK_TO_Q1_DELAY     1.388                  6.887  11      
+led_shifter1/led_string1/single_led/state[2]_2
+                                                             NET DELAY           2.670                  9.557  11      
+led_shifter1/led_string1/i501_4_lut_3_lut/A->led_shifter1/led_string1/i501_4_lut_3_lut/Z
+                                          SLICE_R15C4D       B0_TO_F0_DELAY      0.449                 10.006  6       
+led_shifter1/led_string1/n645                                NET DELAY           3.741                 13.747  6       
+{led_shifter1/led_string1/led_num__i1/SP   led_shifter1/led_string1/led_num__i2/SP}
+                                                             ENDPOINT            0.000                 13.747  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-{led_string1/led_num__i3/CK   led_string1/led_num__i4/CK}
-                                                             CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.198)                 46.967  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                 25.010  64      
+{led_shifter1/led_string1/led_num__i1/CK   led_shifter1/led_string1/led_num__i2/CK}
+                                                             CLOCK PIN           0.000                 25.010  1       
+                                                             Uncertainty      -(0.000)                 25.010  
+                                                             Setup time       -(0.198)                 24.812  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.967  
-Arrival Time                                                                                        -(21.173)  
+Required Time                                                                                          24.812  
+Arrival Time                                                                                        -(13.746)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   25.793  
+Path Slack  (Passed)                                                                                   11.065  
 
 
 
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/state_i1/Q  (SLICE_R11C9A)
-Path End         : {led_string1/led_num__i5/SP   led_string1/led_num__i6/SP}  (SLICE_R2C11D)
+Path Begin       : led_shifter1/led_string1/state_i2/Q  (SLICE_R16C5A)
+Path End         : {led_shifter1/led_string1/led_num__i3/SP   led_shifter1/led_string1/led_num__i4/SP}  (SLICE_R15C3C)
 Source Clock     : clk (R)
-Destination Clock: clk (R)
-Logic Level      : 5
-Delay Ratio      : 79.5% (route), 20.5% (logic)
-Clock Skew       : 0.000 ns 
-Setup Constraint : 41.666 ns 
-Path Slack       : 25.793 ns  (Passed)
+Destination Clock: clk (F)
+Logic Level      : 2
+Delay Ratio      : 77.7% (route), 22.3% (logic)
+Clock Skew       : -1.322 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 11.065 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                  5.499  86      
-{led_string1/single_led/state_i1/CK   led_string1/single_led/state_i2/CK}
-                                                             CLOCK PIN           0.000                  5.499  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           5.499                  5.499  64      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-led_string1/single_led/state_i1/CK->led_string1/single_led/state_i1/Q
-                                          SLICE_R11C9A       CLK_TO_Q0_DELAY     1.388                  6.887  16      
-led_string1/single_led/state[0]                              NET DELAY           2.141                  9.028  16      
-led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/C->led_string1/single_led/equal_56_i9_2_lut_3_lut_4_lut/Z
-                                          SLICE_R11C10A      A0_TO_F0_DELAY      0.449                  9.477  3       
-led_string1/single_led/done_N_377                            NET DELAY           3.542                 13.019  3       
-led_string1/i4733_4_lut/B->led_string1/i4733_4_lut/Z
-                                          SLICE_R8C11B       C0_TO_F0_DELAY      0.449                 13.468  3       
-led_string1/n103293                                          NET DELAY           3.278                 16.746  3       
-led_string1/state_1__I_0_2_4_lut/B->led_string1/state_1__I_0_2_4_lut/Z
-                                          SLICE_R3C11B       D1_TO_F1_DELAY      0.476                 17.222  1       
-led_string1/nextstate[2]                                     NET DELAY           0.304                 17.526  1       
-i5505_2_lut/B->i5505_2_lut/Z              SLICE_R3C11C       C0_TO_F0_DELAY      0.449                 17.975  7       
-led_string1/n103127                                          NET DELAY           3.199                 21.174  7       
-{led_string1/led_num__i5/SP   led_string1/led_num__i6/SP}
-                                                             ENDPOINT            0.000                 21.174  1       
+led_shifter1/led_string1/state_i2/CK->led_shifter1/led_string1/state_i2/Q
+                                          SLICE_R16C5A       CLK_TO_Q1_DELAY     1.388                  6.887  11      
+led_shifter1/led_string1/single_led/state[2]_2
+                                                             NET DELAY           2.670                  9.557  11      
+led_shifter1/led_string1/i501_4_lut_3_lut/A->led_shifter1/led_string1/i501_4_lut_3_lut/Z
+                                          SLICE_R15C4D       B0_TO_F0_DELAY      0.449                 10.006  6       
+led_shifter1/led_string1/n645                                NET DELAY           3.741                 13.747  6       
+{led_shifter1/led_string1/led_num__i3/SP   led_shifter1/led_string1/led_num__i4/SP}
+                                                             ENDPOINT            0.000                 13.747  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-                                                             CONSTRAINT          0.000                 41.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 41.666  86      
-led_string1/counter_reset/clk                                NET DELAY           5.499                 47.165  86      
-{led_string1/led_num__i5/CK   led_string1/led_num__i6/CK}
-                                                             CLOCK PIN           0.000                 47.165  1       
-                                                             Uncertainty      -(0.000)                 47.165  
-                                                             Setup time       -(0.198)                 46.967  
+                                                             CONSTRAINT          0.000                 20.833  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  64      
+led_shifter1/counter_for_reset/clk                           NET DELAY           4.177                 25.010  64      
+{led_shifter1/led_string1/led_num__i3/CK   led_shifter1/led_string1/led_num__i4/CK}
+                                                             CLOCK PIN           0.000                 25.010  1       
+                                                             Uncertainty      -(0.000)                 25.010  
+                                                             Setup time       -(0.198)                 24.812  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                          46.967  
-Arrival Time                                                                                        -(21.173)  
+Required Time                                                                                          24.812  
+Arrival Time                                                                                        -(13.746)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                   25.793  
+Path Slack  (Passed)                                                                                   11.065  
 
 
 
@@ -823,16 +738,23 @@ Path Slack  (Passed)                                                            
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-led_string1/single_led/rgb_shift_i18/D   |    1.743 ns 
-led_string1/single_led/rgb_shift_i17/D   |    1.743 ns 
-led_string1/single_led/rgb_shift_i20/D   |    1.743 ns 
-led_string1/single_led/rgb_shift_i22/D   |    1.743 ns 
-led_string1/single_led/num_high__i3/D    |    1.743 ns 
-led_string1/single_led/num_high__i1/D    |    1.743 ns 
-led_string1/single_led/rgb_shift_i23/D   |    1.743 ns 
-led_string1/single_led/rgb_shift_i0/D    |    1.743 ns 
-led_string1/single_led/num_low__i4/D     |    1.743 ns 
-led_string1/single_led/num_low__i1/D     |    1.743 ns 
+led_shifter1/led_string1/state_i2/D      |    1.743 ns 
+led_shifter1/led_string1/single_led/num_high_i1/D              
+                                         |    1.743 ns 
+led_shifter1/led_string1/single_led/num_high_i3/D              
+                                         |    1.743 ns 
+led_shifter1/state_i2/D                  |    1.743 ns 
+led_shifter1/led_string1/single_led/num_low_i4/D              
+                                         |    1.743 ns 
+led_shifter1/led_string1/single_led/num_low_i1/D              
+                                         |    1.743 ns 
+led_shifter1/led_string1/state_i0/D      |    1.743 ns 
+led_shifter1/led_string1/single_led/counter_low/count_121__i21/D              
+                                         |    1.913 ns 
+led_shifter1/led_string1/single_led/counter_low/count_121__i22/D              
+                                         |    1.913 ns 
+led_shifter1/led_string1/single_led/counter_low/count_121__i23/D              
+                                         |    1.913 ns 
 -------------------------------------------------------
                                          |             
 Hold # of endpoints with negative slack: |           0 
@@ -855,8 +777,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : led_string1/single_led/rgb_shift_i17/Q  (SLICE_R9C16B)
-Path End         : led_string1/single_led/rgb_shift_i18/D  (SLICE_R9C16B)
+Path Begin       : led_shifter1/led_string1/single_led/state_i3/Q  (SLICE_R17C6A)
+Path End         : led_shifter1/led_string1/state_i2/D  (SLICE_R16C5A)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
@@ -869,33 +791,32 @@ Path Slack       : 1.743 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/rgb_shift_i18/CK   led_string1/single_led/rgb_shift_i17/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+led_shifter1/led_string1/single_led/state_i3/CK
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/rgb_shift_i17/CK->led_string1/single_led/rgb_shift_i17/Q
-                                          SLICE_R9C16B       CLK_TO_Q1_DELAY  0.779                  3.863  1       
-led_string1/single_led/rgb_shift[17]                         NET DELAY        0.712                  4.575  1       
-led_string1/single_led/mux_23_i19_3_lut/B->led_string1/single_led/mux_23_i19_3_lut/Z
-                                          SLICE_R9C16B       D0_TO_F0_DELAY   0.252                  4.827  1       
-led_string1/single_led/rgb_shift_23__N_273[18]
-                                                             NET DELAY        0.000                  4.827  1       
-led_string1/single_led/rgb_shift_i18/D                       ENDPOINT         0.000                  4.827  1       
+led_shifter1/led_string1/single_led/state_i3/CK->led_shifter1/led_string1/single_led/state_i3/Q
+                                          SLICE_R17C6A       CLK_TO_Q1_DELAY  0.779                  3.863  17      
+led_shifter1/led_string1/single_led/counter_low/state[2]
+                                                             NET DELAY        0.712                  4.575  17      
+led_shifter1.led_string1.SLICE_116/D1->led_shifter1.led_string1.SLICE_116/F1
+                                          SLICE_R16C5A       D1_TO_F1_DELAY   0.252                  4.827  1       
+led_shifter1.led_string1.next_led$n0                         NET DELAY        0.000                  4.827  1       
+led_shifter1/led_string1/state_i2/D                          ENDPOINT         0.000                  4.827  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/rgb_shift_i18/CK   led_string1/single_led/rgb_shift_i17/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+led_shifter1/led_string1/state_i2/CK                         CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -909,8 +830,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/rgb_shift_i16/Q  (SLICE_R9C17C)
-Path End         : led_string1/single_led/rgb_shift_i17/D  (SLICE_R9C16B)
+Path Begin       : led_shifter1/led_string1/single_led/num_high_i1/Q  (SLICE_R21C5B)
+Path End         : led_shifter1/led_string1/single_led/num_high_i1/D  (SLICE_R21C5B)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
@@ -923,32 +844,33 @@ Path Slack       : 1.743 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/rgb_shift_i16/CK   led_string1/single_led/rgb_shift_i15/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+led_shifter1/led_string1/single_led/num_high_i1/CK
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/rgb_shift_i16/CK->led_string1/single_led/rgb_shift_i16/Q
-                                          SLICE_R9C17C       CLK_TO_Q0_DELAY  0.779                  3.863  1       
-led_string1/single_led/rgb_shift[16]                         NET DELAY        0.712                  4.575  1       
-led_string1/single_led/mux_23_i18_3_lut/B->led_string1/single_led/mux_23_i18_3_lut/Z
-                                          SLICE_R9C16B       D1_TO_F1_DELAY   0.252                  4.827  1       
-led_string1/single_led/rgb_shift_23__N_273[17]
-                                                             NET DELAY        0.000                  4.827  1       
-led_string1/single_led/rgb_shift_i17/D                       ENDPOINT         0.000                  4.827  1       
+led_shifter1/led_string1/single_led/num_high_i1/CK->led_shifter1/led_string1/single_led/num_high_i1/Q
+                                          SLICE_R21C5B       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+led_shifter1/led_string1/single_led/counter_high/num_high[1]
+                                                             NET DELAY        0.712                  4.575  2       
+led_shifter1/led_string1/single_led/i436_3_lut/B->led_shifter1/led_string1/single_led/i436_3_lut/Z
+                                          SLICE_R21C5B       D1_TO_F1_DELAY   0.252                  4.827  1       
+led_shifter1/led_string1/single_led/n580                     NET DELAY        0.000                  4.827  1       
+led_shifter1/led_string1/single_led/num_high_i1/D
+                                                             ENDPOINT         0.000                  4.827  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/rgb_shift_i18/CK   led_string1/single_led/rgb_shift_i17/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+led_shifter1/led_string1/single_led/num_high_i1/CK
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -963,8 +885,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/rgb_shift_i19/Q  (SLICE_R9C14A)
-Path End         : led_string1/single_led/rgb_shift_i20/D  (SLICE_R9C14A)
+Path Begin       : led_shifter1/led_string1/single_led/state_i1/Q  (SLICE_R16C6D)
+Path End         : led_shifter1/led_string1/single_led/num_high_i3/D  (SLICE_R17C5D)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
@@ -977,32 +899,33 @@ Path Slack       : 1.743 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/rgb_shift_i20/CK   led_string1/single_led/rgb_shift_i19/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/led_string1/single_led/state_i2/CK   led_shifter1/led_string1/single_led/state_i1/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/rgb_shift_i19/CK->led_string1/single_led/rgb_shift_i19/Q
-                                          SLICE_R9C14A       CLK_TO_Q1_DELAY  0.779                  3.863  1       
-led_string1/single_led/rgb_shift[19]                         NET DELAY        0.712                  4.575  1       
-led_string1/single_led/mux_23_i21_3_lut/B->led_string1/single_led/mux_23_i21_3_lut/Z
-                                          SLICE_R9C14A       D0_TO_F0_DELAY   0.252                  4.827  1       
-led_string1/single_led/rgb_shift_23__N_273[20]
+led_shifter1/led_string1/single_led/state_i1/CK->led_shifter1/led_string1/single_led/state_i1/Q
+                                          SLICE_R16C6D       CLK_TO_Q1_DELAY  0.779                  3.863  16      
+led_shifter1/led_string1/single_led/counter_low/state[0]
+                                                             NET DELAY        0.712                  4.575  16      
+SLICE_107/D1->SLICE_107/F1                SLICE_R17C5D       D1_TO_F1_DELAY   0.252                  4.827  1       
+led_shifter1.led_string1.single_led.n958$n1
                                                              NET DELAY        0.000                  4.827  1       
-led_string1/single_led/rgb_shift_i20/D                       ENDPOINT         0.000                  4.827  1       
+led_shifter1/led_string1/single_led/num_high_i3/D
+                                                             ENDPOINT         0.000                  4.827  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/rgb_shift_i20/CK   led_string1/single_led/rgb_shift_i19/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+led_shifter1/led_string1/single_led/num_high_i3/CK
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1017,8 +940,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/rgb_shift_i21/Q  (SLICE_R9C11A)
-Path End         : led_string1/single_led/rgb_shift_i22/D  (SLICE_R9C11A)
+Path Begin       : led_shifter1/counter_for_reset/counted/Q  (SLICE_R14C4D)
+Path End         : led_shifter1/state_i2/D  (SLICE_R14C4D)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
@@ -1031,32 +954,32 @@ Path Slack       : 1.743 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/rgb_shift_i22/CK   led_string1/single_led/rgb_shift_i21/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/counter_for_reset/counted/CK   led_shifter1/state_i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/rgb_shift_i21/CK->led_string1/single_led/rgb_shift_i21/Q
-                                          SLICE_R9C11A       CLK_TO_Q1_DELAY  0.779                  3.863  1       
-led_string1/single_led/rgb_shift[21]                         NET DELAY        0.712                  4.575  1       
-led_string1/single_led/mux_23_i23_3_lut/B->led_string1/single_led/mux_23_i23_3_lut/Z
-                                          SLICE_R9C11A       D0_TO_F0_DELAY   0.252                  4.827  1       
-led_string1/single_led/rgb_shift_23__N_273[22]
-                                                             NET DELAY        0.000                  4.827  1       
-led_string1/single_led/rgb_shift_i22/D                       ENDPOINT         0.000                  4.827  1       
+led_shifter1/counter_for_reset/counted/CK->led_shifter1/counter_for_reset/counted/Q
+                                          SLICE_R14C4D       CLK_TO_Q0_DELAY  0.779                  3.863  3       
+led_shifter1/counter_for_reset/reset_done
+                                                             NET DELAY        0.712                  4.575  3       
+led_shifter1/i21_4_lut/D->led_shifter1/i21_4_lut/Z
+                                          SLICE_R14C4D       D1_TO_F1_DELAY   0.252                  4.827  1       
+led_shifter1/nextstate[1]                                    NET DELAY        0.000                  4.827  1       
+led_shifter1/state_i2/D                                      ENDPOINT         0.000                  4.827  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/rgb_shift_i22/CK   led_string1/single_led/rgb_shift_i21/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/counter_for_reset/counted/CK   led_shifter1/state_i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1071,8 +994,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/num_high__i3/Q  (SLICE_R15C9C)
-Path End         : led_string1/single_led/num_high__i3/D  (SLICE_R15C9C)
+Path Begin       : led_shifter1/led_string1/single_led/num_low_i4/Q  (SLICE_R16C8D)
+Path End         : led_shifter1/led_string1/single_led/num_low_i4/D  (SLICE_R16C8D)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
@@ -1085,32 +1008,34 @@ Path Slack       : 1.743 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/num_high__i3/CK   led_string1/single_led/num_high__i4/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+led_shifter1/led_string1/single_led/num_low_i4/CK
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/num_high__i3/CK->led_string1/single_led/num_high__i3/Q
-                                          SLICE_R15C9C       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-led_string1/single_led/counter_high/num_high[3]
+led_shifter1/led_string1/single_led/num_low_i4/CK->led_shifter1/led_string1/single_led/num_low_i4/Q
+                                          SLICE_R16C8D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+led_shifter1/led_string1/single_led/counter_low/num_low[4]
                                                              NET DELAY        0.712                  4.575  2       
-led_string1/single_led/i4538_3_lut_4_lut/D->led_string1/single_led/i4538_3_lut_4_lut/Z
-                                          SLICE_R15C9C       D0_TO_F0_DELAY   0.252                  4.827  1       
-led_string1/single_led/n103099                               NET DELAY        0.000                  4.827  1       
-led_string1/single_led/num_high__i3/D                        ENDPOINT         0.000                  4.827  1       
+led_shifter1/led_string1/single_led/i1_3_lut_adj_5/A->led_shifter1/led_string1/single_led/i1_3_lut_adj_5/Z
+                                          SLICE_R16C8D       D0_TO_F0_DELAY   0.252                  4.827  1       
+led_shifter1/led_string1/single_led/n1523
+                                                             NET DELAY        0.000                  4.827  1       
+led_shifter1/led_string1/single_led/num_low_i4/D
+                                                             ENDPOINT         0.000                  4.827  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/num_high__i3/CK   led_string1/single_led/num_high__i4/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+led_shifter1/led_string1/single_led/num_low_i4/CK
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1125,8 +1050,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/num_high__i1/Q  (SLICE_R13C9B)
-Path End         : led_string1/single_led/num_high__i1/D  (SLICE_R13C9B)
+Path Begin       : led_shifter1/led_string1/single_led/num_low_i1/Q  (SLICE_R16C7A)
+Path End         : led_shifter1/led_string1/single_led/num_low_i1/D  (SLICE_R16C7A)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
@@ -1139,32 +1064,34 @@ Path Slack       : 1.743 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/num_high__i2/CK   led_string1/single_led/num_high__i1/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/led_string1/single_led/num_low_i3/CK   led_shifter1/led_string1/single_led/num_low_i1/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/num_high__i1/CK->led_string1/single_led/num_high__i1/Q
-                                          SLICE_R13C9B       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-led_string1/single_led/counter_high/num_high[0]
+led_shifter1/led_string1/single_led/num_low_i1/CK->led_shifter1/led_string1/single_led/num_low_i1/Q
+                                          SLICE_R16C7A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+led_shifter1/led_string1/single_led/counter_low/num_low[1]
                                                              NET DELAY        0.712                  4.575  2       
-led_string1/single_led/i1_4_lut/A->led_string1/single_led/i1_4_lut/Z
-                                          SLICE_R13C9B       D1_TO_F1_DELAY   0.252                  4.827  1       
-led_string1/single_led/n103862                               NET DELAY        0.000                  4.827  1       
-led_string1/single_led/num_high__i1/D                        ENDPOINT         0.000                  4.827  1       
+led_shifter1/led_string1/single_led/i1_3_lut_adj_6/A->led_shifter1/led_string1/single_led/i1_3_lut_adj_6/Z
+                                          SLICE_R16C7A       D1_TO_F1_DELAY   0.252                  4.827  1       
+led_shifter1/led_string1/single_led/n1537
+                                                             NET DELAY        0.000                  4.827  1       
+led_shifter1/led_string1/single_led/num_low_i1/D
+                                                             ENDPOINT         0.000                  4.827  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/num_high__i2/CK   led_string1/single_led/num_high__i1/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/led_string1/single_led/num_low_i3/CK   led_shifter1/led_string1/single_led/num_low_i1/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1179,8 +1106,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/rgb_shift_i22/Q  (SLICE_R9C11A)
-Path End         : led_string1/single_led/rgb_shift_i23/D  (SLICE_R9C10A)
+Path Begin       : led_shifter1/counter_for_reset/counted/Q  (SLICE_R14C4D)
+Path End         : led_shifter1/led_string1/state_i0/D  (SLICE_R14C5A)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
@@ -1193,32 +1120,33 @@ Path Slack       : 1.743 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/rgb_shift_i22/CK   led_string1/single_led/rgb_shift_i21/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/counter_for_reset/counted/CK   led_shifter1/state_i2/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/rgb_shift_i22/CK->led_string1/single_led/rgb_shift_i22/Q
-                                          SLICE_R9C11A       CLK_TO_Q0_DELAY  0.779                  3.863  1       
-led_string1/single_led/rgb_shift[22]                         NET DELAY        0.712                  4.575  1       
-led_string1/single_led/mux_23_i24_3_lut/B->led_string1/single_led/mux_23_i24_3_lut/Z
-                                          SLICE_R9C10A       D0_TO_F0_DELAY   0.252                  4.827  1       
-led_string1/single_led/rgb_shift_23__N_273[23]
-                                                             NET DELAY        0.000                  4.827  1       
-led_string1/single_led/rgb_shift_i23/D                       ENDPOINT         0.000                  4.827  1       
+led_shifter1/counter_for_reset/counted/CK->led_shifter1/counter_for_reset/counted/Q
+                                          SLICE_R14C4D       CLK_TO_Q0_DELAY  0.779                  3.863  3       
+led_shifter1/counter_for_reset/reset_done
+                                                             NET DELAY        0.712                  4.575  3       
+led_shifter1.led_string1.i1_4_lut/D->led_shifter1.led_string1.i1_4_lut/Z
+                                          SLICE_R14C5A       D0_TO_F0_DELAY   0.252                  4.827  1       
+led_shifter1/led_string1/nextstate[0]                        NET DELAY        0.000                  4.827  1       
+led_shifter1/led_string1/state_i0/D                          ENDPOINT         0.000                  4.827  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-led_string1/single_led/rgb_shift_i23/CK                      CLOCK PIN        0.000                  3.084  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/led_string1/state_i0/CK   led_shifter1/led_string1/state_i1/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1232,159 +1160,168 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/rgb_shift_i0/Q  (SLICE_R19C10B)
-Path End         : led_string1/single_led/rgb_shift_i0/D  (SLICE_R19C10B)
+Path Begin       : led_shifter1/led_string1/single_led/counter_low/count_121__i21/Q  (SLICE_R16C11D)
+Path End         : led_shifter1/led_string1/single_led/counter_low/count_121__i21/D  (SLICE_R16C11D)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
-Delay Ratio      : 40.8% (route), 59.2% (logic)
+Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
 Hold Constraint  : 0.000 ns 
-Path Slack       : 1.743 ns  (Passed)
+Path Slack       : 1.913 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-led_string1/single_led/rgb_shift_i0/CK                       CLOCK PIN        0.000                  3.084  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/led_string1/single_led/counter_low/count_121__i21/CK   led_shifter1/led_string1/single_led/counter_low/count_121__i22/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/rgb_shift_i0/CK->led_string1/single_led/rgb_shift_i0/Q
-                                          SLICE_R19C10B      CLK_TO_Q0_DELAY  0.779                  3.863  2       
-led_string1/single_led/rgb_shift[0]                          NET DELAY        0.712                  4.575  2       
-led_string1/single_led/i4542_4_lut/B->led_string1/single_led/i4542_4_lut/Z
-                                          SLICE_R19C10B      D0_TO_F0_DELAY   0.252                  4.827  1       
-led_string1/single_led/n103103                               NET DELAY        0.000                  4.827  1       
-led_string1/single_led/rgb_shift_i0/D                        ENDPOINT         0.000                  4.827  1       
+led_shifter1/led_string1/single_led/counter_low/count_121__i21/CK->led_shifter1/led_string1/single_led/counter_low/count_121__i21/Q
+                                          SLICE_R16C11D      CLK_TO_Q0_DELAY  0.779                  3.863  2       
+led_shifter1/led_string1/single_led/counter_low/count[21]
+                                                             NET DELAY        0.882                  4.745  2       
+led_shifter1/led_string1/single_led/counter_low/count_121_add_4_23/C0->led_shifter1/led_string1/single_led/counter_low/count_121_add_4_23/S0
+                                          SLICE_R16C11D      C0_TO_F0_DELAY   0.252                  4.997  1       
+led_shifter1/led_string1/single_led/counter_low/n101[21]
+                                                             NET DELAY        0.000                  4.997  1       
+led_shifter1/led_string1/single_led/counter_low/count_121__i21/D
+                                                             ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-led_string1/single_led/rgb_shift_i0/CK                       CLOCK PIN        0.000                  3.084  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/led_string1/single_led/counter_low/count_121__i21/CK   led_shifter1/led_string1/single_led/counter_low/count_121__i22/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 Required Time                                                                                       -3.084  
-Arrival Time                                                                                         4.827  
+Arrival Time                                                                                         4.997  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 1.743  
+Path Slack  (Passed)                                                                                 1.913  
 
 
 
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/num_low__i4/Q  (SLICE_R15C6A)
-Path End         : led_string1/single_led/num_low__i4/D  (SLICE_R15C6A)
+Path Begin       : led_shifter1/led_string1/single_led/counter_low/count_121__i22/Q  (SLICE_R16C11D)
+Path End         : led_shifter1/led_string1/single_led/counter_low/count_121__i22/D  (SLICE_R16C11D)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
-Delay Ratio      : 40.8% (route), 59.2% (logic)
+Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
 Hold Constraint  : 0.000 ns 
-Path Slack       : 1.743 ns  (Passed)
+Path Slack       : 1.913 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/num_low__i3/CK   led_string1/single_led/num_low__i4/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/led_string1/single_led/counter_low/count_121__i21/CK   led_shifter1/led_string1/single_led/counter_low/count_121__i22/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/num_low__i4/CK->led_string1/single_led/num_low__i4/Q
-                                          SLICE_R15C6A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-led_string1/single_led/counter_low/num_low[4]
-                                                             NET DELAY        0.712                  4.575  2       
-led_string1/single_led/i4546_3_lut_4_lut/D->led_string1/single_led/i4546_3_lut_4_lut/Z
-                                          SLICE_R15C6A       D1_TO_F1_DELAY   0.252                  4.827  1       
-led_string1/single_led/n103107                               NET DELAY        0.000                  4.827  1       
-led_string1/single_led/num_low__i4/D                         ENDPOINT         0.000                  4.827  1       
+led_shifter1/led_string1/single_led/counter_low/count_121__i22/CK->led_shifter1/led_string1/single_led/counter_low/count_121__i22/Q
+                                          SLICE_R16C11D      CLK_TO_Q1_DELAY  0.779                  3.863  2       
+led_shifter1/led_string1/single_led/counter_low/count[22]
+                                                             NET DELAY        0.882                  4.745  2       
+led_shifter1/led_string1/single_led/counter_low/count_121_add_4_23/C1->led_shifter1/led_string1/single_led/counter_low/count_121_add_4_23/S1
+                                          SLICE_R16C11D      C1_TO_F1_DELAY   0.252                  4.997  1       
+led_shifter1/led_string1/single_led/counter_low/n101[22]
+                                                             NET DELAY        0.000                  4.997  1       
+led_shifter1/led_string1/single_led/counter_low/count_121__i22/D
+                                                             ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/num_low__i3/CK   led_string1/single_led/num_low__i4/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+{led_shifter1/led_string1/single_led/counter_low/count_121__i21/CK   led_shifter1/led_string1/single_led/counter_low/count_121__i22/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 Required Time                                                                                       -3.084  
-Arrival Time                                                                                         4.827  
+Arrival Time                                                                                         4.997  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 1.743  
+Path Slack  (Passed)                                                                                 1.913  
 
 
 
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : led_string1/single_led/num_low__i1/Q  (SLICE_R15C5C)
-Path End         : led_string1/single_led/num_low__i1/D  (SLICE_R15C5C)
+Path Begin       : led_shifter1/led_string1/single_led/counter_low/count_121__i23/Q  (SLICE_R16C12A)
+Path End         : led_shifter1/led_string1/single_led/counter_low/count_121__i23/D  (SLICE_R16C12A)
 Source Clock     : clk (R)
 Destination Clock: clk (R)
 Logic Level      : 2
-Delay Ratio      : 40.8% (route), 59.2% (logic)
+Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
 Hold Constraint  : 0.000 ns 
-Path Slack       : 1.743 ns  (Passed)
+Path Slack       : 1.913 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/num_low__i1/CK   led_string1/single_led/num_low__i2/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+led_shifter1/led_string1/single_led/counter_low/count_121__i23/CK
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-led_string1/single_led/num_low__i1/CK->led_string1/single_led/num_low__i1/Q
-                                          SLICE_R15C5C       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-led_string1/single_led/counter_low/num_low[1]
-                                                             NET DELAY        0.712                  4.575  2       
-led_string1/single_led/i4549_3_lut_4_lut_4_lut/D->led_string1/single_led/i4549_3_lut_4_lut_4_lut/Z
-                                          SLICE_R15C5C       D0_TO_F0_DELAY   0.252                  4.827  1       
-led_string1/single_led/n103110                               NET DELAY        0.000                  4.827  1       
-led_string1/single_led/num_low__i1/D                         ENDPOINT         0.000                  4.827  1       
+led_shifter1/led_string1/single_led/counter_low/count_121__i23/CK->led_shifter1/led_string1/single_led/counter_low/count_121__i23/Q
+                                          SLICE_R16C12A      CLK_TO_Q0_DELAY  0.779                  3.863  2       
+led_shifter1/led_string1/single_led/counter_low/count[23]
+                                                             NET DELAY        0.882                  4.745  2       
+led_shifter1/led_string1/single_led/counter_low/count_121_add_4_25/C0->led_shifter1/led_string1/single_led/counter_low/count_121_add_4_25/S0
+                                          SLICE_R16C12A      C0_TO_F0_DELAY   0.252                  4.997  1       
+led_shifter1/led_string1/single_led/counter_low/n101[23]
+                                                             NET DELAY        0.000                  4.997  1       
+led_shifter1/led_string1/single_led/counter_low/count_121__i23/D
+                                                             ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  87      
-led_string1/counter_reset/clk                                NET DELAY        3.084                  3.084  87      
-{led_string1/single_led/num_low__i1/CK   led_string1/single_led/num_low__i2/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  65      
+led_shifter1/counter_for_reset/clk                           NET DELAY        3.084                  3.084  65      
+led_shifter1/led_string1/single_led/counter_low/count_121__i23/CK
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 Required Time                                                                                       -3.084  
-Arrival Time                                                                                         4.827  
+Arrival Time                                                                                         4.997  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 1.743  
+Path Slack  (Passed)                                                                                 1.913  
 
 
 

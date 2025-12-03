@@ -6,7 +6,6 @@
 
 module led_string_tb();
 	logic clk, rst;
-	logic [23:0] rgb;
 	logic to_light;
 	logic [23:0] color;
 	logic [3455:0] color_string;

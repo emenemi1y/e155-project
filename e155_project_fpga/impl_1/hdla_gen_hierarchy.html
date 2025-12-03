@@ -5,7 +5,17 @@ Starting: parse design source files
 (VERI-1482) Analyzing Verilog file 'C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv'
 (VERI-1482) Analyzing Verilog file 'C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv'
 (VERI-1482) Analyzing Verilog file 'C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv'
+(VERI-1482) Analyzing Verilog file 'C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv'
+WARNING <2044170> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv(14,16-14,33) (VERI-2170) data object 'mem' is already declared
+INFO <2043967> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv(11,16-11,19) (VERI-1967) previous declaration of 'mem' is from here
+WARNING <2043329> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv(14,16-14,33) (VERI-1329) second declaration of 'mem' is ignored
+WARNING <2043875> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv(30,17-30,28) (VERI-1875) identifier 'update_bits' is used before its declaration
+WARNING <2044013> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv(38,9-38,12) (VERI-2013) variable 'src' must explicitly be declared as automatic or static
+(VERI-1482) Analyzing Verilog file 'C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv'
 INFO <2043018> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv(1,8-1,11) (VERI-1018) compiling module 'top'
-Done: design load finished with (0) errors, and (0) warnings
+WARNING <2043924> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv(11,25-11,36) (VERI-1924) variable 'update_bits' is driven by invalid combination of procedural drivers
+WARNING <2043971> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv(66,2-94,5) (VERI-1971) 'update_bits' driven by this always_ff block should not be driven by any other process
+INFO <2043972> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv(127,2-131,5) (VERI-1972) found another procedural driver of 'update_bits' here
+Done: design load finished with (0) errors, and (6) warnings
 
 </PRE></BODY></HTML>
