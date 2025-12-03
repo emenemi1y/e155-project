@@ -31,7 +31,7 @@ module core(input  logic sck,
 		end
 		
 	controller FSM(sck, incCount);
-    sipo_shift_register spiToReg(sck, load, sdi, tempReg1);  
+    shiftRegSave spiToReg(sck, load, sdi, tempReg1);  
 	SP256K spram (.AD(addr), .DI(tempReg2), .MASKWE(4'b1111), .WE(incCount), .CS(1'b1), .CK(sck), .STDBY(1'b0), .SLEEP(1'b0), .PWROFF_N(1'b1), .DO(sdo));
 	
 endmodule
