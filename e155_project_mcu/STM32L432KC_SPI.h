@@ -25,13 +25,11 @@
  *    -- cpha: clock phase (0: data captured on leading edge of clk and changed on next edge, 
  *          1: data changed on leading edge of clk and captured on next edge)
  * Refer to the datasheet for more low-level details. */ 
-void initSPI(SPI_TypeDef * SPIx, int br, int cpol, int cpha);
+void initSPI(int br, int cpol, int cpha);
 
 /* Transmits a character (1 byte) over SPI and returns the received character.
  *    -- send: the character to send over SPI
  *    -- return: the character received over SPI */
 char spiSendReceive(char send);
 
-// Start SPI communication by setting chip enable to high 
-void beginSPI(void);
 #endif
