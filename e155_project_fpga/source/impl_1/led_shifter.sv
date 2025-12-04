@@ -43,7 +43,7 @@ module led_shifter (
 			else begin 
 				if (nextstate == next) led_num <= led_num + 10'd1;
 				if (nextstate == shift) begin 
-					led_num <= 10'd0;
+					led_num <= 10'd0; 
 					rgb_shifted <= {rgb_shifted[119:0], rgb_shifted[143:120]};
 				end
 			end
@@ -52,8 +52,8 @@ module led_shifter (
 	
 	always_comb begin
 		case(state) 
-			start:	 if (go)				 nextstate = load_bits;
-					 else					 nextstate = start;
+			start:	 //if (go)				 nextstate = load_bits;
+					 					 nextstate = load_bits;
 			load_bits: 					 	 nextstate = hold;
 			hold:	 if (done) 				 nextstate = next;
 					 else 	  				 nextstate = hold;

@@ -42,7 +42,7 @@ if (a)
 <DIV id="content" onclick="hideTocList()"><PRE>
 <A name="Par"></A>                         Lattice PAR Report File
 Radiant Software (64-bit) 2024.2.0.3.0
-Wed Dec  3 17:07:52 2025
+Thu Dec  4 12:44:32 2025
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 	e155_project_fpga_impl_1_map.udb e155_project_fpga_impl_1.udb 
@@ -52,17 +52,17 @@ Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 Level/       Number       Estimated       Timing       Estimated Worst    Timing          Run      Run
 Cost [udb]   Unrouted     Worst Slack     Score        Slack(hold)        Score(hold)     Time     Status
 ----------   --------     -----------     ------       ---------------    -----------     ----     ------
-5_1   *      0            20.176          0            1.743              0               16       Completed
+5_1   *      0            20.938          0            1.743              0               08       Completed
 * : Design saved.
 
-Total (real) run time for 1-seed: 16 secs 
+Total (real) run time for 1-seed: 9 secs 
 
 par done!
 
 
 <A name="par_best"></A><B><U><big>Best Par Run</big></U></B>
 PAR: Place And Route Radiant Software (64-bit) 2024.2.0.3.0.
-PARed on: Wed Dec  3 17:07:52 2025
+PARed on: Thu Dec  4 12:44:32 2025
 
 Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
 	e155_project_fpga_impl_1_map.udb e155_project_fpga_impl_1_par.dir/5_1.udb 
@@ -85,13 +85,13 @@ Performance Grade:   High-Performance_1.2V
    Total number of constraints: 4
    Total number of constraints dropped: 0
 
-Number of Signals: 1524
-Number of Connections: 3488
+Number of Signals: 1521
+Number of Connections: 3476
 
 <A name="par_dus"></A><B><U><big>Device utilization summary:</big></U></B>
 
-   SLICE (est.)     388/2640         15% used
-     LUT            722/5280         14% used
+   SLICE (est.)     387/2640         15% used
+     LUT            719/5280         14% used
      REG            556/5280         11% used
    PIO                3/56            5% used
                       3/36            8% bonded
@@ -115,28 +115,28 @@ Number of Connections: 3488
 Pin Constraint Summary:
    3 out of 3 pins locked (100% locked).
 
-Finished Placer Phase 0 (HIER). CPU time: 1 secs , REAL time: 0 secs 
+Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
 
 
-................
-Finished Placer Phase 0 (AP).  CPU time: 2 secs , REAL time: 2 secs 
+.................
+Finished Placer Phase 0 (AP).  CPU time: 1 secs , REAL time: 0 secs 
 
-Starting Placer Phase 1. CPU time: 2 secs , REAL time: 2 secs 
+Starting Placer Phase 1. CPU time: 1 secs , REAL time: 0 secs 
 ..  ..
 ....................
 
-Placer score = 104780.
+Placer score = 100570.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE            382/2640         14% used
+   SLICE            377/2640         14% used
 
-Finished Placer Phase 1. CPU time: 11 secs , REAL time: 12 secs 
+Finished Placer Phase 1. CPU time: 6 secs , REAL time: 6 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  124958
-Finished Placer Phase 2.  CPU time: 11 secs , REAL time: 12 secs 
+Placer score =  137152
+Finished Placer Phase 2.  CPU time: 6 secs , REAL time: 6 secs 
 
 
 
@@ -144,9 +144,9 @@ Finished Placer Phase 2.  CPU time: 11 secs , REAL time: 12 secs
 
 Global Clocks :
   PRIMARY &quot;clk&quot; from comp &quot;hf_osc.osc_inst&quot; on site &quot;HFOSC_R1C32&quot;, clk load = 292, ce load = 0, sr load = 0
-  PRIMARY &quot;led_shifter1.single_led.n1760&quot; from F1 on comp &quot;led_shifter1.single_led.SLICE_452&quot; on site &quot;R13C10A&quot;, clk load = 0, ce load = 79, sr load = 0
-  PRIMARY &quot;led_shifter1.n1949&quot; from F0 on comp &quot;led_shifter1.SLICE_469&quot; on site &quot;R14C31B&quot;, clk load = 0, ce load = 72, sr load = 0
-  PRIMARY &quot;led_shifter1.n1965&quot; from F0 on comp &quot;led_shifter1.SLICE_530&quot; on site &quot;R14C2D&quot;, clk load = 0, ce load = 0, sr load = 72
+  PRIMARY &quot;led_shifter1.single_led.n1760&quot; from F1 on comp &quot;led_shifter1.single_led.SLICE_450&quot; on site &quot;R13C7B&quot;, clk load = 0, ce load = 79, sr load = 0
+  PRIMARY &quot;led_shifter1.n1974&quot; from F1 on comp &quot;led_shifter1.SLICE_525&quot; on site &quot;R14C13A&quot;, clk load = 0, ce load = 0, sr load = 72
+  PRIMARY &quot;led_shifter1.n1945&quot; from F0 on comp &quot;led_shifter1.SLICE_528&quot; on site &quot;R14C30C&quot;, clk load = 0, ce load = 72, sr load = 0
 
   PRIMARY  : 4 out of 8 (50%)
 
@@ -168,14 +168,14 @@ I/O Bank Usage Summary:
 | 2        | 2 / 8 ( 25%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 11 secs , REAL time: 12 secs 
+Total Placer CPU time: 6 secs , REAL time: 6 secs 
 
 
-Checksum -- place: 587c68b5bc9c9f2ad1f3a61ebbbf98b2e733c354
+Checksum -- place: 67248e3eb51b5f6323b454b2fe0fa361b2c59aa8
 Writing design to file e155_project_fpga_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 17:08:04 12/03/25
+Start NBR router at 12:44:38 12/04/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -194,13 +194,13 @@ Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
 4 global clock signals routed
-1319 connections routed (of 3120 total) (42.28%)
+1319 connections routed (of 3108 total) (42.44%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (4 used out of 8 available):
-#0  Signal &quot;led_shifter1.n1965&quot;
+#0  Signal &quot;led_shifter1.n1974&quot;
        Control loads: 72    out of    72 routed (100.00%)
-#1  Signal &quot;led_shifter1.n1949&quot;
+#1  Signal &quot;led_shifter1.n1945&quot;
        Control loads: 72    out of    72 routed (100.00%)
 #4  Signal &quot;clk&quot;
        Clock   loads: 292   out of   292 routed (100.00%)
@@ -210,34 +210,37 @@ Primary clocks (4 used out of 8 available):
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
 
-Start NBR section for initial routing at 17:08:05 12/03/25
+Start NBR section for initial routing at 12:44:39 12/04/25
 Level 4, iteration 1
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-15(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack&lt;setup&gt;: 18.831ns/0.000ns; real time: 3 secs 
+23(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 19.540ns/0.000ns; real time: 0 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 17:08:07 12/03/25
+Start NBR section for normal routing at 12:44:39 12/04/25
 Level 4, iteration 1
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 19.540ns/0.000ns; real time: 2 secs 
+Level 4, iteration 2
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack&lt;setup&gt;: 18.831ns/0.000ns; real time: 3 secs 
+Estimated worst slack/total negative slack&lt;setup&gt;: 19.540ns/0.000ns; real time: 2 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 17:08:07 12/03/25
+Start NBR section for setup/hold timing optimization with effort level 3 at 12:44:40 12/04/25
 
-Start NBR section for post-routing at 17:08:07 12/03/25
+Start NBR section for post-routing at 12:44:40 12/04/25
 
 End NBR router with 0 unrouted connection(s)
 
-Checksum -- route: f7c94354af5fb6945dafa92945b3a7a4291993b
+Checksum -- route: 2a4c40a3dd5f6faa7bd277777990b8d01f10f3e5
 
-Total CPU time 4 secs 
-Total REAL time: 4 secs 
+Total CPU time 2 secs 
+Total REAL time: 2 secs 
 Completely routed.
-End of route.  3120 routed (100.00%); 0 unrouted.
+End of route.  3108 routed (100.00%); 0 unrouted.
 
 Writing design to file e155_project_fpga_impl_1_par.dir/5_1.udb ...
 
@@ -247,7 +250,7 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Estimated worst slack&lt;setup/&lt;ns&gt;&gt; = 20.176
+PAR_SUMMARY::Estimated worst slack&lt;setup/&lt;ns&gt;&gt; = 20.938
 PAR_SUMMARY::Timing score&lt;setup/&lt;ns&gt;&gt; = 0.000
 PAR_SUMMARY::Estimated worst slack&lt;hold/&lt;ns&gt;&gt; = 1.743
 PAR_SUMMARY::Timing score&lt;hold/&lt;ns&gt;&gt; = 0.000
@@ -255,9 +258,9 @@ PAR_SUMMARY::Number of errors = 0
 
 Note: user must run &apos;timing&apos; for timing closure signoff.
 
-Total CPU  Time: 16 secs 
-Total REAL Time: 16 secs 
-Peak Memory Usage: 145.55 MB
+Total CPU  Time: 8 secs 
+Total REAL Time: 9 secs 
+Peak Memory Usage: 145.08 MB
 
 
 par done!

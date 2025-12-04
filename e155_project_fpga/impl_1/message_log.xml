@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Map">
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Dynamic>
+            <Dynamic>3</Dynamic>
+            <Dynamic>No port matched 'servo_down'.</Dynamic>
+            <Navigation>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Navigation>
+            <Navigation>3</Navigation>
+        </Message>
+        <Message>
+            <ID>1027013</ID>
+            <Severity>16</Severity>
+            <Dynamic>port</Dynamic>
+            <Dynamic>servo_down</Dynamic>
+        </Message>
+        <Message>
+            <ID>1026001</ID>
+            <Severity>16</Severity>
+            <Dynamic>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Dynamic>
+            <Dynamic>3</Dynamic>
+            <Dynamic>Can't resolve object 'servo_down' in constraint 'ldc_set_location -site {9} [get_ports servo_down]'.</Dynamic>
+            <Navigation>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Navigation>
+            <Navigation>3</Navigation>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_location -site {9} [get_ports servo_down]</Dynamic>
+        </Message>
+    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35935050</ID>
@@ -799,44 +830,6 @@
             <Severity>16</Severity>
             <Dynamic>\led_shifter1/single_led/num_high_i0</Dynamic>
             <Dynamic>Zero</Dynamic>
-        </Message>
-    </Task>
-    <Task name="Map">
-        <Message>
-            <ID>1026001</ID>
-            <Severity>16</Severity>
-            <Dynamic>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Dynamic>
-            <Dynamic>3</Dynamic>
-            <Dynamic>No port matched 'servo_down'.</Dynamic>
-            <Navigation>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Navigation>
-            <Navigation>3</Navigation>
-        </Message>
-        <Message>
-            <ID>1027013</ID>
-            <Severity>16</Severity>
-            <Dynamic>port</Dynamic>
-            <Dynamic>servo_down</Dynamic>
-        </Message>
-        <Message>
-            <ID>1026001</ID>
-            <Severity>16</Severity>
-            <Dynamic>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Dynamic>
-            <Dynamic>3</Dynamic>
-            <Dynamic>Can't resolve object 'servo_down' in constraint 'ldc_set_location -site {9} [get_ports servo_down]'.</Dynamic>
-            <Navigation>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Navigation>
-            <Navigation>3</Navigation>
-        </Message>
-        <Message>
-            <ID>1011001</ID>
-            <Severity>16</Severity>
-            <Dynamic>ldc_set_location -site {9} [get_ports servo_down]</Dynamic>
-        </Message>
-    </Task>
-    <Task name="Export">
-        <Message>
-            <ID>1081100</ID>
-            <Severity>1</Severity>
-            <Dynamic>Bitstream authenticated.</Dynamic>
         </Message>
     </Task>
 </BaliMessageLog>

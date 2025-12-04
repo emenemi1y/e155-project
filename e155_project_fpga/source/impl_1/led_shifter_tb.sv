@@ -12,9 +12,9 @@ module led_shifter_tb();
 	
 	assign color1 = {8'd0, 8'd206, 8'd255};
 	assign color2 = {8'd127, 8'd50, 8'd168};
-	assign color_string ={color1, color1, color1,    // 3× color1
-         color2, color2, color2};    // 3× color2
-	led_shifter dut(clk, rst, color_string, to_light);
+	assign color_string ={color1, color1, color1,    // 3Ã— color1
+         color2, color2, color2};    // 3Ã— color2
+	led_shifter dut(clk, rst, 1'b1, color_string, to_light);
 	
 	
 	always
