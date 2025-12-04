@@ -10,15 +10,10 @@
 #include <stdint.h>
 #include <stm32l432xx.h>
 
-#define SPI_CE PA1
-#define SPI_SCK PA1
-#define SPI_MOSI PA7
-#define SPI_MISO PA11
-
-//#define SPI_CE PA5
-//#define SPI_SCK PB3
-//#define SPI_MOSI PB5
-//#define SPI_MISO PB4
+#define SPI_CE PA5
+#define SPI_SCK PB3
+#define SPI_MOSI PB5
+#define SPI_MISO PB4
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
@@ -30,11 +25,13 @@
  *    -- cpha: clock phase (0: data captured on leading edge of clk and changed on next edge, 
  *          1: data changed on leading edge of clk and captured on next edge)
  * Refer to the datasheet for more low-level details. */ 
-void initSPI(int br, int cpol, int cpha);
+void initSPI(SPI_TypeDef * SPIx, int br, int cpol, int cpha);
 
 /* Transmits a character (1 byte) over SPI and returns the received character.
  *    -- send: the character to send over SPI
  *    -- return: the character received over SPI */
 char spiSendReceive(char send);
 
+// Start SPI communication by setting chip enable to high 
+void beginSPI(void);
 #endif

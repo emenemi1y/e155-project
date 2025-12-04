@@ -375,12 +375,52 @@
             <Navigation>9</Navigation>
         </Message>
         <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/song_timing.sv(6): </Dynamic>
+            <Dynamic>song_timing</Dynamic>
+            <Navigation>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/song_timing.sv</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/servo_driver.sv(6): </Dynamic>
+            <Dynamic>servo_driver</Dynamic>
+            <Navigation>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/servo_driver.sv</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
             <ID>35931002</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(18): </Dynamic>
+            <Dynamic>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(20): </Dynamic>
             <Dynamic>reset</Dynamic>
             <Navigation>c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv</Navigation>
-            <Navigation>18</Navigation>
+            <Navigation>20</Navigation>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \servo/high_num[31:0]</Dynamic>
+            <Dynamic>31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \servo/high_num[31:0]</Dynamic>
+            <Dynamic>18, 17</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \servo/high_num[31:0]</Dynamic>
+            <Dynamic>1, 0</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \servo/low_num[31:0]</Dynamic>
+            <Dynamic>1, 0</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
@@ -391,14 +431,86 @@
         <Message>
             <ID>35001747</ID>
             <Severity>256</Severity>
+            <Dynamic>\servo/low_num</Dynamic>
+            <Dynamic>31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001748</ID>
+            <Severity>256</Severity>
+            <Dynamic>\servo/low_num</Dynamic>
+            <Dynamic>18</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
             <Dynamic>driving \led_shifter1/single_led/state[4:0]</Dynamic>
             <Dynamic>4</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \song_timing1/state[3:0]</Dynamic>
+            <Dynamic>3, 2</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \servo/state[2:0]</Dynamic>
+            <Dynamic>2</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
             <Dynamic>\led_shifter1/single_led/num_low_i0</Dynamic>
             <Dynamic>One</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_high_i31</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_high_i30</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_high_i29</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_high_i28</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_high_i27</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_high_i26</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_high_i25</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_high_i24</Dynamic>
+            <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
@@ -505,7 +617,19 @@
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\led_shifter1/single_led/num_low_i3</Dynamic>
+            <Dynamic>\led_shifter1/single_led/num_high_i6</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_high_i5</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_low_i2</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
@@ -625,19 +749,49 @@
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\led_shifter1/single_led/num_high_i6</Dynamic>
+            <Dynamic>\led_shifter1/single_led/num_low_i24</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\led_shifter1/single_led/num_high_i2</Dynamic>
+            <Dynamic>\led_shifter1/single_led/num_low_i25</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
             <ID>35935040</ID>
             <Severity>16</Severity>
-            <Dynamic>\led_shifter1/single_led/rgb_shift_i0</Dynamic>
+            <Dynamic>\led_shifter1/single_led/num_low_i26</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_low_i27</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_low_i28</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_low_i29</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_low_i30</Dynamic>
+            <Dynamic>Zero</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935040</ID>
+            <Severity>16</Severity>
+            <Dynamic>\led_shifter1/single_led/num_low_i31</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
@@ -646,23 +800,43 @@
             <Dynamic>\led_shifter1/single_led/num_high_i0</Dynamic>
             <Dynamic>Zero</Dynamic>
         </Message>
+    </Task>
+    <Task name="Map">
         <Message>
-            <ID>35935040</ID>
+            <ID>1026001</ID>
             <Severity>16</Severity>
-            <Dynamic>\led_shifter1/single_led/num_high_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
+            <Dynamic>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Dynamic>
+            <Dynamic>3</Dynamic>
+            <Dynamic>No port matched 'servo_down'.</Dynamic>
+            <Navigation>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Navigation>
+            <Navigation>3</Navigation>
         </Message>
         <Message>
-            <ID>35935040</ID>
+            <ID>1027013</ID>
             <Severity>16</Severity>
-            <Dynamic>\led_shifter1/single_led/rgb_shift_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
+            <Dynamic>port</Dynamic>
+            <Dynamic>servo_down</Dynamic>
         </Message>
         <Message>
-            <ID>35935040</ID>
+            <ID>1026001</ID>
             <Severity>16</Severity>
-            <Dynamic>\led_shifter1/single_led/rgb_shift_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
+            <Dynamic>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Dynamic>
+            <Dynamic>3</Dynamic>
+            <Dynamic>Can't resolve object 'servo_down' in constraint 'ldc_set_location -site {9} [get_ports servo_down]'.</Dynamic>
+            <Navigation>C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc</Navigation>
+            <Navigation>3</Navigation>
+        </Message>
+        <Message>
+            <ID>1011001</ID>
+            <Severity>16</Severity>
+            <Dynamic>ldc_set_location -site {9} [get_ports servo_down]</Dynamic>
+        </Message>
+    </Task>
+    <Task name="Export">
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
         </Message>
     </Task>
 </BaliMessageLog>

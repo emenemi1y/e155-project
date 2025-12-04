@@ -49,7 +49,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Wed Dec  3 03:44:35 2025
+Mapped on: Wed Dec  3 17:07:42 2025
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
 
@@ -61,23 +61,23 @@ Command line:   map -pdc C:/Users/ekendrick/Documents/GitHub/e155-project/e155_p
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
 
-   Number of slice registers: 105 out of  5280 (2%)
+   Number of slice registers: 556 out of  5280 (11%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           165 out of  5280 (3%)
-      Number of logic LUT4s:              67
-      Number of inserted feedthru LUT4s:  20
-      Number of replicated LUT4s:          2
-      Number of ripple logic:             38 (76 LUT4s)
-   Number of IO sites used:   1 out of 39 (3%)
-      Number of IO sites used for general PIO: 1
+   Number of LUT4s:           722 out of  5280 (14%)
+      Number of logic LUT4s:             314
+      Number of inserted feedthru LUT4s: 149
+      Number of replicated LUT4s:          1
+      Number of ripple logic:            129 (258 LUT4s)
+   Number of IO sites used:   3 out of 39 (8%)
+      Number of IO sites used for general PIO: 3
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 1 out of 36 (3%)
+      Number of IO sites used for PIO+I3C: 3 out of 36 (8%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 1 out of 39 (3%)
-   Number of DSPs:             0 out of 8 (0%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 3 out of 39 (8%)
+   Number of DSPs:             1 out of 8 (13%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  1 out of 1 (100%)
    Number of Low Speed OSCs:   0 out of 1 (0%)
@@ -90,38 +90,51 @@ Command line:   map -pdc C:/Users/ekendrick/Documents/GitHub/e155-project/e155_p
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net clk: 74 loads, 41 rising, 33 falling (Driver: Pin
+      Net clk: 445 loads, 445 rising, 0 falling (Driver: Pin
      hf_osc.osc_inst/CLKHF)
-   Number of Clock Enables:  3
+   Number of Clock Enables:  4
       Net VCC_net: 1 loads, 0 SLICEs
-      Net to_light_c: 1 loads, 1 SLICEs
-      Net led_shifter1.single_led.n691: 26 loads, 26 SLICEs
-   Number of LSRs:  6
-      Net led_shifter1.inc_num: 1 loads, 1 SLICEs
-      Net led_shifter1.n3: 1 loads, 1 SLICEs
-      Net led_shifter1.single_led.state[3]: 1 loads, 1 SLICEs
-      Net led_shifter1.single_led.n611: 26 loads, 26 SLICEs
-      Net led_shifter1.single_led.n119: 13 loads, 13 SLICEs
-      Net led_shifter1.single_led.n115: 13 loads, 13 SLICEs
+      Net led_shifter1.n1949: 144 loads, 144 SLICEs
+      Net led_shifter1.n5: 6 loads, 6 SLICEs
+      Net led_shifter1.single_led.n1760: 150 loads, 150 SLICEs
+   Number of LSRs:  11
+      Net song_timing1.n178: 17 loads, 17 SLICEs
+      Net song_timing1.n14[0]: 1 loads, 1 SLICEs
+      Net led_shifter1.n1965: 144 loads, 144 SLICEs
+      Net led_shifter1.n2051: 6 loads, 6 SLICEs
+      Net led_shifter1.single_led.n9_c: 6 loads, 6 SLICEs
+      Net led_shifter1.single_led.n190: 17 loads, 17 SLICEs
+      Net led_shifter1.single_led.n1961: 1 loads, 1 SLICEs
+      Net led_shifter1.single_led.n194: 17 loads, 17 SLICEs
+      Net led_shifter1.delay_counter.n174: 17 loads, 17 SLICEs
+      Net servo.n186: 17 loads, 17 SLICEs
+      Net servo.counter_high.n182: 17 loads, 17 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net led_shifter1.single_led.n611: 27 loads
-      Net led_shifter1.single_led.n691: 27 loads
-      Net led_shifter1.single_led.state[1]: 18 loads
-      Net led_shifter1.single_led.state[0]: 17 loads
-      Net led_shifter1.single_led.state[2]: 16 loads
-      Net led_shifter1.single_led.n115: 13 loads
-      Net led_shifter1.single_led.n119: 13 loads
-      Net led_shifter1.single_led.state[3]: 13 loads
-      Net led_shifter1.state[0]: 7 loads
-      Net led_shifter1.state[1]: 7 loads
+      Net led_shifter1.single_led.n9_c: 151 loads
+      Net led_shifter1.single_led.n1760: 150 loads
+      Net led_shifter1.n1949: 144 loads
+      Net led_shifter1.n1965: 144 loads
+      Net VCC_net: 27 loads
+      Net led_shifter1.delay_counter.n174: 17 loads
+      Net led_shifter1.single_led.n190: 17 loads
+      Net led_shifter1.single_led.n194: 17 loads
+      Net servo.n186: 17 loads
+      Net song_timing1.n178: 17 loads
 
-   Number of warnings:  0
+   Number of warnings:  4
    Number of criticals: 0
    Number of errors:    0
 
 <A name="mrp_dwe"></A><B><U><big>Design Errors/Criticals/Warnings</big></U></B>
 
-   No error, critical, or warning presents.
+WARNING &lt;1026001&gt; - map: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_p
+     roject_fpga/pins.pdc (3) : No port matched &apos;servo_down&apos;.
+WARNING &lt;1027013&gt; - map: No port matched &apos;servo_down&apos;.
+WARNING &lt;1026001&gt; - map: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_p
+     roject_fpga/pins.pdc (3) : Can&apos;t resolve object &apos;servo_down&apos; in constraint
+     &apos;ldc_set_location -site {9} [get_ports servo_down]&apos;.
+WARNING &lt;1011001&gt; - map: Remove invalid constraint &apos;ldc_set_location -site {9}
+     [get_ports servo_down]&apos;.
 
 <A name="mrp_ioa"></A><B><U><big>IO (PIO) Attributes</big></U></B>
 
@@ -129,12 +142,15 @@ Command line:   map -pdc C:/Users/ekendrick/Documents/GitHub/e155-project/e155_p
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
+| song_start          | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | to_light            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| servo_signal        | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
-Block led_shifter1/single_led/i7_1_lut was optimized away.
 Block hf_osc.vlo_inst was optimized away.
 
 <A name="mrp_osc"></A><B><U><big>OSC Summary</big></U></B>
@@ -148,20 +164,24 @@ OSC 1:                                 Pin/Node Value
 
 <A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
 
+Instance Name: servo/mult_21
+         Type: DSP
 Instance Name: hf_osc.osc_inst
          Type: HFOSC
 
 <A name="mrp_consum"></A><B><U><big>Constraint Summary</big></U></B>
 
-   Total number of constraints: 2
-   Total number of constraints dropped: 0
+   Total number of constraints: 5
+   Total number of constraints dropped: 1
+   Dropped constraint is:
+     ldc_set_location -site {9} [get_ports servo_down]
 
 <A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 68 MB
-Checksum -- map: 252bc5fac71aedb6e0465aaa8c86fddce7d54769
+   Peak Memory Usage: 78 MB
+Checksum -- map: 5dc564f9dfc8772d32fdf46818b2c2603e7150d7
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995
      AT&amp;T Corp.   All rights reserved.

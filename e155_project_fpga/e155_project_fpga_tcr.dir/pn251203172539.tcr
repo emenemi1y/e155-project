@@ -1,0 +1,81 @@
+#Start recording tcl command: 12/3/2025 08:48:45
+#Project Location: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga; Project name: e155_project_fpga
+prj_open "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/e155_project_fpga.rdf"
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/servo_driver.sv"
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/servo_driver_tb.sv"
+prj_disable_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/servo_driver_tb.sv"
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/song_timing.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spi.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_disable_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spi.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/update_rgb_string.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 12/3/2025 17:25:39

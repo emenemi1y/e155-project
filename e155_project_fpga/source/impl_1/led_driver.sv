@@ -5,7 +5,7 @@
 
 module led_driver (
 	input logic clk,
-	input logic rst,
+	input logic rst, rst_leds,
 	input logic [143:0] rgb,
 	input logic load,
 	output logic to_light, done);
@@ -13,7 +13,7 @@ module led_driver (
 	typedef enum logic [4:0] {init, shift, T1H, T1L, T0H, T0L, finish, next, hold} statetype;
 	statetype state, nextstate;
 	
-	logic [23:0] num_high, num_low;
+	logic [31:0] num_high, num_low;
 	logic counter_reset_high, counted_high;
 	logic counter_reset_low, counted_low;
 	// Counter for waiting 
@@ -39,20 +39,20 @@ module led_driver (
 			else num_high <= 24'd40;
 		end
 		else begin
-			if (state == T1H) num_high <= 24'd18;
-			if (state == T1L) num_low <= 24'd7;
-			if (state == T0H) num_high <= 24'd8;
-			if (state == T0L) num_low <= 24'd17; 
+			if (state == T1H) num_high <= 24'd20;
+			if (state == T1L) num_low <= 24'd9;
+			if (state == T0H) num_high <= 24'd10;
+			if (state == T0L) num_low <= 24'd19; 
 		end
 	end
 	
-	always_ff @(negedge clk) begin
+	always_ff @(posedge clk) begin
 		if (rst | update_bits) begin
 			rgb_shift <= rgb;
 			rgb_count <= 0;
 		end
 		else begin
-			if (shift_bit) begin
+			if (nextstate == shift) begin
 				rgb_shift <= {rgb_shift[142:0], 1'b0};
 				if (done) rgb_count <= 10'b0;
 				rgb_count <= rgb_count + 10'd1;
@@ -67,7 +67,7 @@ module led_driver (
 	always_comb 
 		case(state) 
 			init:		if (~load)				nextstate = init;
-						else if (rgb_shift[23]) nextstate = T1H;
+						else if (rgb_shift[143]) nextstate = T1H;
 						else                    nextstate = T0H;
 			T1H:		if (~counted_high)		nextstate = T1H;
 						else					nextstate = T1L;
@@ -84,7 +84,7 @@ module led_driver (
 			finish:		 						nextstate = next;
 			next: 		if (~load)				nextstate = next;
 						else					nextstate = init;
-			hold:		if (rgb_shift[23])      nextstate = T1H;
+			hold:		if (rgb_shift[143])      nextstate = T1H;
 						else					nextstate = T0H;
 			default:							nextstate = init;
 						
@@ -97,6 +97,7 @@ module led_driver (
 		counter_reset_low = (state != T1L) && (state != T0L);
 		counter_reset_high = (state != T1H) && (state != T0H);
 		to_light = ((state == T1H) | (state == T0H));
+		if (rst_leds) to_light = 0;
 		shift_bit = (state == shift);
 		update_bits = (state == next);
 	end

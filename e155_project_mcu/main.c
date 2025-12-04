@@ -1,12 +1,7 @@
 // E155 project main file
 
 #include "STM32L432KC.h"
-
-#define TX PA9
-#define RX PA10
 #define USART_ID USART1_ID
-
-
 
 int main(void) {
   configureFlash();
@@ -17,8 +12,14 @@ int main(void) {
   gpioEnable(GPIO_PORT_B);
   gpioEnable(GPIO_PORT_C);
 
+  // GPIO pin for telling FPGA to start 
+  pinMode(FPGA_PIN, GPIO_OUTPUT);
+  digitalWrite(FPGA_PIN, PIO_LOW);
+  pinMode(BUSY_PIN, GPIO_INPUT);
+
   // Enable TIM15
   RCC->APB2ENR |= RCC_APB2ENR_TIM15EN;
+  RCC->APB2ENR |= RCC_APB2ENR_TIM16EN;
   initTIM(TIM15, 1e6);
   initTIM(TIM16, 1e3);
 
@@ -32,7 +33,7 @@ int main(void) {
 
 
   initializeDF3(USART);
-  //setVolume(USART, 30);
+  setVolume(USART, 20);
   pauseSong(USART);
   
   
@@ -43,14 +44,26 @@ int main(void) {
   
   while(1){
     if (PICC_IsNewCardPresent()){
+      
       if(PICC_ReadCardSerial()){
         prev_id = card_id;
         card_id = PICC_DumpToSerial(&(uid));
-      }   
+        //digitalWrite(FPGA_PIN, PIO_HIGH);
+        //delay_units(TIM15, 30);
+        //digitalWrite(FPGA_PIN, PIO_LOW);
+      } 
+      
+      if (getSongID(card_id) != 0x00){
+        digitalWrite(FPGA_PIN, PIO_HIGH);
+        delay_units(TIM15, 30);
+        digitalWrite(FPGA_PIN, PIO_LOW);
+      }
       pauseSong(USART);
+      playSong(USART, 0x1e);
+      delay_units(TIM16, 12000);
       playSong(USART, getSongID(card_id));
-      //if (card_id == 0x7945dc11) playSong(USART, 0x01);
-      //else if (card_id == 0x1c2ae62e) playSong(USART, 0x02);
+      
+      
     }
   }
   

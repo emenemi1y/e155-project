@@ -1,1 +1,4 @@
 ldc_set_location -site {4} [get_ports to_light]
+ldc_set_location -site {19} [get_ports servo_signal]
+ldc_set_location -site {9} [get_ports servo_down]
+ldc_set_location -site {3} [get_ports song_start]

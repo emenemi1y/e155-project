@@ -8,13 +8,16 @@ uint8_t getSongID(uint64_t card_id){
     case (0x1c2ae62e):
       return 0x02;
       break;
-    case (0x984e62e):
+    case (0x1183e52e):
       return 0x03;
       break;
-    case (0xf966e62e):
+    case (0xc299e52e):
       return 0x04;
       break;
-    default: return 0x30;
+    case (0xdca6e52e):
+      return 0x05;
+      break;
+    default: return 0x00;
 
   }
 }

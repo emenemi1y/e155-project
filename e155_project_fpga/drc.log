@@ -1,3 +1,5 @@
 DRC: Design Rule Check Radiant Software (64-bit) 2024.2.0.3.0
-Tue Dec  2 00:36:41 2025
+Wed Dec  3 10:52:07 2025
 
+WARNING <1027013> - No port matched 'to_light'.
+WARNING <1026001> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/pins.pdc (1) : Can't resolve object 'to_light' in constraint 'ldc_set_location -site {4} [get_ports to_light]'.

@@ -15,7 +15,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 void initializeDF3(USART_TypeDef * USART);
-void selectSong();
 void pauseSong(USART_TypeDef * USART);
 void playSong (USART_TypeDef * USART, uint8_t song);
 void setVolume(USART_TypeDef * USART, uint8_t volume);

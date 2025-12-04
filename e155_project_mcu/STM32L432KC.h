@@ -28,6 +28,11 @@
 #define HSI_FREQ 16000000 // HSI clock is 16 MHz
 #define MSI_FREQ 4000000  // HSI clock is 4 MHz
 
+#define TX PA9
+#define RX PA10
+#define FPGA_PIN PB1
+#define BUSY_PIN PC14
+
 
 int _write(int file, char *ptr, int len);
 
