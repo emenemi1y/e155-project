@@ -39,7 +39,7 @@
 #define SPI_MOSI PA7
 #define SPI_MISO PA11
 #define LOAD_PIN PA2
-#define DONE PA3
+#define FPGA_DONE PA3
 
 // Flash Memory Configurtion
 #define FLASH_BASE        0x08000000UL

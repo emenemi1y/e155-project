@@ -124,14 +124,9 @@ int main(void) {
 
 
   // Load and done pins
-  pinMode(PA2, GPIO_OUTPUT);  // LOAD
-  //pinMode(PA3, GPIO_INPUT);   // DONE
+  pinMode(LOAD_PIN, GPIO_OUTPUT);  // LOAD
+  pinMode(FPGA_DONE, GPIO_INPUT);   // DONE
   
-  // debugging LEDs
-  pinMode(PA9, GPIO_OUTPUT);
-  pinMode(PA10, GPIO_OUTPUT);
-  digitalWrite(PA9, 0);
-  digitalWrite(PA10, 0);
 
   // Artificial chip select signal to allow 8-bit CE-based SPI decoding on the logic analyzers.
   pinMode(SPI_CE, GPIO_OUTPUT);
@@ -143,31 +138,47 @@ int main(void) {
 
 
   // sending FLASH data
-  readSendFlash(PAGE127_ADDR, 8);
+  readSendFlash(PAGE127_ADDR, 144);
 }
 
 ////////////////////////////////////////////////
 // Functions
 ////////////////////////////////////////////////
 
+
 void readSendFlash(uint32_t base_addr, uint32_t length) {
 
-
-
-    volatile uint8_t *src = (volatile uint8_t *)base_addr;
+    // Treat flash contents as 16-bit words
+    volatile uint16_t *src = (volatile uint16_t *)base_addr;
+    uint32_t num_words = length / 2;   // 2 bytes per 16-bit word
 
     // Assert LOAD high to indicate to the FPGA that a new frame is starting
     digitalWrite(LOAD_PIN, 1);
 
-    for (uint32_t i = 0; i < length; i++) {
-        // Artificial chip-select pulse per byte, like in the AES lab
-        digitalWrite(SPI_CE, 1);               // CE high
-        spiSendReceive(*(src+i));                // send one byte from flash
-        //printf("value at this location %d \n", *(src+i));
-        digitalWrite(SPI_CE, 0);               // CE low
+    for (uint32_t i = 0; i < num_words; i++) {
+
+        uint16_t word = src[i];
+
+        // Wait until FPGA indicates it is ready for next 16-bit word
+        while (!digitalRead(FPGA_DONE));
+
+        // Start this 16-bit transaction
+        digitalWrite(SPI_CE, 1);   // CE high
+
+        // Send 16 bits as two 8-bit frames (MSB first, then LSB)
+        uint8_t high = (word >> 8) & 0xFF;
+        uint8_t low  =  word       & 0xFF;
+
+        spiSendReceive(high);
+        spiSendReceive(low);
+
+        // Confirm all SPI transactions are completed
+        while (SPI1->SR & SPI_SR_BSY);
+
+        // End transaction
+        digitalWrite(SPI_CE, 0);   // CE low
     }
 
-    while(SPI1->SR & SPI_SR_BSY); // Confirm all SPI transactions are completed
-
-    digitalWrite(LOAD_PIN, 0); // Write LOAD low */
+    // De-assert LOAD when done
+    digitalWrite(LOAD_PIN, 0);
 }
