@@ -12,7 +12,6 @@ module servo_driver_tb();
 
 	servo_driver dut(clk, rst, angle, servo_signal);
 	
-	
 	always
 		begin
 			clk = 1; #5; 

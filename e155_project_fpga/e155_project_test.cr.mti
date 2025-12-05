@@ -5,6 +5,13 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	counter_tb
 
+} {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_shifter_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module led_shifter_tb
+
+Top level modules:
+	led_shifter_tb
+
 } {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/servo_driver_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/servo_driver_tb.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module servo_driver_tb
@@ -26,33 +33,12 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	led_shifter
 
-} {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module led_driver_tb
-
-Top level modules:
-	led_driver_tb
-
-} {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_tb.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module spram_tb
-
-Top level modules:
-	spram_tb
-
 } {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/counter.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module counter
 
 Top level modules:
 	counter
-
-} {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string_tb.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module led_string_tb
-
-Top level modules:
-	led_string_tb
 
 } {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/servo_driver.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/servo_driver.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
@@ -61,25 +47,11 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	servo_driver
 
-} {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module spram
-
-Top level modules:
-	spram
-
 } {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/top.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module top
 
 Top level modules:
 	top
-
-} {} {}} C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_string.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module led_string
-
-Top level modules:
-	led_string
 
 } {} {}}

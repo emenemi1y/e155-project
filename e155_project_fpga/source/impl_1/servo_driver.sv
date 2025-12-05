@@ -2,10 +2,12 @@
 // servo_driver.sv
 // ekendrick@hmc.edu
 // 12/3/25
+// Servo PWM logic -- -90 degrees corresponds to 1 ms / 20 ms PWM, 0 degrees is 1.5 ms / 20 ms PWM, 90 degrees is 2 ms / 20 ms PWM
 
 module servo_driver(input logic clk, reset,
-				    input logic [9:0] angle, // angle 0 to 180, except 0 corresponds to -90
-					output logic servo_signal);
+				    input logic [9:0] angle,  // angle 0 to 180, except 0 corresponds to -90
+					output logic servo_signal // Output logic to the servo
+					);
 					
 		
 		// Define state variables
@@ -32,7 +34,7 @@ module servo_driver(input logic clk, reset,
 				high_num <= 32'd24000;
 				low_num  <= 32'd456000;
 			end else begin
-				high_num <= angle * 32'd133 + 32'd24000;
+				high_num <= angle * 32'd133 + 32'd24000; 
 				low_num  <= 32'd480000 - high_num;
 			end
 		end

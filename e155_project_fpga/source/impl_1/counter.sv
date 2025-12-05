@@ -8,8 +8,8 @@ Counted goes high when the counter reaches the "num" value
 
 module counter(
 	input logic clk, reset,
-	input logic [31:0] num,
-	output logic counted
+	input logic [31:0] num, // Number to count to
+	output logic counted	// Asserted high when the number is counted to
 );
 
 	logic [31:0] count;

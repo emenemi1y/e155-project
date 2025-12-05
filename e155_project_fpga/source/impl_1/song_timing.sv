@@ -2,9 +2,10 @@
 // song_timing.sv
 // ekendrick@hmc.edu
 // 12/3/25
+// Handles song timing based on communcation with MCU
 
-module song_timing(input logic clk, reset, song_start,
-				    output logic [9:0] angle // angle 0 to 180, except 0 corresponds to -90
+module song_timing(input logic clk, reset, song_start, // Song start is a signal from the MCU that goes high when a card is detected
+				    output logic [9:0] angle 			// angle 0 to 180, except 0 corresponds to -90
 				   );
 					
 		

@@ -7,10 +7,15 @@
 module led_driver_tb();
 	logic clk, rst;
 	logic start, load;
-	logic [23:0] rgb;
+	logic [143:0] color_string;
+	logic [23:0] color1, color2;
+	assign color1 = {8'd0, 8'd206, 8'd255};
+	assign color2 = {8'd127, 8'd50, 8'd168};
+	assign color_string ={color1, color1, color1,    
+         color2, color2, color2};   
 	logic to_light, done;
 	
-	led_driver dut(clk, rst, rgb, load, to_light, done);
+	led_driver dut(clk, rst, 1'b0, color_string, load, to_light, done);
 	
 	always
 		begin
@@ -20,8 +25,8 @@ module led_driver_tb();
 	
 	initial begin
 		#12; 
+		// Reset LEDs and set color
 		rst = 1;
-		rgb = {8'd0, 8'd206, 8'd255};
 		load = 1;
 		#12; 
 		rst = 0; 

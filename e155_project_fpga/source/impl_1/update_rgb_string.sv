@@ -1,14 +1,15 @@
 // Emily Kendrick
+// ekendrick@hmc.edu
+// 12/4/25
 // update_rgb_string.sv
 // Updates the rgb string when a card is tapped 
+// (not tested)
 
 module update_rgb_string(input logic clk,
 						 input logic [5:0] id,
 						 input logic song_start,
 						 output logic [143:0] rgb);
-						 
-	
-	
+						 	
 	logic [143:0] new_led_string;
 	
 	always_ff @(posedge clk)
