@@ -244,3 +244,5 @@ sim:/servo_driver_tb/servo_signal
 add wave -position insertpoint  \
 sim:/servo_driver_tb/dut/state
 run 3000000
+# End time: 03:03:58 on Dec 05,2025, Elapsed time: 3:32:24
+# Errors: 0, Warnings: 4
