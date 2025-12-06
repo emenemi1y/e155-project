@@ -15,6 +15,7 @@ website:
         text: Results
       - href: docs.qmd
         text: Documentation
+        
       - href: team.qmd
         text: Team
 
@@ -23,7 +24,7 @@ format:
     theme:
       - united
       - brand
-    css: styles.css
+    css: styles.css   
     toc: true
 
 

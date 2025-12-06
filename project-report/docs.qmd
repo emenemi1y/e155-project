@@ -16,7 +16,7 @@ All the code for this project can be found in the associated [GitHub repository]
 
 | Item | Qty | Part Number | Source | Cost |
 |:-------:|:----:|:-----:|:------:|
-| Speaker | 1 | N/A | Lab | $0 |
+| Speaker | 1 | N/A | Lab | $0 | 
 | SD Card | 1 | N/A | Lab | $0 |
 | RFID Tag | 1 | UID-M1-BAISE | [20 pack](https://www.amazon.com/Writable-Rewritable-Compatible-Classic-Control/dp/B0DHZZFCHR/ref=sr_1_9?crid=YQ1SQMI69TH6&dib=eyJ2IjoiMSJ9.Ri20uBAVxHlN6_C3kPyC3j5G579x9Q-yffTZGr7nlBjvjAktzZ4kIVvGFCXZ5UNRXlqpRXNx-Z_yLAEOU6cA4mCNHHmo-4jd4zaB33osLCUSSi2KCwIm8Wzm43byIDZ3Cdrfhs2fZ8TfhNklfYLXEUlL4JJWcWoiBNQutOyjYPVH_plYE2U64PtGm9ffAkkOAGTvKgrgsWo9aMXxBD0wy1LmB_G7ae8P7BBBs9_ar7lCX0jsSpYTRqPdb1kwWm_4FLSVerqHVkAiBJhPycn3gm8zRDEyy-AAMpv0uUR8W9I.gysc2cuOD1_F3OuyzZVc_XfQ3UhUrlZhA8ehdKtKIDU&dib_tag=se&keywords=rfid+tags+13.56+mhz&qid=1761586471&s=electronics&sprefix=rfid+tags+13.56+mhz%2Celectronics%2C146&sr=1-9) | $9.98|
 | RFID Reader | 1 | RFID RC522 | [RFID Reader](https://www.amazon.com/dp/B01CSTW0IA/ref=sspa_dk_detail_0?pd_rd_i=B01CSTW0IA&pd_rd_w=bLk8j&content-id=amzn1.sym.f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&pf_rd_p=f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&pf_rd_r=NV47PJTQMA03V6PTGA05&pd_rd_wg=D9Ors&pd_rd_r=3fbf7e6c-8b34-4e1a-b862-9fc9fa7b7f59&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1) | $5.69 |
