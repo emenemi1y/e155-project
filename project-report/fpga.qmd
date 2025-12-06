@@ -37,8 +37,8 @@ output pin low for at least 50 microseconds). The original string is shifted by 
 looks like the colors are "sliding" across the LEDs. This was successfully implemented, but no
 video was taken before all of the hardware broke.
 
-![led_driver FSM](images/led_driver_fsm)
-![led_shifter FSM](images/led_shifter_fsm)
+![led_driver FSM](images/led_driver_fsm.jpeg)
+![led_shifter FSM](images/led_shifter_fsm.jpeg)
 
 ## Servo Control
 The servo was implemented to control a "needle" that would lay on top of the "record" to look like
@@ -53,9 +53,9 @@ This was achieved using two FSMs and counters. servo_control outputs the PWM sig
 input angle, and just makes use of counters. song_timing asserts angles corresponding to a down,
 then up, then back down position when a song is loaded to simulate changing a record. 
 
-![servo_driver FSM](images/servo_driver_fsm.png)
+![servo_driver FSM](images/servo_driver_fsm.jpeg)
 
-![song_timing FSM](images/song_timing_fsm.png)
+![song_timing FSM](images/song_timing_fsm.jpeg)
 
 ## SPRAM 
 

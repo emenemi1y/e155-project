@@ -46,7 +46,7 @@
     "href": "fpga.html#led-strip-control",
     "title": "FPGA Design Overview",
     "section": "LED Strip Control",
-    "text": "LED Strip Control"
+    "text": "LED Strip Control\nThe FPGA displayed a custom color sequence on a WS2812 RGB individually addressable LED strip with 144 pixels/m. The data transfer protocol for the LEDs is NZR, non-return-to-zero communication. This involved sending a PWM signal and changing the duty cycle of the pulses based on the data to be sent, like in the diagram below.\n\n\n\nWS2812 communication protocol\n\n\nThis was accomplished using two FSMs: led_driver and led_shifter. led_driver shifted in a specific number of bits to the LED strip by updating the duty cycle of the PWM signal for each bit. To save on space, a pattern of 6 colors was repeated across the entire LED strip, so this took 144 bits (corresponding to 6 LEDs * 24 bits each). Each LED requires 24 bits (8 green, 8 red, 8 blue).\nled_shifter iterates through inputs to be sent to the led_driver. The same 144 bit string is sent to the LED strip 6 times over, then a reset signal is asserted (which just requires pulling the output pin low for at least 50 microseconds). The original string is shifted by 24 bits so it looks like the colors are “sliding” across the LEDs. This was successfully implemented, but no video was taken before all of the hardware broke."
   },
   {
     "objectID": "fpga.html#servo-control",
@@ -124,5 +124,54 @@
     "title": "Results",
     "section": "Logic Analyzer and Testbench Results",
     "text": "Logic Analyzer and Testbench Results\nThe logic analyzer and Quarto simulator were used extensively for testing software. The logic analyzer was used for verifying communication with the DFPlayer and SPI communication from the MCU (which was supposed to go to the FPGA). Results from the logic analyzer are given below.\n\n\n\n8 bytes of data, as expected\n\n\n\n\n\nZoomed in, 1 byte of data, transmitted 0x56 as expected\n\n\nThe Quarto simulator was used to verify the FSMs were behaving as expected. Their results are given below. The led_driver module was made to modulate the duty cycle of a PWM signal to send to the lights. The waveforms indicate that it is behaving as expected. \nThe led_shifter module was made to shift strings into the led_driver module. Here, after 24624 bits of data has been sent to the LEDs, a reset signal is sent and the RGB string to be sent to the LED strip is shifted. \nThe servo_driver module created a PWM signal for the servo based on an input angle. Here, the output shifts from high to low."
+  },
+  {
+    "objectID": "docs.html",
+    "href": "docs.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "The system schematic is given below, including the RFID reader, DFPlayer, speaker, LED strip, MCU, and FPGA.\n\n\n\nProject schematic"
+  },
+  {
+    "objectID": "docs.html#schematic",
+    "href": "docs.html#schematic",
+    "title": "Documentation",
+    "section": "",
+    "text": "The system schematic is given below, including the RFID reader, DFPlayer, speaker, LED strip, MCU, and FPGA.\n\n\n\nProject schematic"
+  },
+  {
+    "objectID": "docs.html#code",
+    "href": "docs.html#code",
+    "title": "Documentation",
+    "section": "Code",
+    "text": "Code\nAll the code for this project can be found in the associated GitHub repository."
+  },
+  {
+    "objectID": "docs.html#bill-of-materials",
+    "href": "docs.html#bill-of-materials",
+    "title": "Documentation",
+    "section": "Bill of Materials",
+    "text": "Bill of Materials\n\n\n\nItem\nQty\nPart Number\nSource\n\n\n\n\nSpeaker\n1\nN/A\nLab\n\n\nSD Card\n1\nN/A\nLab\n\n\nRFID Tag\n1\nUID-M1-BAISE\n20 pack\n\n\nRFID Reader\n1\nRFID RC522\nRFID Reader\n\n\nDFPlayer\n1\nB01D1D0E7Q\nDFPlayer\n\n\nLED Strip\n1\nHD-5V-WS2812E-100L-B-IP30\n144 LED/1 m\n\n\nServo motors\n1\n4 x SG90 Servo\nServo motor\n\n\n\nThe total cost for this project was $46.92, which was under the $50 limit."
+  },
+  {
+    "objectID": "docs.html#references",
+    "href": "docs.html#references",
+    "title": "Documentation",
+    "section": "References",
+    "text": "References\n\nArduino code translated into C for RFID Reader\n\nAccess here\n\nNXP Semiconductors, “Standard performance MIFARE and NTAG frontend”, MFRC522 datasheet, April 2016.\n\nAccess here\n\nWorldsemi, “Intelligent control LED integrated light source”, WS2812B datasheet.\n\nAccess here\n\nLattice Semiconductor, “iCE40 SPRAM Usage Guide”, March 2021.\n\nAccess here\n\nSTMicroelectronics, “STM32L41xxx/42xxx/43xxx/44xxx/45xxx/46xxx advanced Arm®-based 32-bit MCUs”, RM0394 Reference Manual, October 2018.\n\nAccess here\n\nSTMicroelectronics, “Ultra-low-power Arm® Cortex®-M4 32-bit MCU+FPU, 100DMIPS, up to 256KB Flash”, STM32L432KB STM32L432KC datasheet, May 2018.\n\nAccess here"
+  },
+  {
+    "objectID": "team.html",
+    "href": "team.html",
+    "title": "About us",
+    "section": "",
+    "text": "Nina Jobanputra is a senior engineering major at Harvey Mudd College. She is interested in working as an electrical engineer in biotech fields, or robotics. In her free time you can find Nina on the Ultimate Field or in Rock Creek, Washington DC. Find her on LinkedIn or check out her portfolio.\nEmily Kendrick is also a senior engineering major at Harvey Mudd. She doesn’t really know exactly what she wants to do with her life, but is interested in lots of things EE. When she is not doing schoolwork she is definitely running. She has lived in southern California her whole life. Find her on LinkedIn or check out her portfolio."
+  },
+  {
+    "objectID": "team.html#acknowledgements",
+    "href": "team.html#acknowledgements",
+    "title": "About us",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nWe would like to thank Prof Spencer and Kavi for their help in progressing through this project. We would also like to thank Jacob in the stockroom for helping us find the parts we needed."
   }
 ]

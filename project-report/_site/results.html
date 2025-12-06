@@ -103,14 +103,14 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./results.html" aria-current="page"> 
-<span class="menu-text">results</span></a>
+<span class="menu-text">Results</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs.qmd"> 
+    <a class="nav-link" href="./docs.html"> 
 <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./team.qmd"> 
+    <a class="nav-link" href="./team.html"> 
 <span class="menu-text">Team</span></a>
   </li>  
 </ul>
@@ -137,6 +137,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#lights" id="toc-lights" class="nav-link" data-scroll-target="#lights">Lights</a></li>
   <li><a href="#dfplayer" id="toc-dfplayer" class="nav-link" data-scroll-target="#dfplayer">DFPlayer</a></li>
   </ul></li>
+  <li><a href="#logic-analyzer-and-testbench-results" id="toc-logic-analyzer-and-testbench-results" class="nav-link" data-scroll-target="#logic-analyzer-and-testbench-results">Logic Analyzer and Testbench Results</a></li>
   </ul>
 </nav>
     </div>
@@ -206,14 +207,33 @@ ul.task-list li input[type="checkbox"] {
 <section id="lights" class="level3">
 <h3 class="anchored" data-anchor-id="lights">Lights</h3>
 <p>While we were able to successfully program the lights so it looked like a pattern of lights was “shifting” across the string, we do not have a video of that working. Instead, we have this video of the lights blinking two different colors, and a picture of a rainbow string.</p>
-<p><video src="videos/lights_Working.MOV" class="img-fluid" controls=""><a href="videos/lights_Working.MOV">Lights blinking pink and blue</a></video> <img src="iamges/rainbow.jpeg" class="img-fluid" alt="Rainbow lights"></p>
+<p><video src="videos/lights_Working.MOV" class="img-fluid" controls=""><a href="videos/lights_Working.MOV">Lights blinking pink and blue</a></video> <img src="images/rainbow.jpeg" class="img-fluid" alt="Rainbow lights"></p>
 </section>
 <section id="dfplayer" class="level3">
 <h3 class="anchored" data-anchor-id="dfplayer">DFPlayer</h3>
 <p>We also have a video of the DFPlayer playing a song. We do not have a video of the RFID Reader working. <video src="videos/DFPlayer_Playing.MOV" class="img-fluid" controls=""><a href="videos/DFPlayer_Playing.MOV">DFPlayer playing a song</a></video></p>
-
-
 </section>
+</section>
+<section id="logic-analyzer-and-testbench-results" class="level2">
+<h2 class="anchored" data-anchor-id="logic-analyzer-and-testbench-results">Logic Analyzer and Testbench Results</h2>
+<p>The logic analyzer and Quarto simulator were used extensively for testing software. The logic analyzer was used for verifying communication with the DFPlayer and SPI communication from the MCU (which was supposed to go to the FPGA). Results from the logic analyzer are given below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/FLASH_SPI_2.png" class="img-fluid figure-img"></p>
+<figcaption>8 bytes of data, as expected</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/FLASH_SPI_1.png" class="img-fluid figure-img"></p>
+<figcaption>Zoomed in, 1 byte of data, transmitted 0x56 as expected</figcaption>
+</figure>
+</div>
+<p>The Quarto simulator was used to verify the FSMs were behaving as expected. Their results are given below. The led_driver module was made to modulate the duty cycle of a PWM signal to send to the lights. The waveforms indicate that it is behaving as expected. <img src="images/led_driver_tb.png" class="img-fluid" alt="led_driver waveforms"></p>
+<p>The led_shifter module was made to shift strings into the led_driver module. Here, after 24<em>6</em>24 bits of data has been sent to the LEDs, a reset signal is sent and the RGB string to be sent to the LED strip is shifted. <img src="images/led_shifter_tb.png" class="img-fluid" alt="led_shifter waveforms"></p>
+<p>The servo_driver module created a PWM signal for the servo based on an input angle. Here, the output shifts from high to low. <img src="images/servo_driver_tb.png" class="img-fluid" alt="servo_driver waveforms"></p>
+
+
 </section>
 
 </main> <!-- /main -->

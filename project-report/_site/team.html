@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MCU Design Overview – E155 Project: RFID Jukebox</title>
+<title>About us – E155 Project: RFID Jukebox</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">FPGA Design</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./mcu.html" aria-current="page"> 
+    <a class="nav-link" href="./mcu.html"> 
 <span class="menu-text">MCU Design</span></a>
   </li>  
   <li class="nav-item">
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./team.html"> 
+    <a class="nav-link active" href="./team.html" aria-current="page"> 
 <span class="menu-text">Team</span></a>
   </li>  
 </ul>
@@ -129,9 +129,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rfid-reader" id="toc-rfid-reader" class="nav-link active" data-scroll-target="#rfid-reader">RFID Reader</a></li>
-  <li><a href="#dfplayer" id="toc-dfplayer" class="nav-link" data-scroll-target="#dfplayer">DFPlayer</a></li>
-  <li><a href="#flash" id="toc-flash" class="nav-link" data-scroll-target="#flash">FLASH</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul>
 </nav>
     </div>
@@ -140,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MCU Design Overview</h1>
+<h1 class="title">About us</h1>
 </div>
 
 
@@ -157,25 +155,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The MCU (STM32L432KC) was key for the implementation of our projects. One of these was operating the RFID reader. The MCU connected to the reader and read the different IDs of the cards via SPI. It used these IDs to select a song saved on an SD card reader through a DFPlayer, and played that song. It also sent a signal to the FPGA to indicate when to start the servo motor and the lights. The FLASH memory of the microcontroller was programmed to store color data to be sent to the FPGA to be displayed on the LEDs. A diagram ofthe</p>
-<p>A diagram of the MCU operation is given below. <img src="images/mcu_block.png" class="img-fluid" alt="MCU block diagram"></p>
-<section id="rfid-reader" class="level2">
-<h2 class="anchored" data-anchor-id="rfid-reader">RFID Reader</h2>
-<p>We implemented an RFID-RC522 RFID sensor to read the IDs from 13.56 MHz RFID cards. Communication to the RFID Reader was done via SPI. We translated an existing library for use of the RFID-RC522 with an Arduino (found <a href="https://github.com/miguelbalboa/rfid/blob/master/src/MFRC522.cpp">here</a>) to C for use with the STM32L432KC. A block diagram, from the MFRC522 datasheet, is given below. An antenna is used to detect the RFID cards.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/MFRC522_block.png" class="img-fluid figure-img"></p>
-<figcaption>Simplified block diagram of the MFRC522</figcaption>
-</figure>
-</div>
-</section>
-<section id="dfplayer" class="level2">
-<h2 class="anchored" data-anchor-id="dfplayer">DFPlayer</h2>
-<p>A DFPlayer takes MP3 files from an SD card and translates them into signals that can be sent to a speaker. It communicates with the MCU via USART, and takes 7 bytes at a time to initialize, pick and play a song from the SD card, and pause a song. The byte string that had to be sent to the DFPlayer is given below.</p>
-</section>
-<section id="flash" class="level2">
-<h2 class="anchored" data-anchor-id="flash">FLASH</h2>
-<p>The last component of our MCU design was the use of the FLASH peripheral. We had to create an unlock, lock, program and erase function in order to properly store strings in the FLASH memory. We had not explored this functionality of the MCU before in labs and so the reference manual was used extensively as well as the official STM32L4 HAL_Library. In order to program the FLASH our main program first executed the unlocking of the FLASH. Then we erased the FLASH at a specific page. The page by page erase method allowed us to be more cautious. After erasing the specific page we programmed strings into the page incrementing the address after 8 bits. Finally, we created a function that would transmit 16 bits of flash memory at a time over SPI to the FPGA.</p>
+<p>
+<strong>Nina Jobanputra</strong> is a senior engineering major at Harvey Mudd College. She is interested in working as an electrical engineer in biotech fields, or robotics. In her free time you can find Nina on the Ultimate Field or in Rock Creek, Washington DC. Find her on <a href="https://www.linkedin.com/in/nina-jobanputra/">LinkedIn</a> or check out her <a href="https://njobanputra.github.io/hmc-e155-portfolio/">portfolio</a>.
+</p>
+<p>
+<strong>Emily Kendrick</strong> is also a senior engineering major at Harvey Mudd. She doesn’t really know exactly what she wants to do with her life, but is interested in lots of things EE. When she is not doing schoolwork she is definitely running. She has lived in southern California her whole life. Find her on <a href="https://www.linkedin.com/in/emily56/">LinkedIn</a> or check out her <a href="https://emenemi1y.github.io/HMC-E155-PORTFOLIO/">portfolio</a>.
+</p>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>We would like to thank Prof Spencer and Kavi for their help in progressing through this project. We would also like to thank Jacob in the stockroom for helping us find the parts we needed.</p>
 
 
 </section>

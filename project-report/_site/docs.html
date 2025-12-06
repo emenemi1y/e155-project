@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MCU Design Overview – E155 Project: RFID Jukebox</title>
+<title>Documentation – E155 Project: RFID Jukebox</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">FPGA Design</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./mcu.html" aria-current="page"> 
+    <a class="nav-link" href="./mcu.html"> 
 <span class="menu-text">MCU Design</span></a>
   </li>  
   <li class="nav-item">
@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Results</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs.html"> 
+    <a class="nav-link active" href="./docs.html" aria-current="page"> 
 <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
@@ -129,9 +129,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rfid-reader" id="toc-rfid-reader" class="nav-link active" data-scroll-target="#rfid-reader">RFID Reader</a></li>
-  <li><a href="#dfplayer" id="toc-dfplayer" class="nav-link" data-scroll-target="#dfplayer">DFPlayer</a></li>
-  <li><a href="#flash" id="toc-flash" class="nav-link" data-scroll-target="#flash">FLASH</a></li>
+  <li><a href="#schematic" id="toc-schematic" class="nav-link active" data-scroll-target="#schematic">Schematic</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  <li><a href="#bill-of-materials" id="toc-bill-of-materials" class="nav-link" data-scroll-target="#bill-of-materials">Bill of Materials</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -140,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MCU Design Overview</h1>
+<h1 class="title">Documentation</h1>
 </div>
 
 
@@ -157,25 +158,106 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The MCU (STM32L432KC) was key for the implementation of our projects. One of these was operating the RFID reader. The MCU connected to the reader and read the different IDs of the cards via SPI. It used these IDs to select a song saved on an SD card reader through a DFPlayer, and played that song. It also sent a signal to the FPGA to indicate when to start the servo motor and the lights. The FLASH memory of the microcontroller was programmed to store color data to be sent to the FPGA to be displayed on the LEDs. A diagram ofthe</p>
-<p>A diagram of the MCU operation is given below. <img src="images/mcu_block.png" class="img-fluid" alt="MCU block diagram"></p>
-<section id="rfid-reader" class="level2">
-<h2 class="anchored" data-anchor-id="rfid-reader">RFID Reader</h2>
-<p>We implemented an RFID-RC522 RFID sensor to read the IDs from 13.56 MHz RFID cards. Communication to the RFID Reader was done via SPI. We translated an existing library for use of the RFID-RC522 with an Arduino (found <a href="https://github.com/miguelbalboa/rfid/blob/master/src/MFRC522.cpp">here</a>) to C for use with the STM32L432KC. A block diagram, from the MFRC522 datasheet, is given below. An antenna is used to detect the RFID cards.</p>
+<section id="schematic" class="level2">
+<h2 class="anchored" data-anchor-id="schematic">Schematic</h2>
+<p>The system schematic is given below, including the RFID reader, DFPlayer, speaker, LED strip, MCU, and FPGA.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/MFRC522_block.png" class="img-fluid figure-img"></p>
-<figcaption>Simplified block diagram of the MFRC522</figcaption>
+<p><img src="images/project_schematic.png" class="img-fluid figure-img"></p>
+<figcaption>Project schematic</figcaption>
 </figure>
 </div>
 </section>
-<section id="dfplayer" class="level2">
-<h2 class="anchored" data-anchor-id="dfplayer">DFPlayer</h2>
-<p>A DFPlayer takes MP3 files from an SD card and translates them into signals that can be sent to a speaker. It communicates with the MCU via USART, and takes 7 bytes at a time to initialize, pick and play a song from the SD card, and pause a song. The byte string that had to be sent to the DFPlayer is given below.</p>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<p>All the code for this project can be found in the associated <a href="https://github.com/emenemi1y/e155-project">GitHub repository</a>.</p>
 </section>
-<section id="flash" class="level2">
-<h2 class="anchored" data-anchor-id="flash">FLASH</h2>
-<p>The last component of our MCU design was the use of the FLASH peripheral. We had to create an unlock, lock, program and erase function in order to properly store strings in the FLASH memory. We had not explored this functionality of the MCU before in labs and so the reference manual was used extensively as well as the official STM32L4 HAL_Library. In order to program the FLASH our main program first executed the unlocking of the FLASH. Then we erased the FLASH at a specific page. The page by page erase method allowed us to be more cautious. After erasing the specific page we programmed strings into the page incrementing the address after 8 bits. Finally, we created a function that would transmit 16 bits of flash memory at a time over SPI to the FPGA.</p>
+<section id="bill-of-materials" class="level2">
+<h2 class="anchored" data-anchor-id="bill-of-materials">Bill of Materials</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Item</th>
+<th style="text-align: center;">Qty</th>
+<th style="text-align: center;">Part Number</th>
+<th style="text-align: center;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Speaker</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">N/A</td>
+<td style="text-align: center;">Lab</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SD Card</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">N/A</td>
+<td style="text-align: center;">Lab</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">RFID Tag</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">UID-M1-BAISE</td>
+<td style="text-align: center;"><a href="https://www.amazon.com/Writable-Rewritable-Compatible-Classic-Control/dp/B0DHZZFCHR/ref=sr_1_9?crid=YQ1SQMI69TH6&amp;dib=eyJ2IjoiMSJ9.Ri20uBAVxHlN6_C3kPyC3j5G579x9Q-yffTZGr7nlBjvjAktzZ4kIVvGFCXZ5UNRXlqpRXNx-Z_yLAEOU6cA4mCNHHmo-4jd4zaB33osLCUSSi2KCwIm8Wzm43byIDZ3Cdrfhs2fZ8TfhNklfYLXEUlL4JJWcWoiBNQutOyjYPVH_plYE2U64PtGm9ffAkkOAGTvKgrgsWo9aMXxBD0wy1LmB_G7ae8P7BBBs9_ar7lCX0jsSpYTRqPdb1kwWm_4FLSVerqHVkAiBJhPycn3gm8zRDEyy-AAMpv0uUR8W9I.gysc2cuOD1_F3OuyzZVc_XfQ3UhUrlZhA8ehdKtKIDU&amp;dib_tag=se&amp;keywords=rfid+tags+13.56+mhz&amp;qid=1761586471&amp;s=electronics&amp;sprefix=rfid+tags+13.56+mhz%2Celectronics%2C146&amp;sr=1-9">20 pack</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">RFID Reader</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">RFID RC522</td>
+<td style="text-align: center;"><a href="https://www.amazon.com/dp/B01CSTW0IA/ref=sspa_dk_detail_0?pd_rd_i=B01CSTW0IA&amp;pd_rd_w=bLk8j&amp;content-id=amzn1.sym.f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&amp;pf_rd_p=f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&amp;pf_rd_r=NV47PJTQMA03V6PTGA05&amp;pd_rd_wg=D9Ors&amp;pd_rd_r=3fbf7e6c-8b34-4e1a-b862-9fc9fa7b7f59&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&amp;th=1">RFID Reader</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">DFPlayer</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">B01D1D0E7Q</td>
+<td style="text-align: center;"><a href="https://www.amazon.com/HiLetgo-Arduino-Player-Module-DFPlayer/dp/B01D1D0E7Q/ref=sr_1_2_sspa?crid=1F3TO04MC922K&amp;dib=eyJ2IjoiMSJ9.kpWABimVoWPytAKExrHq0INHSYtEX0oCff_TWH9oGW6JdnAIYg6uni65ZrmNSD-ZyaCkujkoe59RJMwZWCEwIfn_3TuXkEpoxoiavRHDGpHY6C3jCWXZUSRKlEHN0SHXWQ7rpCsleLeY4j1cFRs0FHk5h_bkiUxOVV8gzz3Vot8SwXOmg4nhT7g-jlBSLs8A8vT_44ynrQeReJMaWDCrxgMpz_Eh-odcZQjibiF05P2sWDfaOz6NGw7XWW8jKJ2HKfBAXDLQmZAe8wWQE_o-N6TwmOlMwTcoXpZ70FZPUtU.pczE8Fu4P2AHFYfQ2ZFbpwtTppOhqEV_Fr1ZbGV_SgY&amp;dib_tag=se&amp;keywords=dfplayer&amp;qid=1762548621&amp;s=electronics&amp;sprefix=dfplay%2Celectronics%2C175&amp;sr=1-2-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;psc=1">DFPlayer</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">LED Strip</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">HD-5V-WS2812E-100L-B-IP30</td>
+<td style="text-align: center;"><a href="https://www.amazon.com/gp/product/B088B85G38/ref=ewc_pr_img_1?th=1">144 LED/1 m</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Servo motors</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4 x SG90 Servo</td>
+<td style="text-align: center;"><a href="https://www.amazon.com/Micro-Servos-Helicopter-Airplane-Controls/dp/B07MLR1498/ref=sr_1_32?crid=55AN2R77VLS5&amp;dib=eyJ2IjoiMSJ9.vvm0l8vigaOzRyR0JxtGqwnAICMVOFootLhXD3Wsvgyb6Gtqunt5wmelfzjolQGrO0CwDgycrIjz70LeczcJxAXz2R4qndiq4X3UkQ7cmBX8r9rPlCxOYjIOL6GSVm4aKGwCHXlv5XDWb8qOiL9r_7nffAtWo_wJqulczckPpdPlU-g7P0tPhjLiW3yY2LZ5O1W0Lrjakni-9qevb9WIBzyvQoYA7eyo3etaBt5BoHNREqHtcZ0NV3WzdNAoibvksJwZiVxhzK_LD3-ZpY0gxxG34rBFoqw-iyTa-Ct2jug.D6qIdfVub9ELPrOEL91Yt6ZcUh_QgAM-6IK73HGdET4&amp;dib_tag=se&amp;keywords=servo%2Bmotor&amp;qid=1761756052&amp;refinements=p_36%3A-10500&amp;rnid=386491011&amp;sprefix=servo%2Bmotor%2Caps%2C422&amp;sr=8-32&amp;th=1">Servo motor</a></td>
+</tr>
+</tbody>
+</table>
+<p>The total cost for this project was $46.92, which was under the $50 limit.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Arduino code translated into C for RFID Reader
+<ul>
+<li>Access <a href="https://github.com/miguelbalboa/rfid/blob/master/src/MFRC522.cpp">here</a></li>
+</ul></li>
+<li>NXP Semiconductors, “Standard performance MIFARE and NTAG frontend”, MFRC522 datasheet, April 2016.
+<ul>
+<li>Access <a href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">here</a></li>
+</ul></li>
+<li>Worldsemi, “Intelligent control LED integrated light source”, WS2812B datasheet.
+<ul>
+<li>Access <a href="https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf">here</a></li>
+</ul></li>
+<li>Lattice Semiconductor, “iCE40 SPRAM Usage Guide”, March 2021.
+<ul>
+<li>Access <a href="https://hmc-e155.github.io/assets/doc/FPGA-TN-02022-1-3-iCE40-SPRAM-Usage-Guide.pdf">here</a></li>
+</ul></li>
+<li>STMicroelectronics, “STM32L41xxx/42xxx/43xxx/44xxx/45xxx/46xxx advanced Arm®-based 32-bit MCUs”, RM0394 Reference Manual, October 2018.
+<ul>
+<li>Access <a href="https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">here</a></li>
+</ul></li>
+<li>STMicroelectronics, “Ultra-low-power Arm® Cortex®-M4 32-bit MCU+FPU, 100DMIPS, up to 256KB Flash”, STM32L432KB STM32L432KC datasheet, May 2018.
+<ul>
+<li>Access <a href="https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf">here</a></li>
+</ul></li>
+</ul>
 
 
 </section>

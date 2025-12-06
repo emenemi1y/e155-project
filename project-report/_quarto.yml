@@ -12,7 +12,7 @@ website:
       - href: mcu.qmd
         text: MCU Design
       - href: results.qmd
-        text: results
+        text: Results
       - href: docs.qmd
         text: Documentation
       - href: team.qmd

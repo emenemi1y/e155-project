@@ -9,12 +9,37 @@ The system schematic is given below, including the RFID reader, DFPlayer, speake
 
 ![Project schematic](images/project_schematic.png)
 
+## Code 
+All the code for this project can be found in the associated [GitHub repository](https://github.com/emenemi1y/e155-project).
+
 ## Bill of Materials 
 
-| Default | Left | Right | Center |
+| Item | Qty | Part Number | Source | Cost |
 |:-------:|:----:|:-----:|:------:|
-| 12      | 12   |    12 |   12   |
-| 123     | 123  |   123 |  123   |
-| 1       | 1    |     1 |   1    |
+| Speaker | 1 | N/A | Lab | $0 |
+| SD Card | 1 | N/A | Lab | $0 |
+| RFID Tag | 1 | UID-M1-BAISE | [20 pack](https://www.amazon.com/Writable-Rewritable-Compatible-Classic-Control/dp/B0DHZZFCHR/ref=sr_1_9?crid=YQ1SQMI69TH6&dib=eyJ2IjoiMSJ9.Ri20uBAVxHlN6_C3kPyC3j5G579x9Q-yffTZGr7nlBjvjAktzZ4kIVvGFCXZ5UNRXlqpRXNx-Z_yLAEOU6cA4mCNHHmo-4jd4zaB33osLCUSSi2KCwIm8Wzm43byIDZ3Cdrfhs2fZ8TfhNklfYLXEUlL4JJWcWoiBNQutOyjYPVH_plYE2U64PtGm9ffAkkOAGTvKgrgsWo9aMXxBD0wy1LmB_G7ae8P7BBBs9_ar7lCX0jsSpYTRqPdb1kwWm_4FLSVerqHVkAiBJhPycn3gm8zRDEyy-AAMpv0uUR8W9I.gysc2cuOD1_F3OuyzZVc_XfQ3UhUrlZhA8ehdKtKIDU&dib_tag=se&keywords=rfid+tags+13.56+mhz&qid=1761586471&s=electronics&sprefix=rfid+tags+13.56+mhz%2Celectronics%2C146&sr=1-9) | $9.98|
+| RFID Reader | 1 | RFID RC522 | [RFID Reader](https://www.amazon.com/dp/B01CSTW0IA/ref=sspa_dk_detail_0?pd_rd_i=B01CSTW0IA&pd_rd_w=bLk8j&content-id=amzn1.sym.f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&pf_rd_p=f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&pf_rd_r=NV47PJTQMA03V6PTGA05&pd_rd_wg=D9Ors&pd_rd_r=3fbf7e6c-8b34-4e1a-b862-9fc9fa7b7f59&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1) | $5.69 |
+| DFPlayer | 1 | B01D1D0E7Q | [DFPlayer](https://www.amazon.com/HiLetgo-Arduino-Player-Module-DFPlayer/dp/B01D1D0E7Q/ref=sr_1_2_sspa?crid=1F3TO04MC922K&dib=eyJ2IjoiMSJ9.kpWABimVoWPytAKExrHq0INHSYtEX0oCff_TWH9oGW6JdnAIYg6uni65ZrmNSD-ZyaCkujkoe59RJMwZWCEwIfn_3TuXkEpoxoiavRHDGpHY6C3jCWXZUSRKlEHN0SHXWQ7rpCsleLeY4j1cFRs0FHk5h_bkiUxOVV8gzz3Vot8SwXOmg4nhT7g-jlBSLs8A8vT_44ynrQeReJMaWDCrxgMpz_Eh-odcZQjibiF05P2sWDfaOz6NGw7XWW8jKJ2HKfBAXDLQmZAe8wWQE_o-N6TwmOlMwTcoXpZ70FZPUtU.pczE8Fu4P2AHFYfQ2ZFbpwtTppOhqEV_Fr1ZbGV_SgY&dib_tag=se&keywords=dfplayer&qid=1762548621&s=electronics&sprefix=dfplay%2Celectronics%2C175&sr=1-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1) | $7.99 |
+| LED Strip | 1 | HD-5V-WS2812E-100L-B-IP30 | [144 LED/1 m](https://www.amazon.com/gp/product/B088B85G38/ref=ewc_pr_img_1?th=1) | $10.99 |
+| Servo motors | 1 | 4 x SG90 Servo | [Servo motor](https://www.amazon.com/Micro-Servos-Helicopter-Airplane-Controls/dp/B07MLR1498/ref=sr_1_32?crid=55AN2R77VLS5&dib=eyJ2IjoiMSJ9.vvm0l8vigaOzRyR0JxtGqwnAICMVOFootLhXD3Wsvgyb6Gtqunt5wmelfzjolQGrO0CwDgycrIjz70LeczcJxAXz2R4qndiq4X3UkQ7cmBX8r9rPlCxOYjIOL6GSVm4aKGwCHXlv5XDWb8qOiL9r_7nffAtWo_wJqulczckPpdPlU-g7P0tPhjLiW3yY2LZ5O1W0Lrjakni-9qevb9WIBzyvQoYA7eyo3etaBt5BoHNREqHtcZ0NV3WzdNAoibvksJwZiVxhzK_LD3-ZpY0gxxG34rBFoqw-iyTa-Ct2jug.D6qIdfVub9ELPrOEL91Yt6ZcUh_QgAM-6IK73HGdET4&dib_tag=se&keywords=servo%2Bmotor&qid=1761756052&refinements=p_36%3A-10500&rnid=386491011&sprefix=servo%2Bmotor%2Caps%2C422&sr=8-32&th=1) | $7.99 |
 
-: Demonstration of pipe table syntax
+The total cost for this project was $46.92, which was under the $50 limit. 
+
+## References  
+
+* Arduino code translated into C for RFID Reader
+    + Access [here](https://github.com/miguelbalboa/rfid/blob/master/src/MFRC522.cpp)
+* NXP Semiconductors, “Standard performance MIFARE and NTAG frontend”, MFRC522 datasheet, April 2016.
+    + Access [here](https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf)
+* Worldsemi, “Intelligent control LED integrated light source”, WS2812B datasheet.
+    + Access [here](https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf)
+* Lattice Semiconductor, “iCE40 SPRAM Usage Guide”, March 2021.
+    + Access [here](https://hmc-e155.github.io/assets/doc/FPGA-TN-02022-1-3-iCE40-SPRAM-Usage-Guide.pdf)
+* STMicroelectronics, “STM32L41xxx/42xxx/43xxx/44xxx/45xxx/46xxx advanced Arm®-based 32-bit MCUs”, RM0394 Reference Manual, October 2018. 
+    + Access [here](https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)
+* STMicroelectronics, “Ultra-low-power Arm® Cortex®-M4 32-bit MCU+FPU, 100DMIPS, up to 256KB Flash”, STM32L432KB STM32L432KC datasheet, May 2018. 
+    + Access [here](https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf)
+
+
+
