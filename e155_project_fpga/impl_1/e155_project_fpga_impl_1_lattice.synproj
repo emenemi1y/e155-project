@@ -49,6 +49,7 @@
 "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/servo_driver.sv"
 "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/song_timing.sv"
 "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/update_rgb_string.sv"
+"C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_spi.sv"
 
 
 -path "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga"

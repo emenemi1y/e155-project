@@ -1,0 +1,21 @@
+project:
+  type: website
+
+website:
+  title: "E155 Project: RFID Jukebox"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - united
+      - brand
+    css: styles.css
+    toc: true
+
+
+

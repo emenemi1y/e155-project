@@ -23,10 +23,10 @@
 # Compile of led_shifter_tb.sv was successful.
 # Compile of servo_driver.sv was successful.
 # Compile of servo_driver_tb.sv was successful.
-# 9 compiles, 4 failed with no errors.
+# 9 compiles, 0 failed with no errors.
 vsim -gui work.led_shifter_tb -voptargs=+acc
 # vsim -gui work.led_shifter_tb -voptargs="+acc" 
-# Start time: 23:19:47 on Dec 04,2025
+# Start time: 14:20:30 on Dec 05,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
@@ -39,210 +39,27 @@ vsim -gui work.led_shifter_tb -voptargs=+acc
 # Loading work.counter(fast)
 add wave -position insertpoint  \
 sim:/led_shifter_tb/clk \
-sim:/led_shifter_tb/color_string \
-sim:/led_shifter_tb/to_light
+sim:/led_shifter_tb/to_light \
+sim:/led_shifter_tb/color_string
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: ekendrick  Hostname: 6CJZ0R3  ProcessID: 37040
-#           Attempting to use alternate WLF file "./wlft59tx0f".
+#           Attempting to use alternate WLF file "./wlftdkgkfi".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft59tx0f
+#           Using alternate file: ./wlftdkgkfi
 add wave -position insertpoint  \
-sim:/led_shifter_tb/dut/led_num \
 sim:/led_shifter_tb/dut/rgb \
 sim:/led_shifter_tb/dut/rgb_shifted \
-sim:/led_shifter_tb/dut/state
-run 300000
+sim:/led_shifter_tb/dut/state \
+sim:/led_shifter_tb/dut/led_num
+add wave -position insertpoint  \
+sim:/led_shifter_tb/dut/single_led/rgb \
+sim:/led_shifter_tb/dut/single_led/state \
+sim:/led_shifter_tb/dut/single_led/rgb_shift \
+sim:/led_shifter_tb/dut/single_led/rgb_count
 run 3000000
-vsim -gui -voptargs=+acc work.led_driver_tb
-# End time: 23:22:15 on Dec 04,2025, Elapsed time: 0:02:28
-# Errors: 0, Warnings: 8
-# vsim -gui -voptargs="+acc" work.led_driver_tb 
-# Start time: 23:22:15 on Dec 04,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "led_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
-#    Time: 0 ns  Iteration: 0  Instance: /led_driver_tb/dut File: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv Line: 13
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (24) for port 'rst_leds'. The port definition is at: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(8).
-#    Time: 0 ns  Iteration: 0  Instance: /led_driver_tb/dut File: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv Line: 13
-# ** Warning: (vsim-3015) [PCDPC] - Port size (144) does not match connection size (1) for port 'rgb'. The port definition is at: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(9).
-#    Time: 0 ns  Iteration: 0  Instance: /led_driver_tb/dut File: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv Line: 13
-# ** Warning: (vsim-3722) C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv(13): [TFMPC] - Missing connection for port 'done'.
-add wave -position insertpoint  \
-sim:/led_driver_tb/clk \
-sim:/led_driver_tb/done \
-sim:/led_driver_tb/load \
-sim:/led_driver_tb/rgb \
-sim:/led_driver_tb/start \
-sim:/led_driver_tb/to_light
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: ekendrick  Hostname: 6CJZ0R3  ProcessID: 37040
-#           Attempting to use alternate WLF file "./wlft6zb2n3".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft6zb2n3
-add wave -position insertpoint  \
-sim:/led_driver_tb/dut/rgb_count \
-sim:/led_driver_tb/dut/rgb_shift \
-sim:/led_driver_tb/dut/state
-run 3000000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of led_shifter.sv was successful.
-# Compile of led_shifter_tb.sv was successful.
-# Compile of servo_driver.sv was successful.
-# Compile of servo_driver_tb.sv was successful.
-# 9 compiles, 1 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (144) does not match connection size (24) for port 'rgb'. The port definition is at: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(9).
-#    Time: 0 ns  Iteration: 0  Instance: /led_driver_tb/dut File: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv Line: 13
-run 3000000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv failed with 1 errors.
-# Compile of counter_tb.sv was successful.
-# Compile of led_shifter.sv was successful.
-# Compile of led_shifter_tb.sv was successful.
-# Compile of servo_driver.sv was successful.
-# Compile of servo_driver_tb.sv was successful.
-# 9 compiles, 2 failed with 1 error.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (144) does not match connection size (24) for port 'rgb'. The port definition is at: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(9).
-#    Time: 0 ns  Iteration: 0  Instance: /led_driver_tb/dut File: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv Line: 13
-run 30000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv failed with 1 errors.
-# Compile of counter_tb.sv was successful.
-# Compile of led_shifter.sv was successful.
-# Compile of led_shifter_tb.sv was successful.
-# Compile of servo_driver.sv was successful.
-# Compile of servo_driver_tb.sv was successful.
-# 9 compiles, 2 failed with 1 error.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (144) does not match connection size (24) for port 'rgb'. The port definition is at: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(9).
-#    Time: 0 ns  Iteration: 0  Instance: /led_driver_tb/dut File: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/led_driver_tb.sv Line: 13
 run 300000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of led_shifter.sv was successful.
-# Compile of led_shifter_tb.sv was successful.
-# Compile of servo_driver.sv was successful.
-# Compile of servo_driver_tb.sv was successful.
-# 9 compiles, 1 failed with no errors.
-run 300000
-restart 0f
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-# Warning in wave window restart: (vish-4014) No objects found matching '/led_driver_tb/rgb'. 
-add wave -position insertpoint  \
-sim:/led_driver_tb/color_string
-run 300000
-# Compile of top.sv was successful.
-# Compile of counter.sv was successful.
-# Compile of led_driver.sv was successful.
-# Compile of led_driver_tb.sv was successful.
-# Compile of counter_tb.sv was successful.
-# Compile of led_shifter.sv was successful.
-# Compile of led_shifter_tb.sv was successful.
-# Compile of servo_driver.sv was successful.
-# Compile of servo_driver_tb.sv was successful.
-# 9 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.led_driver_tb(fast)
-# Loading work.led_driver(fast)
-# Loading work.counter(fast)
-run 300000
-vsim -gui -voptargs=+acc work.servo_driver
-# End time: 23:30:41 on Dec 04,2025, Elapsed time: 0:08:26
-# Errors: 0, Warnings: 2
-# vsim -gui -voptargs="+acc" work.servo_driver 
-# Start time: 23:30:41 on Dec 04,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "servo_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.servo_driver(fast)
-# Loading work.counter(fast)
-add wave -position insertpoint  \
-sim:/servo_driver/angle \
-sim:/servo_driver/clk \
-sim:/servo_driver/servo_signal \
-sim:/servo_driver/state
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: ekendrick  Hostname: 6CJZ0R3  ProcessID: 37040
-#           Attempting to use alternate WLF file "./wlft865qss".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft865qss
-vsim -gui -voptargs=+acc work.servo_driver_tb
-# End time: 23:31:34 on Dec 04,2025, Elapsed time: 0:00:53
-# Errors: 0, Warnings: 4
-# vsim -gui -voptargs="+acc" work.servo_driver_tb 
-# Start time: 23:31:34 on Dec 04,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "servo_driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.servo_driver_tb(fast)
-# Loading work.servo_driver(fast)
-# Loading work.counter(fast)
-add wave -position insertpoint  \
-sim:/servo_driver_tb/angle \
-sim:/servo_driver_tb/clk \
-sim:/servo_driver_tb/servo_signal
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: ekendrick  Hostname: 6CJZ0R3  ProcessID: 37040
-#           Attempting to use alternate WLF file "./wlftg2agk4".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftg2agk4
-add wave -position insertpoint  \
-sim:/servo_driver_tb/dut/state
-run 3000000
-# End time: 03:03:58 on Dec 05,2025, Elapsed time: 3:32:24
-# Errors: 0, Warnings: 4
+delay 10000000
+# invalid command name "delay"
+run 10000000
+# End time: 15:34:51 on Dec 05,2025, Elapsed time: 1:14:21
+# Errors: 0, Warnings: 5

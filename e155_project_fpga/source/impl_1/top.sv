@@ -25,12 +25,12 @@ module top (input song_start,				// Signal sent from the MCU indicating that a c
 	
 	// LED shifter 
 	logic shifter_reset;
-	led_shifter led_shifter1(clk, reset, song_start, color_string, to_light);
+	led_shifter led_shifter1(clk, reset, 1'b1, color_string, to_light);
 	
 	// Servo logic
-	logic [9:0] angle;
-	song_timing song_timing1(clk, reset, song_start, angle);
-	servo_driver servo(clk, reset, angle, servo_signal);
+	logic [9:0] angle; 
+	//song_timing song_timing1(clk, reset, song_start, angle);
+	//servo_driver servo(clk, reset, angle, servo_signal);
 	
 endmodule
 		

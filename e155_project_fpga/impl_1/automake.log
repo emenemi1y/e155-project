@@ -9,7 +9,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Dec  4 12:44:01 2025
+Fri Dec  5 14:34:43 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1_lattice.synproj -logfile e155_project_fpga_impl_1_lattice.srp -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml 
@@ -124,6 +124,7 @@ Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_proje
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/servo_driver.sv
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/song_timing.sv
 Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/update_rgb_string.sv
+Verilog design file: C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/source/impl_1/spram_spi.sv
 VHDL library: pmi
 VHDL design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd
 WARNING <35935050> - input port TRIM9 is not connected on this instance. VDB-5050
@@ -181,6 +182,7 @@ Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_pro
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/servo_driver.sv. VERI-1482
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/song_timing.sv. VERI-1482
 Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/update_rgb_string.sv. VERI-1482
+Analyzing Verilog file c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/spram_spi.sv. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
 
@@ -188,14 +190,12 @@ INFO <35921014> - c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd(4): analyzing pa
 INFO <35921504> - The default VHDL library search path is now "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1". VHDL-1504
 Top module language type = Verilog.
 Top module name (Verilog, mixed language): top
-INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(1): compiling module top. VERI-1018
+INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(6): compiling module top. VERI-1018
 INFO <35901018> - C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2&apos;b01). VERI-1018
 INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_shifter.sv(6): compiling module led_shifter. VERI-1018
 INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/led_driver.sv(6): compiling module led_driver. VERI-1018
 INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/counter.sv(9): compiling module counter. VERI-1018
-INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/song_timing.sv(6): compiling module song_timing. VERI-1018
-INFO <35901018> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/servo_driver.sv(6): compiling module servo_driver. VERI-1018
-WARNING <35931002> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(20): net reset does not have a driver. VDB-1002
+WARNING <35931002> - c:/users/ekendrick/documents/github/e155-project/e155_project_fpga/source/impl_1/top.sv(17): net reset does not have a driver. VDB-1002
 [Parameter Setting Section Start]
 
 	[Parameter Settings for Instance(s): hf_osc]
@@ -203,53 +203,18 @@ WARNING <35931002> - c:/users/ekendrick/documents/github/e155-project/e155_proje
 		CLKHF_DIV                 2'b01
 
 [Parameter Setting Section End]
+CRITICAL <35002028> - I/O port's net has no driver and is unused: song_start
+CRITICAL <35002028> - I/O port's net has no driver and is unused: servo_signal
+######## Missing driver on net servo_signal. Patching with GND.
 ######## Missing driver on net reset. Patching with GND.
 
 
 
-CRITICAL <35001747> - Bit(s) of register driving \servo/high_num[31:0] stuck at '0': 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19
-CRITICAL <35001747> - Bit(s) of register driving \servo/high_num[31:0] stuck at '0': 18, 17
-CRITICAL <35001747> - Bit(s) of register driving \servo/high_num[31:0] stuck at '0': 1, 0
-CRITICAL <35001747> - Bit(s) of register driving \servo/low_num[31:0] stuck at '0': 1, 0
 CRITICAL <35001747> - Bit(s) of register driving \led_shifter1/state[3:0] stuck at '0': 3
-CRITICAL <35001747> - Bit(s) of register \servo/low_num stuck at '0': 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19
-CRITICAL <35001748> - Bit(s) of register \servo/low_num stuck at '1': 18
-Mapped 1 multiplier(s)
-
-
+CRITICAL <35002028> - I/O port's net has no driver and is unused: song_start
 CRITICAL <35001747> - Bit(s) of register driving \led_shifter1/single_led/state[4:0] stuck at '0': 4
-CRITICAL <35001747> - Bit(s) of register driving \song_timing1/state[3:0] stuck at '0': 3, 2
-CRITICAL <35001747> - Bit(s) of register driving \servo/state[2:0] stuck at '0': 2
-WARNING <35935040> - Register \led_shifter1/single_led/num_low_i0 clock is stuck at One. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i31 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i30 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i29 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i28 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i27 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i26 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i25 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i24 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i23 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i22 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i21 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i20 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i19 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i18 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i17 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i16 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i15 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i14 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i13 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i12 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i11 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i10 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i9 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i8 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i7 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i6 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i5 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_low_i2 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_low_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_low_i2 clock is stuck at One. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_low_i3 clock is stuck at One. VDB-5040
 WARNING <35935040> - Register \led_shifter1/single_led/num_low_i6 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - Register \led_shifter1/single_led/num_low_i7 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - Register \led_shifter1/single_led/num_low_i8 clock is stuck at Zero. VDB-5040
@@ -276,20 +241,45 @@ WARNING <35935040> - Register \led_shifter1/single_led/num_low_i28 clock is stuc
 WARNING <35935040> - Register \led_shifter1/single_led/num_low_i29 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - Register \led_shifter1/single_led/num_low_i30 clock is stuck at Zero. VDB-5040
 WARNING <35935040> - Register \led_shifter1/single_led/num_low_i31 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - Register \led_shifter1/single_led/num_high_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i31 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i30 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i29 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i28 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i27 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i26 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i25 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i24 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i23 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i22 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i21 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i20 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i19 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i18 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i17 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i16 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i15 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i14 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i13 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i3 clock is stuck at One. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \led_shifter1/single_led/num_high_i9 clock is stuck at Zero. VDB-5040
 
 ################### Begin Area Report (top)######################
-Number of register bits => 556 of 5280 (10 % )
-CCU2 => 129
-FD1P3XZ => 556
+Number of register bits => 423 of 5280 (8 % )
+CCU2 => 63
+FD1P3XZ => 423
 HSOSC => 1
-IB => 1
-LUT4 => 311
-MAC16 => 1
+LUT4 => 241
 OB => 2
 ################### End Area Report ##################
 Number of odd-length carry chains : 1
-Number of even-length carry chains : 9
+Number of even-length carry chains : 4
 
 ################### Begin Clock Report ######################
 Clock Nets
@@ -299,16 +289,16 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : led_shifter1/single_led/n1760, loads : 159
+  Net : led_shifter1/single_led/n1659, loads : 159
   Net : led_shifter1/single_led/n9_c, loads : 157
-  Net : led_shifter1/n1945, loads : 152
-  Net : led_shifter1/n1974, loads : 146
-  Net : song_timing1/n178, loads : 42
-  Net : led_shifter1/delay_counter/n174, loads : 40
-  Net : servo/n186, loads : 39
-  Net : servo/counter_high/n182, loads : 39
-  Net : led_shifter1/single_led/n194, loads : 39
-  Net : led_shifter1/single_led/n190, loads : 39
+  Net : led_shifter1/n1372, loads : 152
+  Net : led_shifter1/n1677, loads : 146
+  Net : led_shifter1/delay_counter/n138, loads : 40
+  Net : led_shifter1/single_led/n142, loads : 39
+  Net : led_shifter1/single_led/n146, loads : 39
+  Net : led_shifter1/n1764, loads : 18
+  Net : led_shifter1/single_led/counter_low/n133[31], loads : 18
+  Net : led_shifter1/single_led/counter_low/n2366, loads : 18
 ################### End Clock Report ##################
 
 ################### Begin Constraint Report ######################
@@ -317,13 +307,13 @@ Constraint Summary:
   Total number of constraints dropped: 0
 ###################  End Constraint Report  ######################
 
-Peak Memory Usage: 102 MB
+Peak Memory Usage: 99 MB
 
 --------------------------------------------------------------
 Total CPU Time: 6 secs 
-Total REAL Time: 12 secs 
+Total REAL Time: 8 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: 22ee7cfd2183eb3188a8bc6e27c4c99c1a20b3c
+Checksum -- synthesis -- netlist: 86c6cde587804134dda3fe425adf38f36808faa1
 
 
 
@@ -335,10 +325,10 @@ Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V 
    Package:          SG48
    Performance:      High-Performance_1.2V
 Reading input file 'e155_project_fpga_impl_1.vm' ...
-CPU Time to convert: 0.125
+CPU Time to convert: 0.09375
 REAL Time to convert: 0
-convert PEAK Memory Usage: 43 MB
-convert CURRENT Memory Usage: 43 MB
+convert PEAK Memory Usage: 40 MB
+convert CURRENT Memory Usage: 40 MB
 Removing unused logic ...
 Starting design annotation....
  
@@ -350,8 +340,8 @@ Writing output file 'e155_project_fpga_impl_1_syn.udb'.
 POSTSYN finished successfully.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 47 MB
-Checksum -- postsyn: 44089d0e733ac6a2abb208deac177216b38107b
+Peak Memory Usage: 46 MB
+Checksum -- postsyn: 5f649dfb2f1e31c7a7b4e82959b6a0fdb4524777
 
 
 
@@ -383,26 +373,27 @@ WARNING <1026001> - C:/Users/ekendrick/Documents/GitHub/e155-project/e155_projec
 WARNING <1011001> - Remove invalid constraint 'ldc_set_location -site {9} [get_ports servo_down]'.
 Running general design DRC...
 
+WARNING <71003020> - Top module port 'song_start' does not connect to anything.
 
 
 
 Design Summary:
-   Number of slice registers: 556 out of  5280 (11%)
+   Number of slice registers: 423 out of  5280 (8%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           719 out of  5280 (14%)
-      Number of logic LUT4s:             312
-      Number of inserted feedthru LUT4s: 149
-      Number of ripple logic:            129 (258 LUT4s)
-   Number of IO sites used:   3 out of 39 (8%)
-      Number of IO sites used for general PIO: 3
+   Number of LUT4s:           514 out of  5280 (10%)
+      Number of logic LUT4s:             243
+      Number of inserted feedthru LUT4s: 145
+      Number of ripple logic:             63 (126 LUT4s)
+   Number of IO sites used:   2 out of 39 (5%)
+      Number of IO sites used for general PIO: 2
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 3 out of 36 (8%)
+      Number of IO sites used for PIO+I3C: 2 out of 36 (6%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 3 out of 39 (8%)
-   Number of DSPs:             1 out of 8 (13%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 2 out of 39 (5%)
+   Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  1 out of 1 (100%)
    Number of Low Speed OSCs:   0 out of 1 (0%)
@@ -415,41 +406,38 @@ Design Summary:
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net clk: 445 loads, 445 rising, 0 falling (Driver: Pin hf_osc.osc_inst/CLKHF)
+      Net clk: 369 loads, 369 rising, 0 falling (Driver: Pin hf_osc.osc_inst/CLKHF)
    Number of Clock Enables:  4
       Net VCC_net: 1 loads, 0 SLICEs
+      Net led_shifter1.n1372: 144 loads, 144 SLICEs
       Net led_shifter1.n5: 6 loads, 6 SLICEs
-      Net led_shifter1.n1945: 144 loads, 144 SLICEs
-      Net led_shifter1.single_led.n1760: 150 loads, 150 SLICEs
-   Number of LSRs:  11
-      Net song_timing1.n178: 17 loads, 17 SLICEs
-      Net song_timing1.n14[0]: 1 loads, 1 SLICEs
-      Net servo.n186: 17 loads, 17 SLICEs
-      Net servo.counter_high.n182: 17 loads, 17 SLICEs
-      Net led_shifter1.n1974: 144 loads, 144 SLICEs
-      Net led_shifter1.n1964: 6 loads, 6 SLICEs
+      Net led_shifter1.single_led.n1659: 150 loads, 150 SLICEs
+   Number of LSRs:  7
+      Net led_shifter1.n1677: 144 loads, 144 SLICEs
+      Net led_shifter1.n1764: 6 loads, 6 SLICEs
       Net led_shifter1.single_led.n9_c: 6 loads, 6 SLICEs
-      Net led_shifter1.single_led.n194: 17 loads, 17 SLICEs
-      Net led_shifter1.single_led.n190: 17 loads, 17 SLICEs
-      Net led_shifter1.single_led.n1962: 1 loads, 1 SLICEs
-      Net led_shifter1.delay_counter.n174: 17 loads, 17 SLICEs
+      Net led_shifter1.single_led.n1675: 1 loads, 1 SLICEs
+      Net led_shifter1.single_led.n142: 17 loads, 17 SLICEs
+      Net led_shifter1.single_led.n146: 17 loads, 17 SLICEs
+      Net led_shifter1.delay_counter.n138: 17 loads, 17 SLICEs
    Top 10 highest fanout non-clock nets:
       Net led_shifter1.single_led.n9_c: 151 loads
-      Net led_shifter1.single_led.n1760: 150 loads
-      Net led_shifter1.n1945: 144 loads
-      Net led_shifter1.n1974: 144 loads
-      Net VCC_net: 27 loads
-      Net led_shifter1.single_led.n190: 17 loads
-      Net led_shifter1.single_led.n194: 17 loads
-      Net servo.counter_high.n182: 17 loads
-      Net servo.n186: 17 loads
-      Net song_timing1.n178: 17 loads
+      Net led_shifter1.single_led.n1659: 150 loads
+      Net led_shifter1.n1372: 144 loads
+      Net led_shifter1.n1677: 144 loads
+      Net led_shifter1.delay_counter.n138: 17 loads
+      Net led_shifter1.single_led.n142: 17 loads
+      Net led_shifter1.single_led.n146: 17 loads
+      Net led_shifter1.single_led.state[0]: 16 loads
+      Net led_shifter1.single_led.state[1]: 15 loads
+      Net led_shifter1.state[0]: 15 loads
 Running physical design DRC...
 
+WARNING <71003020> - Top module port 'song_start' does not connect to anything.
  
 
 
-   Number of warnings:  4
+   Number of warnings:  6
    Number of criticals: 0
    Number of errors:    0
 
@@ -462,15 +450,15 @@ Constraint Summary:
 
 Total CPU Time: 0 secs  
 Total REAL Time: 0 secs  
-Peak Memory Usage: 78 MB
+Peak Memory Usage: 74 MB
 
-Checksum -- map: c2c6e1bdda4c26e8826e6be5a85d5128b96f49
+Checksum -- map: ac54aa3094d1a6149828fbd6f3843e4b7b552b24
 Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /0 secs 
 
 pnmainc -log pnmain "e155_project_fpga_impl_1_par.tcl"
 
 PAR: Place And Route Radiant Software (64-bit) 2024.2.0.3.0.
-PARed on: Thu Dec  4 12:44:32 2025
+PARed on: Fri Dec  5 14:35:02 2025
 
 Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
 	e155_project_fpga_impl_1_map.udb e155_project_fpga_impl_1_par.dir/5_1.udb 
@@ -487,22 +475,32 @@ Family:  iCE40UP
 Device:  iCE40UP5K
 Package: SG48
 Performance Grade:   High-Performance_1.2V
+WARNING <77001032> - Unable to find the instance/port 'song_start' in the constraint 'ldc_set_location -site {3} [get_ports song_start]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {3} [get_ports song_start]', the locate object is not specified
 
 Constraint Summary
-   Total number of constraints: 4
-   Total number of constraints dropped: 0
+   Total number of constraints: 3
+   Total number of constraints dropped: 1
+   Dropped constraints are:
+     ldc_set_location -site {3} [get_ports song_start]
 
-Number of Signals: 1521
-Number of Connections: 3476
+WARNING <77001032> - Unable to find the instance/port 'song_start' in the constraint 'ldc_set_location -site {3} [get_ports song_start]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {3} [get_ports song_start]', the locate object is not specified
+WARNING <71003020> - Top module port 'song_start' does not connect to anything.
+WARNING <71003020> - Top module port 'song_start' does not connect to anything.
+WARNING <71003020> - Top module port 'song_start' does not connect to anything.
+WARNING <71003020> - Top module port 'song_start' does not connect to anything.
+Number of Signals: 1050
+Number of Connections: 2597
 Device utilization summary:
 
-   SLICE (est.)     387/2640         15% used
-     LUT            719/5280         14% used
-     REG            556/5280         11% used
-   PIO                3/56            5% used
-                      3/36            8% bonded
+   SLICE (est.)     269/2640         10% used
+     LUT            514/5280         10% used
+     REG            423/5280          8% used
+   PIO                2/56            4% used
+                      2/36            5% bonded
    IOLOGIC            0/56            0% used
-   DSP                1/8            13% used
+   DSP                0/8             0% used
    I2C                0/2             0% used
    HFOSC              1/1           100% used
    LFOSC              0/1             0% used
@@ -519,39 +517,41 @@ Device utilization summary:
    OPENDRAIN          0/3             0% used
 
 Pin Constraint Summary:
-   3 out of 3 pins locked (100% locked).
+   2 out of 2 pins locked (100% locked).
 
 Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
 
 
-.................
-Finished Placer Phase 0 (AP).  CPU time: 1 secs , REAL time: 0 secs 
+...........................
+Finished Placer Phase 0 (AP).  CPU time: 1 secs , REAL time: 2 secs 
 
-Starting Placer Phase 1. CPU time: 1 secs , REAL time: 0 secs 
+Starting Placer Phase 1. CPU time: 1 secs , REAL time: 2 secs 
 ..  ..
 ....................
 
-Placer score = 100570.
+Placer score = 65790.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE            377/2640         14% used
+   SLICE            265/2640         10% used
 
-Finished Placer Phase 1. CPU time: 6 secs , REAL time: 6 secs 
+WARNING <77001032> - Unable to find the instance/port 'song_start' in the constraint 'ldc_set_location -site {3} [get_ports song_start]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {3} [get_ports song_start]', the locate object is not specified
+Finished Placer Phase 1. CPU time: 4 secs , REAL time: 5 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  137152
-Finished Placer Phase 2.  CPU time: 6 secs , REAL time: 6 secs 
+Placer score =  78003
+Finished Placer Phase 2.  CPU time: 4 secs , REAL time: 5 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "clk" from comp "hf_osc.osc_inst" on site "HFOSC_R1C32", clk load = 292, ce load = 0, sr load = 0
-  PRIMARY "led_shifter1.single_led.n1760" from F1 on comp "led_shifter1.single_led.SLICE_450" on site "R13C7B", clk load = 0, ce load = 79, sr load = 0
-  PRIMARY "led_shifter1.n1974" from F1 on comp "led_shifter1.SLICE_525" on site "R14C13A", clk load = 0, ce load = 0, sr load = 72
-  PRIMARY "led_shifter1.n1945" from F0 on comp "led_shifter1.SLICE_528" on site "R14C30C", clk load = 0, ce load = 72, sr load = 0
+  PRIMARY "clk" from comp "hf_osc.osc_inst" on site "HFOSC_R1C32", clk load = 219, ce load = 0, sr load = 0
+  PRIMARY "led_shifter1.single_led.n1659" from F1 on comp "led_shifter1.single_led.SLICE_377" on site "R13C5C", clk load = 0, ce load = 79, sr load = 0
+  PRIMARY "led_shifter1.n1372" from F0 on comp "led_shifter1.SLICE_372" on site "R14C30C", clk load = 0, ce load = 72, sr load = 0
+  PRIMARY "led_shifter1.n1677" from F1 on comp "led_shifter1.SLICE_425" on site "R14C8A", clk load = 0, ce load = 0, sr load = 72
 
   PRIMARY  : 4 out of 8 (50%)
 
@@ -559,9 +559,9 @@ Global Clocks :
 
 
 I/O Usage Summary (final):
-   3 out of 56 (5.4%) I/O sites used.
-   3 out of 36 (8.3%) bonded I/O sites used.
-   Number of I/O components: 3; differential: 0
+   2 out of 56 (3.6%) I/O sites used.
+   2 out of 36 (5.6%) bonded I/O sites used.
+   Number of I/O components: 2; differential: 0
    Number of Vref pins used: 0
 
 I/O Bank Usage Summary:
@@ -570,17 +570,19 @@ I/O Bank Usage Summary:
 +----------+---------------+------------+------------+------------+
 | 0        | 0 / 14 (  0%) | OFF        |            |            |
 | 1        | 1 / 14 (  7%) | 3.3V       |            |            |
-| 2        | 2 / 8 ( 25%)  | 3.3V       |            |            |
+| 2        | 1 / 8 ( 12%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 6 secs , REAL time: 6 secs 
+Total Placer CPU time: 4 secs , REAL time: 5 secs 
 
 
-Checksum -- place: 67248e3eb51b5f6323b454b2fe0fa361b2c59aa8
+Checksum -- place: d32ac90846803048f26403859024560e5bee3dcd
 Writing design to file e155_project_fpga_impl_1_par.dir/5_1.udb ...
 
+WARNING <77001032> - Unable to find the instance/port 'song_start' in the constraint 'ldc_set_location -site {3} [get_ports song_start]'
+WARNING <77001031> - In the constraint 'ldc_set_location -site {3} [get_ports song_start]', the locate object is not specified
 
-Start NBR router at 12:44:38 12/04/25
+Start NBR router at 14:35:07 12/05/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -599,65 +601,65 @@ Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
 4 global clock signals routed
-1319 connections routed (of 3108 total) (42.44%)
+986 connections routed (of 2232 total) (44.18%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (4 used out of 8 available):
-#0  Signal "led_shifter1.n1974"
+#0  Signal "led_shifter1.n1677"
        Control loads: 72    out of    72 routed (100.00%)
-#1  Signal "led_shifter1.n1945"
+#1  Signal "led_shifter1.n1372"
        Control loads: 72    out of    72 routed (100.00%)
 #4  Signal "clk"
-       Clock   loads: 292   out of   292 routed (100.00%)
-#5  Signal "led_shifter1.single_led.n1760"
+       Clock   loads: 219   out of   219 routed (100.00%)
+#5  Signal "led_shifter1.single_led.n1659"
        Control loads: 79    out of    79 routed (100.00%)
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
     TimerIf::skewscore 0
 
-Start NBR section for initial routing at 12:44:39 12/04/25
+Start NBR section for initial routing at 14:35:08 12/05/25
 Level 4, iteration 1
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-23(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 19.540ns/0.000ns; real time: 0 secs 
+15(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 20.214ns/0.000ns; real time: 2 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 12:44:39 12/04/25
+Start NBR section for normal routing at 14:35:09 12/05/25
 Level 4, iteration 1
-2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 19.540ns/0.000ns; real time: 2 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 20.214ns/0.000ns; real time: 2 secs 
 Level 4, iteration 2
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 19.540ns/0.000ns; real time: 2 secs 
+Estimated worst slack/total negative slack<setup>: 20.214ns/0.000ns; real time: 2 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 12:44:40 12/04/25
+Start NBR section for setup/hold timing optimization with effort level 3 at 14:35:09 12/05/25
 Changing speed to m;   changing temperature to -40
 Changing speed to 6;   changing temperature to 100
 
-Start NBR section for post-routing at 12:44:40 12/04/25
+Start NBR section for post-routing at 14:35:09 12/05/25
 
 End NBR router with 0 unrouted connection(s)
 Changing speed to m;   changing temperature to -40
 Changing speed to 6;   changing temperature to 100
 
-Checksum -- route: 2a4c40a3dd5f6faa7bd277777990b8d01f10f3e5
+Checksum -- route: 506f45698d71369d545bc4d3ca20d211200c4bff
 
-Total CPU time 2 secs 
+Total CPU time 1 secs 
 Total REAL time: 2 secs 
 Completely routed.
-End of route.  3108 routed (100.00%); 0 unrouted.
+End of route.  2232 routed (100.00%); 0 unrouted.
 
 Writing design to file e155_project_fpga_impl_1_par.dir/5_1.udb ...
 
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 20.938
+PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 21.855
 PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
 PAR_SUMMARY::Estimated worst slack<hold/<ns>> = 1.743
 PAR_SUMMARY::Timing score<hold/<ns>> = 0.000
@@ -665,9 +667,9 @@ PAR_SUMMARY::Number of errors = 0
 
 Note: user must run 'timing' for timing closure signoff.
 
-Total CPU  Time: 8 secs 
-Total REAL Time: 9 secs 
-Peak Memory Usage: 145.08 MB
+Total CPU  Time: 7 secs 
+Total REAL Time: 7 secs 
+Peak Memory Usage: 141.23 MB
 
 
 par done!
@@ -677,7 +679,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /10 secs 
+Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /8 secs 
 
 timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m   -pwrprd -html -rpt "e155_project_fpga_impl_1.twr" "e155_project_fpga_impl_1.udb" 
 timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt e155_project_fpga_impl_1.twr e155_project_fpga_impl_1.udb -gui -msgset C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/promote.xml
@@ -694,7 +696,7 @@ Performance Grade:   High-Performance_1.2V
 
 
 
-Successfully loading udb, 0.05 seconds
+Successfully loading udb, 0.03 seconds
 
 Initializing timer
 Starting design annotation....
@@ -702,15 +704,15 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  292  counted  2745  covered  2731
+Connections ignored  219  counted  1984  covered  1976
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 114 MB
+Peak Memory Usage: 111 MB
 
- 0.938487s wall, 0.796875s user + 0.125000s system = 0.921875s CPU (98.2%)
+ 0.839656s wall, 0.718750s user + 0.093750s system = 0.812500s CPU (96.8%)
 
 
 tmcheck -par "e155_project_fpga_impl_1.par"  
@@ -728,10 +730,16 @@ Family:  iCE40UP
 Device:  iCE40UP5K
 Package: SG48
 Performance Grade:   High-Performance_1.2V
+WARNING <77001032> - bitgen: Unable to find the instance/port 'song_start' in the constraint 'ldc_set_location -site {3} [get_ports song_start]'
+
+WARNING <77001031> - bitgen: In the constraint 'ldc_set_location -site {3} [get_ports song_start]', the locate object is not specified
+
 
 Constraint Summary
-   Total number of constraints: 4
-   Total number of constraints dropped: 0
+   Total number of constraints: 3
+   Total number of constraints dropped: 1
+   Dropped constraints are:
+     ldc_set_location -site {3} [get_ports song_start]
 
 Successfully loading design udb and device data from disks and to up-layer in CPU time: 0 secs , REAL time: 0 secs 
 
@@ -758,10 +766,11 @@ Preference Summary:
 
 Creating bit map...
 Saving bit stream in "C:/Users/ekendrick/Documents/GitHub/e155-project/e155_project_fpga/impl_1/e155_project_fpga_impl_1.bin".
+INFO <1081100> - Bitstream authenticated.
 Bitstream generation complete!
 
 Total CPU Time: 0 secs 
-Total REAL Time: 5 secs 
-Peak Memory Usage: 126 MB
+Total REAL Time: 2 secs 
+Peak Memory Usage: 123 MB
 
-Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /6 secs 
+Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /2 secs 
