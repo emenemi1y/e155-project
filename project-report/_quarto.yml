@@ -6,8 +6,17 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Project Overview
+      - href: fpga.qmd
+        text: FPGA Design
+      - href: mcu.qmd
+        text: MCU Design
+      - href: results.qmd
+        text: results
+      - href: docs.qmd
+        text: Documentation
+      - href: team.qmd
+        text: Team
 
 format:
   html:

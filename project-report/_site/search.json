@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "E155 Project: RFID Jukebox",
+    "section": "",
+    "text": "In this project, we sought to create an RFID-card controlled jukebox. A user would be able to tap an RFID-card onto an RFID reader, and the jukebox would play songs corresponding to the specific card that was tapped. Songs would be loaded on an SD Card, and read and transmitted to a speaker using a DFPlayer. An LED light string would display a light show corresponding to the song that is played. A servo motor would move a “needle” on a record to emulate a real jukebox."
+  },
+  {
+    "objectID": "index.html#project-abstract",
+    "href": "index.html#project-abstract",
+    "title": "E155 Project: RFID Jukebox",
+    "section": "",
+    "text": "In this project, we sought to create an RFID-card controlled jukebox. A user would be able to tap an RFID-card onto an RFID reader, and the jukebox would play songs corresponding to the specific card that was tapped. Songs would be loaded on an SD Card, and read and transmitted to a speaker using a DFPlayer. An LED light string would display a light show corresponding to the song that is played. A servo motor would move a “needle” on a record to emulate a real jukebox."
+  },
+  {
+    "objectID": "index.html#system-design",
+    "href": "index.html#system-design",
+    "title": "E155 Project: RFID Jukebox",
+    "section": "System Design",
+    "text": "System Design\nThe block diagram for the system is given below:"
+  },
+  {
+    "objectID": "index.html#new-hardware",
+    "href": "index.html#new-hardware",
+    "title": "E155 Project: RFID Jukebox",
+    "section": "New Hardware",
+    "text": "New Hardware\n\nRFID Reader\nThe RFID reader was a new sensor that we had not previously seen in this class. It communicated to the MCU via SPI. One of the main challenges and new things we learned in regards to this sensor was how to use and translate libraries. This sensor is fairly common in a lot of beginner RFID projects on Arduino, and so there was a lot of code and libraries out there to help get the sensor up and running. However, Arduino is in C++ and we were using C. So we had to translate massive libraries into C code. This task greatly improved our C code writing abilities and strengthened our knowledge of the intricacies of the language C.\n\n\nDFPlayer\nAnother piece of new hardware we used was the DFPlayer Mini, another popular Arduino component. This device used USART to communicate a string of numbers which correlated to files on the SD card. It translated the MP3 files on the SD card to signals to be transmitted to a speaker.\n\n\nLED Light Strip\nA new piece of hardware we implemented on the FPGA was a light strip. We used WS2812 individually addressable LEDs. The entire strip was controlled using a PWM signal, which communicated RGB values to each of the individual lights. We created an FSM that would take the given color sequence and shifted them throughout the length of the strip. We wanted to give the lights the color sequence through SPRAM but were unable to implement this before we experienced hardware issues."
+  },
+  {
+    "objectID": "fpga.html",
+    "href": "fpga.html",
+    "title": "FPGA Design Overview",
+    "section": "",
+    "text": "The FPGA had a couple of tasks that were laid out by our project proposal. One of the tasks was to control the light display. While the original plan was to get the light code sequence from SPRAM, we did not get to this point due to unforeseen circumstances. We were able to program it with a given RGB color string and used an FSM to shift the lights in different patterns. The FPGA also controlled the servo motor that moved the “needle” of our jukebox. This was also controlled by an FSM. The servo motor design fully met our specs."
+  },
+  {
+    "objectID": "fpga.html#block-diagram",
+    "href": "fpga.html#block-diagram",
+    "title": "FPGA Design Overview",
+    "section": "Block Diagram",
+    "text": "Block Diagram\nThe block diagram for our FPGA design is given below.\n\n\n\nBlock diagram for FPGA design"
+  },
+  {
+    "objectID": "fpga.html#led-strip-control",
+    "href": "fpga.html#led-strip-control",
+    "title": "FPGA Design Overview",
+    "section": "LED Strip Control",
+    "text": "LED Strip Control"
+  },
+  {
+    "objectID": "fpga.html#servo-control",
+    "href": "fpga.html#servo-control",
+    "title": "FPGA Design Overview",
+    "section": "Servo Control",
+    "text": "Servo Control\nThe servo was implemented to control a “needle” that would lay on top of the “record” to look like a real jukebox. An SG90 servo motor was used, which takes a PWM input with a duty cycle corresponding to the angle the servo should turn to. The PWM signal has a period of 20ms. An angle of -90 degrees requires a pulse width of 1 ms, an angle of 0 degrees requires a pulse width of 1.5 ms, and an angle 90 degrees requires a pulse width of 2.0 ms.\n\n\n\nSG90 communication\n\n\nThis was achieved using two FSMs and counters. servo_control outputs the PWM signal based on an input angle, and just makes use of counters. song_timing asserts angles corresponding to a down, then up, then back down position when a song is loaded to simulate changing a record.\n\n\n\nservo_driver FSM\n\n\n\n\n\nsong_timing FSM"
+  },
+  {
+    "objectID": "fpga.html#spram",
+    "href": "fpga.html#spram",
+    "title": "FPGA Design Overview",
+    "section": "SPRAM",
+    "text": "SPRAM\nThe new feature we tried to implement on the FPGA was of SPRAM. In our original design we wanted the FLASH of the MCU to transmit data to the SPRAM of the FPGA via SPI to store color data for the lights. While we had code that would upload the SPI transmitted bits to the SPRAM and it was able to synthesize we never got a chance to test it before our project ended up getting shorted."
+  },
+  {
+    "objectID": "mcu.html",
+    "href": "mcu.html",
+    "title": "MCU Design Overview",
+    "section": "",
+    "text": "The MCU (STM32L432KC) was key for the implementation of our projects. One of these was operating the RFID reader. The MCU connected to the reader and read the different IDs of the cards via SPI. It used these IDs to select a song saved on an SD card reader through a DFPlayer, and played that song. It also sent a signal to the FPGA to indicate when to start the servo motor and the lights. The FLASH memory of the microcontroller was programmed to store color data to be sent to the FPGA to be displayed on the LEDs. A diagram ofthe\nA diagram of the MCU operation is given below."
+  },
+  {
+    "objectID": "mcu.html#rfid-reader",
+    "href": "mcu.html#rfid-reader",
+    "title": "MCU Design Overview",
+    "section": "RFID Reader",
+    "text": "RFID Reader\nWe implemented an RFID-RC522 RFID sensor to read the IDs from 13.56 MHz RFID cards. Communication to the RFID Reader was done via SPI. We translated an existing library for use of the RFID-RC522 with an Arduino (found here) to C for use with the STM32L432KC. A block diagram, from the MFRC522 datasheet, is given below. An antenna is used to detect the RFID cards.\n\n\n\nSimplified block diagram of the MFRC522"
+  },
+  {
+    "objectID": "mcu.html#dfplayer",
+    "href": "mcu.html#dfplayer",
+    "title": "MCU Design Overview",
+    "section": "DFPlayer",
+    "text": "DFPlayer\nA DFPlayer takes MP3 files from an SD card and translates them into signals that can be sent to a speaker. It communicates with the MCU via USART, and takes 7 bytes at a time to initialize, pick and play a song from the SD card, and pause a song. The byte string that had to be sent to the DFPlayer is given below."
+  },
+  {
+    "objectID": "mcu.html#flash",
+    "href": "mcu.html#flash",
+    "title": "MCU Design Overview",
+    "section": "FLASH",
+    "text": "FLASH\nThe last component of our MCU design was the use of the FLASH peripheral. We had to create an unlock, lock, program and erase function in order to properly store strings in the FLASH memory. We had not explored this functionality of the MCU before in labs and so the reference manual was used extensively as well as the official STM32L4 HAL_Library. In order to program the FLASH our main program first executed the unlocking of the FLASH. Then we erased the FLASH at a specific page. The page by page erase method allowed us to be more cautious. After erasing the specific page we programmed strings into the page incrementing the address after 8 bits. Finally, we created a function that would transmit 16 bits of flash memory at a time over SPI to the FPGA."
+  },
+  {
+    "objectID": "results.html",
+    "href": "results.html",
+    "title": "Results",
+    "section": "",
+    "text": "At some point in time, the design successfully read the ID of an RFID tag and used that information to select a song from an SD Card inserted in a DFPlayer. Further, the MCU was able to store color data in FLASH that could be read and sent via SPI to the FPGA. The FPGA was also able to play a “light show” on the LED string, updating in such a way that the colors were “sliding” across the string. Then, disaster struck. During testing, power and ground were shorted to one another, destroying our entire project. It was going to be cool, but you’ll just have to take our word for it."
+  },
+  {
+    "objectID": "results.html#results-overview",
+    "href": "results.html#results-overview",
+    "title": "Results",
+    "section": "",
+    "text": "At some point in time, the design successfully read the ID of an RFID tag and used that information to select a song from an SD Card inserted in a DFPlayer. Further, the MCU was able to store color data in FLASH that could be read and sent via SPI to the FPGA. The FPGA was also able to play a “light show” on the LED string, updating in such a way that the colors were “sliding” across the string. Then, disaster struck. During testing, power and ground were shorted to one another, destroying our entire project. It was going to be cool, but you’ll just have to take our word for it."
+  },
+  {
+    "objectID": "results.html#specs-and-performance",
+    "href": "results.html#specs-and-performance",
+    "title": "Results",
+    "section": "Specs and Performance",
+    "text": "Specs and Performance\nThe following were our specs at the beginning of the project and whether or not we met them.\n\nRFID reader is able to correctly identify unique cards and select current song from SD card memory\n\nStatus: met\nThe RFID reader successfully communicated via SPI and identified unique RFID tags.\n\nMCU is able to write to SPRAM of the FPGA via SPI.\n\nStatus: unmet\nThe FLASH memory of the MCU was successfully written to and transmitted out via SPI. However, we were unable to test the SPRAM of the FPGA before our hardware broke.\n\nDFPlayer can use song data to play songs on speaker.\n\nStatus: met\nThe DFPlayer could read songs from an SD card and play them.\n\nFPGA can communicate with external LEDs and motors to play a light show during the song with a synchronized start time.\n\nStatus: met\nA PWM signal was used to communicated with both LEDs and the servo. Both worked before hardware issues.\n\nNeedle lowers at start of song, play back should start after needle lowers, and light show begins.\n\nStatus: eh\nThe servo moves at the start of the song, and the LEDs start shifting at the beginning of a song. However, we never added a “needle” to the servo."
+  },
+  {
+    "objectID": "results.html#system-images-and-videos",
+    "href": "results.html#system-images-and-videos",
+    "title": "Results",
+    "section": "System images and videos",
+    "text": "System images and videos\n\nTragedy strikes!\nDuring the process of creating this project, power and ground were accidentally shorted together while moving all the components from a small breadboard to a larger one. All of the external components and the FPGA were fried. The MCU is the only part that lives to see today. As a result, the pictures and videos we have are limited.\n\n\nLights\nWhile we were able to successfully program the lights so it looked like a pattern of lights was “shifting” across the string, we do not have a video of that working. Instead, we have this video of the lights blinking two different colors, and a picture of a rainbow string.\nLights blinking pink and blue \n\n\nDFPlayer\nWe also have a video of the DFPlayer playing a song. We do not have a video of the RFID Reader working. DFPlayer playing a song"
+  },
+  {
+    "objectID": "results.html#logic-analyzer-and-testbench-results",
+    "href": "results.html#logic-analyzer-and-testbench-results",
+    "title": "Results",
+    "section": "Logic Analyzer and Testbench Results",
+    "text": "Logic Analyzer and Testbench Results\nThe logic analyzer and Quarto simulator were used extensively for testing software. The logic analyzer was used for verifying communication with the DFPlayer and SPI communication from the MCU (which was supposed to go to the FPGA). Results from the logic analyzer are given below.\n\n\n\n8 bytes of data, as expected\n\n\n\n\n\nZoomed in, 1 byte of data, transmitted 0x56 as expected\n\n\nThe Quarto simulator was used to verify the FSMs were behaving as expected. Their results are given below. The led_driver module was made to modulate the duty cycle of a PWM signal to send to the lights. The waveforms indicate that it is behaving as expected. \nThe led_shifter module was made to shift strings into the led_driver module. Here, after 24624 bits of data has been sent to the LEDs, a reset signal is sent and the RGB string to be sent to the LED strip is shifted. \nThe servo_driver module created a PWM signal for the servo based on an input angle. Here, the output shifts from high to low."
+  }
+]

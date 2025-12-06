@@ -1,7 +1,42 @@
 ---
 title: "E155 Project: RFID Jukebox"
+format: html 
 ---
 
-This is a Quarto website.
+## Project Abstract
+In this project, we sought to create an RFID-card controlled jukebox. A user would be able to tap an RFID-card 
+onto an RFID reader, and the jukebox would play songs corresponding to the specific card that was tapped. Songs would be 
+loaded on an SD Card, and read and transmitted to a speaker using a DFPlayer. An LED light string would display a light show corresponding 
+to the song that is played. A servo motor would move a “needle” on a record to emulate a real jukebox. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+![](images/jukebox_ad.jpg)
+
+## System Design
+The block diagram for the system is given below: 
+![System block diagram](images/block_diagram.png)
+
+## New Hardware
+
+### RFID Reader
+The RFID reader was a new sensor that we had not previously seen in this class. It communicated 
+to the MCU via SPI. One of the main challenges and new things we learned in regards to this sensor 
+was how to use and translate libraries. This sensor is fairly common in a lot of beginner RFID 
+projects on Arduino, and so there was a lot of code and libraries out there to help get the 
+sensor up and running. However, Arduino is in C++ and we were using C. So we had to translate
+massive libraries into C code. This task greatly improved our C code writing abilities and 
+strengthened our knowledge of the intricacies of the language C.
+
+### DFPlayer
+
+Another piece of new hardware we used was the DFPlayer Mini, another popular Arduino component. 
+This device used USART to communicate a string of numbers which correlated to files on the SD card.
+It translated the MP3 files on the SD card to signals to be transmitted to a speaker. 
+
+### LED Light Strip
+
+A new piece of hardware we implemented on the FPGA was a light strip. We used WS2812 individually
+addressable LEDs. The entire strip was controlled using a PWM signal, which communicated
+RGB values to each of the individual lights. We created an FSM that would take the 
+given color sequence and shifted them throughout the length of the strip. We wanted to 
+give the lights the color sequence through SPRAM but were unable to implement this before
+we experienced hardware issues.

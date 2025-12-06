@@ -1,0 +1,20 @@
+---
+title: "Documentation"
+format: html 
+---
+
+## Schematic 
+
+The system schematic is given below, including the RFID reader, DFPlayer, speaker, LED strip, MCU, and FPGA.
+
+![Project schematic](images/project_schematic.png)
+
+## Bill of Materials 
+
+| Default | Left | Right | Center |
+|:-------:|:----:|:-----:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+: Demonstration of pipe table syntax
